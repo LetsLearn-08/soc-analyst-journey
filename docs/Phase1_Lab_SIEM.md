@@ -1,14 +1,39 @@
 # 📅 Phase 1 Timeline – SOC Lab Journey
 
-## Day 1–3: Lab Setup
-- Installed **VirtualBox** and created 4 VMs (Windows, Kali, Metasploitable, SIEM).
-- Configured **host-only network** (192.168.56.0/24).
-- VM Setup Links:
-  - [Windows 10 VM](https://www.partitionwizard.com/partitionmanager/win10-iso-for-virtualbox-vmware.html)
-  - [Kali Linux VM](https://www.kali.org/get-kali/)
-  - [Metasploitable 2 VM](https://docs.rapid7.com/metasploit/metasploitable-2/)
-  - [Splunk SIEM Ubuntu VM](https://github.com/MustangGuy86/Splunk-SIEM-Setup-on-Ubuntu-Desktop)
+## 📅 Timeline
+
+### Day 1–3: Lab Setup
+- Installed **VirtualBox** and created 4 VMs (Windows, Kali, Metasploitable, SIEM).  
+- Configured **host-only network** (`192.168.56.0/24`).  
+- VM Setup Manual:  
+  - [Windows 10 VM](#1-windows-10-vm)  
+  - [Kali Linux VM](#2-kali-linux-vm)  
+  - [Metasploitable 2 VM](#3-metasploitable-2-vm)  
+  - [Ubuntu SIEM VM](#4-ubuntu-siem-vm-splunk)  
 - Proof: [Architecture Diagram](docs/architecture-diagram.png)
+
+---
+
+## ⚙️ VM Setup Manual
+
+### 1. Windows 10 VM
+- Name: `Win10-SOC` | RAM: 4 GB | Disk: 40 GB  
+- Install ISO → Enable Audit Policies → Install Sysmon.  
+- Proof: [Windows Audit Policy Screenshot](screenshots/windows-audit-policy.png)
+
+### 2. Kali Linux VM
+- Name: `Kali-Attacker` | RAM: 2 GB | Disk: 20 GB  
+- Install ISO → Install tools (`nmap`, `hydra`, `nikto`).  
+- Proof: [Linux Auth Failures Screenshot](screenshots/linux-auth-failures.png)
+
+### 3. Metasploitable 2 VM
+- Import OVA → Login (`msfadmin/msfadmin`) → Confirm vulnerable services.  
+- Proof: [Architecture Diagram](docs/architecture-diagram.png)
+
+### 4. Ubuntu SIEM VM (Splunk)
+- Name: `SIEM-Splunk` | RAM: 4 GB | Disk: 40 GB  
+- Install Ubuntu ISO → Install Splunk Free → Enable receiving on `9997`.  
+- Proof: [Splunk Web Login Screenshot](screenshots/splunk-login.png)
 
 ---
 
@@ -130,5 +155,6 @@ Building this Phase 1 SOC lab taught me more than just commands and configs — 
 - Long-term → Build a platform where anyone can turn their stories into **cybersecurity labs + anime narratives**.
 
 # Logs tell stories, analysts write the truth.
-## STAY TUNED ...@Lets Learn-08(https://github.com/LetsLearn-08)
+## 📢 Stay Tuned
+Follow my journey: **[@Lets Learn-08](https://github.com/LetsLearn-08)**  
 
