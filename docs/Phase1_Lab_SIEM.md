@@ -3,6 +3,11 @@
 ## Day 1–3: Lab Setup
 - Installed **VirtualBox** and created 4 VMs (Windows, Kali, Metasploitable, SIEM).
 - Configured **host-only network** (192.168.56.0/24).
+- VM Setup Links:
+  - [Windows 10 VM](https://www.partitionwizard.com/partitionmanager/win10-iso-for-virtualbox-vmware.html)
+  - [Kali Linux VM](https://www.kali.org/get-kali/)
+  - [Metasploitable 2 VM](https://docs.rapid7.com/metasploit/metasploitable-2/)
+  - [Splunk SIEM Ubuntu VM](https://github.com/MustangGuy86/Splunk-SIEM-Setup-on-Ubuntu-Desktop)
 - Proof: [Architecture Diagram](docs/architecture-diagram.png)
 
 ---
