@@ -19,21 +19,21 @@
 ### 1. Windows 10 VM
 - Name: `Win10-SOC` | RAM: 4 GB | Disk: 40 GB  
 - Install ISO → Enable Audit Policies → Install Sysmon.  
-- Proof: [Windows Audit Policy Screenshot](screenshots/windows-audit-policy.png)
+- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/tree/aad8ac1150b21801f673c83b82175b0ec840cdac/windows-vm-setup
 
 ### 2. Kali Linux VM
 - Name: `Kali-Attacker` | RAM: 2 GB | Disk: 20 GB  
 - Install ISO → Install tools (`nmap`, `hydra`, `nikto`).  
-- Proof: [Linux Auth Failures Screenshot](screenshots/linux-auth-failures.png)
+- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/tree/8656d9b915562eee9a0d1c022dd7b94e953ceb54/kali-linux-setup
 
 ### 3. Metasploitable 2 VM
 - Import OVA → Login (`msfadmin/msfadmin`) → Confirm vulnerable services.  
-- Proof: [Architecture Diagram](docs/architecture-diagram.png)
+- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/47888eac940c7c9333b2fbd559498907108d55c0/metasploit-lab/README.md
 
 ### 4. Ubuntu SIEM VM (Splunk)
 - Name: `SIEM-Splunk` | RAM: 4 GB | Disk: 40 GB  
 - Install Ubuntu ISO → Install Splunk Free → Enable receiving on `9997`.  
-- Proof: [Splunk Web Login Screenshot](screenshots/splunk-login.png)
+- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/tree/47888eac940c7c9333b2fbd559498907108d55c0/splunk-vm-setup
 
 ---
 
