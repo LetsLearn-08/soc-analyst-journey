@@ -13,28 +13,37 @@
 - Proof: [Architecture Diagram](docs/architecture-diagram.png)
 
 ---
+# 🚀 SOC Journey
 
-## ⚙️ VM Setup Manual
+This repository documents my modular SOC lab environment, built for learning, detection engineering, and community sharing.
 
-### 1. Windows 10 VM
-- Name: `Win10-SOC` | RAM: 4 GB | Disk: 40 GB  
-- Install ISO → Enable Audit Policies → Install Sysmon.  
-- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/4b27b790885ce5be1a63b8cbabe71aa2ecb16d5e/windows-vm-setup/README.md
+## 🔗 Subprojects
 
-### 2. Kali Linux VM
-- Name: `Kali-Attacker` | RAM: 2 GB | Disk: 20 GB  
-- Install ISO → Install tools (`nmap`, `hydra`, `nikto`).  
-- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/tree/8656d9b915562eee9a0d1c022dd7b94e953ceb54/kali-linux-setup
+- [Windows 10 SOC Lab](windows10-soc-lab/README.md)
+  - [Windows Installation Guide](windows10-soc-lab/markdown/windows-install.md)
+  - [Guest Additions Setup](windows10-soc-lab/markdown/guest-additions.md)
+  - [SOC Preparation](windows10-soc-lab/markdown/soc-prep.md)
+  - [Lab Status](windows10-soc-lab/markdown/status.md)
 
-### 3. Metasploitable 2 VM
-- Import OVA → Login (`msfadmin/msfadmin`) → Confirm vulnerable services.  
-- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/47888eac940c7c9333b2fbd559498907108d55c0/metasploit-lab/README.md
+- [Splunk SIEM Lab](splunk-siem-lab/README.md)
+  - [Splunk Installation Guide](splunk-siem-lab/markdown/splunk-install.md)
+  - [Windows Integration](splunk-siem-lab/markdown/splunk-integration.md)
+  - [Dashboards & Alerts](splunk-siem-lab/markdown/splunk-dashboards.md)
+  - [Lab Status](splunk-siem-lab/markdown/status.md)
 
-### 4. Ubuntu SIEM VM (Splunk)
-- Name: `SIEM-Splunk` | RAM: 4 GB | Disk: 40 GB  
-- Install Ubuntu ISO → Install Splunk Free → Enable receiving on `9997`.  
-- Proof: https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/4b27b790885ce5be1a63b8cbabe71aa2ecb16d5e/splunk-vm-setup/README.md
----
+- [Kali Linux Lab](kali-lab/README.md)
+  - [Kali Installation Guide](kali-lab/markdown/kali-install.md)
+  - [Host‑Only Networking](kali-lab/markdown/host-only-networking.md)
+  - [Troubleshooting Guide](kali-lab/markdown/troubleshooting.md)
+  - [Lab Status](kali-lab/markdown/status.md)
+
+- [Metasploitable2 Lab](metasploitable2-lab/README.md)
+  - [Overview & Safety Notes](metasploitable2-lab/markdown/metasploitable-overview.md)
+  - [Nmap Workflow](metasploitable2-lab/markdown/nmap-workflow.md)
+  - [Findings Summary](metasploitable2-lab/markdown/findings-summary.md)
+  - [NSE Script Template](metasploitable2-lab/markdown/nse-template.md)
+  - [Lab Status](metasploitable2-lab/markdown/status.md)
+
 
 ## Day 4–7: VM Configuration
 - **Windows VM** → enabled audit policies, installed Sysmon.  
