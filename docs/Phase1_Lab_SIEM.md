@@ -10,7 +10,7 @@
   - [Kali Linux VM] 
   - [Metasploitable 2 VM] 
   - [Ubuntu SIEM VM] 
-- Proof: [Architecture Diagram](docs/architecture-diagram.png)
+
 
 ---
 # 🚀 SOC Journey
@@ -35,7 +35,7 @@ Each link takes you to the folder in the Pentester Journey repo where the full R
 - **Windows VM** → enabled audit policies, installed Sysmon.  
 - **Kali VM** → installed tools (Nmap, Hydra, Nikto).  
 - **Metasploitable VM** → imported OVA, confirmed vulnerable services.  
-- Proof: [Windows Audit Policy Screenshot](screenshots/windows-audit-policy.png)
+
 
 ---
 
@@ -43,14 +43,14 @@ Each link takes you to the folder in the Pentester Journey repo where the full R
 - Installed **Splunk Free** on Ubuntu SIEM VM.  
 - Enabled receiving on port 9997.  
 - Installed Splunk Add-ons (Windows, Sysmon, Linux).  
-- Proof: [Splunk Web Login Screenshot](screenshots/splunk-login.png)
+
 
 ---
 
 ## Day 12–13: Log Forwarding
 - Configured **Splunk Forwarder** on Windows and Linux VMs.  
 - Forwarded Windows Event Logs, Sysmon, and Linux syslogs.  
-- Proof: [Forwarder Config File](configs/linux/forwarder-commands.sh)
+
 
 ---
 
@@ -59,10 +59,6 @@ Each link takes you to the folder in the Pentester Journey repo where the full R
   - **Failed logins** (Windows EventCode 4625, Linux SSH failures).  
   - **Process creation** (Sysmon EventCode 1, Windows EventCode 4688).  
   - **Suspicious traffic** (port scans, brute force attempts).  
-- Proof:  
-  - [Failed Logins Dashboard](screenshots/windows-failed-logons.png)  
-  - [Process Creation Dashboard](screenshots/process-creation.png)  
-  - [Suspicious Traffic Dashboard](screenshots/port-scan-detection.png)
 
 ---
 
@@ -70,34 +66,21 @@ Each link takes you to the folder in the Pentester Journey repo where the full R
 - Used **Kali** to brute-force SSH and RDP.  
 - Ran **Nmap scans** against Windows and Metasploitable.  
 - Observed detections in dashboards.  
-- Proof: [Linux Auth Failures Screenshot](screenshots/linux-auth-failures.png)
+
 
 ---
 
-## 📌 Proof of Work
 
-Here are direct links to the evidence of my lab setup and detections:
+## 🖼️ Proof Screenshots
 
-- **[Windows Failed Logins Screenshot](screenshots/windows-failed-logons.png)**  
-  Shows multiple failed login attempts detected in Splunk/ELK.
+All screenshots are organized in a separate file for clarity:
 
-- **[Linux Auth Failures Screenshot](screenshots/linux-auth-failures.png)**  
-  Captures SSH brute-force attempts from Kali against Linux.
+- [Windows VM Screenshots](screenshots-checklist.md#windows-vm)
+- [Kali Linux VM Screenshots](screenshots-checklist.md#kali-linux-vm)
+- [Metasploitable VM Screenshots](screenshots-checklist.md#metasploitable-vm)
+- [SIEM VM Screenshots](screenshots-checklist.md#siem-vm)
 
-- **[Process Creation Screenshot](screenshots/process-creation.png)**  
-  Displays Sysmon logs of suspicious processes (e.g., PowerShell, Notepad).
-
-- **[Suspicious Traffic Screenshot](screenshots/port-scan-detection.png)**  
-  Visualizes Nmap port scans from Kali against Metasploitable.
-
-- **[Sysmon Config File](configs/windows/sysmon-config.xml)**  
-  The exact Sysmon configuration I used to enrich Windows logs.
-
-- **[Splunk Saved Searches](configs/siem/savedsearches.txt)**  
-  Queries used to build dashboards for login attempts, process creation, and traffic anomalies.
-
-- **[Forwarder Commands](configs/linux/forwarder-commands.sh)**  
-  Commands used to configure Splunk Forwarders on Linux machines.
+Each section contains labeled screenshots that validate the setup and configuration steps.
 
 ---
 
