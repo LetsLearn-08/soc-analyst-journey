@@ -6,43 +6,45 @@
 - Installed **VirtualBox** and created 4 VMs (Windows, Kali, Metasploitable, SIEM).  
 - Configured **host-only network** (`192.168.56.0/24`).  
 - VM Setup Manual:  
-  - [Windows 10 VM](#1-windows-10-vm)  
-  - [Kali Linux VM](#2-kali-linux-vm)  
-  - [Metasploitable 2 VM](#3-metasploitable-2-vm)  
-  - [Ubuntu SIEM VM](#4-ubuntu-siem-vm-splunk)  
+  - [Windows 10 VM]
+  - [Kali Linux VM] 
+  - [Metasploitable 2 VM] 
+  - [Ubuntu SIEM VM] 
 - Proof: [Architecture Diagram](docs/architecture-diagram.png)
 
 ---
+
 # 🚀 SOC Journey
 
 This repository documents my modular SOC lab environment, built for learning, detection engineering, and community sharing.
 
-## 🔗 Subprojects
+## 🔗 Linked Subprojects (from Pentester Journey)
 
-- [Windows 10 SOC Lab](windows10-soc-lab/README.md)
-  - [Windows Installation Guide](windows10-soc-lab/markdown/windows-install.md)
-  - [Guest Additions Setup](windows10-soc-lab/markdown/guest-additions.md)
-  - [SOC Preparation](windows10-soc-lab/markdown/soc-prep.md)
-  - [Lab Status](windows10-soc-lab/markdown/status.md)
+- [Windows 10 SOC Lab](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/windows-vm-setup/README.md)
+  - [Windows Installation Guide](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/windows-vm-setup/markdown/windows-install.md)
+  - [Guest Additions Setup](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/windows-vm-setup/markdown/guest-additions.md)
+  - [SOC Preparation](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/windows-vm-setup/markdown/soc-prep.md)
+  - [Lab Status](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/windows-vm-setup/markdown/status.md)
 
-- [Splunk SIEM Lab](splunk-siem-lab/README.md)
-  - [Splunk Installation Guide](splunk-siem-lab/markdown/splunk-install.md)
-  - [Windows Integration](splunk-siem-lab/markdown/splunk-integration.md)
-  - [Dashboards & Alerts](splunk-siem-lab/markdown/splunk-dashboards.md)
-  - [Lab Status](splunk-siem-lab/markdown/status.md)
+- [Splunk SIEM Lab](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/splunk-vm-setup/README.md)
+  - [Splunk Installation Guide](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/splunk-vm-setup/markdown/splunk-install.md)
+  - [Windows Integration](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/splunk-vm-setup/markdown/splunk-integration.md)
+  - [Dashboards & Alerts](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/splunk-vm-setup/markdown/splunk-dashboards.md)
+  - [Lab Status](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/splunk-vm-setup/markdown/status.md)
 
-- [Kali Linux Lab](kali-lab/README.md)
-  - [Kali Installation Guide](kali-lab/markdown/kali-install.md)
-  - [Host‑Only Networking](kali-lab/markdown/host-only-networking.md)
-  - [Troubleshooting Guide](kali-lab/markdown/troubleshooting.md)
-  - [Lab Status](kali-lab/markdown/status.md)
+- [Kali Linux Lab](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/kali-vm-setup/README.md)
+  - [Kali Installation Guide](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/kali-vm-setup/markdown/kali-install.md)
+  - [Host‑Only Networking](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/kali-vm-setup/markdown/host-only-networking.md)
+  - [Troubleshooting Guide](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/kali-vm-setup/markdown/troubleshooting.md)
+  - [Lab Status](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/kali-vm-setup/markdown/status.md)
 
-- [Metasploitable2 Lab](metasploitable2-lab/README.md)
-  - [Overview & Safety Notes](metasploitable2-lab/markdown/metasploitable-overview.md)
-  - [Nmap Workflow](metasploitable2-lab/markdown/nmap-workflow.md)
-  - [Findings Summary](metasploitable2-lab/markdown/findings-summary.md)
-  - [NSE Script Template](metasploitable2-lab/markdown/nse-template.md)
-  - [Lab Status](metasploitable2-lab/markdown/status.md)
+- [Metasploitable2 Lab](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/metasploitable2-vm-setup/README.md)
+  - [Overview & Safety Notes](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/metasploitable2-vm-setup/markdown/metasploitable-overview.md)
+  - [Nmap Workflow](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/metasploitable2-vm-setup/markdown/nmap-workflow.md)
+  - [Findings Summary](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/metasploitable2-vm-setup/markdown/findings-summary.md)
+  - [NSE Script Template](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/metasploitable2-vm-setup/markdown/nse-template.md)
+  - [Lab Status](https://github.com/LetsLearn-08/pentester-journey/blob/main/docs/metasploitable2-vm-setup/markdown/status.md)
+
 
 
 ## Day 4–7: VM Configuration
