@@ -21,29 +21,29 @@ This repository documents my modular SOC lab environment, built for learning, de
 ## 🔗 Linked Labs from Pentester Journey
 
 - [Windows 10 SOC Lab](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/README.md)
-  - [Windows Installation Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/markdown/windows-install.md)
-  - [Guest Additions Setup](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/markdown/guest-additions.md)
-  - [SOC Preparation](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/markdown/soc-prep.md)
-  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/markdown/status.md)
+  - [Windows Installation Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/windows-install.md)
+  - [Guest Additions Setup](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/guest-additions.md)
+  - [SOC Preparation](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/soc-prep.md)
+  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/windows-vm-setup/status.md)
 
 - [Splunk SIEM Lab](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/README.md)
-  - [Splunk Installation Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/markdown/splunk-install.md)
-  - [Windows Integration](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/markdown/splunk-integration.md)
-  - [Dashboards & Alerts](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/markdown/splunk-dashboards.md)
-  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/markdown/status.md)
+  - [Splunk Installation Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/splunk-install.md)
+  - [Windows Integration](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/splunk-integration.md)
+  - [Dashboards & Alerts](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/splunk-dashboards.md)
+  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/splunk-vm-setup/status.md)
 
 - [Kali Linux Lab](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/README.md)
-  - [Kali Installation Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/markdown/kali-install.md)
-  - [Host‑Only Networking](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/markdown/host-only-networking.md)
-  - [Troubleshooting Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/markdown/troubleshooting.md)
-  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/markdown/status.md)
+  - [Kali Installation Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/kali-install.md)
+  - [Host‑Only Networking](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/host-only-networking.md)
+  - [Troubleshooting Guide](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/troubleshooting.md)
+  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/kali-linux-setup/status.md)
 
 - [Metasploitable2 Lab](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/README.md)
-  - [Overview & Safety Notes](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/markdown/metasploitable-overview.md)
-  - [Nmap Workflow](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/markdown/nmap-workflow.md)
-  - [Findings Summary](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/markdown/findings-summary.md)
-  - [NSE Script Template](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/markdown/nse-template.md)
-  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/markdown/status.md)
+  - [Overview & Safety Notes](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/metasploitable-overview.md)
+  - [Nmap Workflow](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/nmap-workflow.md)
+  - [Findings Summary](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/findings-summary.md)
+  - [NSE Script Template](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/nse-template.md)
+  - [Lab Status](https://github.com/LetsLearn-08/Roadmap---Penetration-Testing/blob/main/metasploit-lab/status.md)
 
 ## Day 4–7: VM Configuration
 - **Windows VM** → enabled audit policies, installed Sysmon.  
