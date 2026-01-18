@@ -75,7 +75,8 @@ Each link takes you to the folder in the Pentester Journey repo where the full R
 This file organizes all proof screenshots for Phase 1 of the SOC Lab Journey.  
 Each section contains labeled screenshots that validate setup, configuration, and detections.
 
-All Phase 1 screenshots are stored in the [proof folder](./proof).
+[`docs/proof`](docs/proof)
+
 
 ## 📌 Windows VM
 - [ ] VirtualBox creation  
