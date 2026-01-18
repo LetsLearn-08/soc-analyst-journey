@@ -75,7 +75,10 @@ Each link takes you to the folder in the Pentester Journey repo where the full R
 This file organizes all proof screenshots for Phase 1 of the SOC Lab Journey.  
 Each section contains labeled screenshots that validate setup, configuration, and detections.
 
-[proof folder](proof)
+
+
+All Phase 1 screenshots are stored in the [proof folder](https://github.com/LetsLearn-08/soc-analyst-journey/tree/635dc47ce7096d3f7d03c5f1e9cbb5fea7b3e252/proof).
+
 
 
 
