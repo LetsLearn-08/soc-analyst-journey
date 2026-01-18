@@ -70,17 +70,59 @@ Each link takes you to the folder in the Pentester Journey repo where the full R
 
 ---
 
+# 🖼️ Screenshots Checklist – SOC Lab Phase 1
 
-## 🖼️ Proof Screenshots
+This file organizes all proof screenshots for Phase 1 of the SOC Lab Journey.  
+Each section contains labeled screenshots that validate setup, configuration, and detections.
 
-All screenshots are organized in a separate file for clarity:
 
-- [Windows VM Screenshots](screenshots-checklist.md#windows-vm)
-- [Kali Linux VM Screenshots](screenshots-checklist.md#kali-linux-vm)
-- [Metasploitable VM Screenshots](screenshots-checklist.md#metasploitable-vm)
-- [SIEM VM Screenshots](screenshots-checklist.md#siem-vm)
 
-Each section contains labeled screenshots that validate the setup and configuration steps.
+➡️ [View all screenshots here](./proof)
+
+
+## 📌 Windows VM
+- [ ] VirtualBox creation  
+- [ ] Network interface setup  
+- [ ] Audit policy configuration  
+- [ ] Sysmon installation  
+- [ ] Splunk Forwarder setup  
+- [ ] Event log forwarding  
+- [ ] Dashboard: Failed logins (EventCode 4625)  
+- [ ] Dashboard: Process creation (EventCode 4688)  
+
+
+
+## 🐉 Kali Linux VM
+- [ ] VM setup and interface  
+- [ ] Tool installation (Nmap, Hydra, Nikto)  
+- [ ] SSH brute-force attack  
+- [ ] RDP brute-force attack  
+- [ ] Nmap scan results  
+
+
+
+## 💥 Metasploitable VM
+- [ ] OVA import  
+- [ ] Vulnerable services confirmation  
+- [ ] Nmap scan detection in Splunk  
+
+
+
+## 📊 SIEM (Splunk) VM
+- [ ] Splunk installation on Ubuntu  
+- [ ] Receiving enabled on port 9997  
+- [ ] Installed Splunk Add-ons (Windows, Sysmon, Linux)  
+- [ ] Log ingestion confirmation  
+- [ ] Dashboard: Failed logins  
+- [ ] Dashboard: Process creation  
+- [ ] Dashboard: Suspicious traffic (port scans, brute force attempts)  
+
+
+
+## ✅ Validation
+- [ ] Attack simulation logs visible in Splunk  
+- [ ] Dashboards updated with detections  
+- [ ] End-to-end SOC workflow proof  
 
 ---
 
