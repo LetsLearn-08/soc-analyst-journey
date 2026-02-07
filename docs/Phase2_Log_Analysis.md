@@ -47,10 +47,9 @@
 
 
 ---
-
 ## 📸 Screenshots Proofs
-All Phase 2 screenshots are stored in the [`proof2`](./proof2) folder.  
-They include raw logs, Splunk queries, and incident report evidence for each detection scenario.
+All Phase 2 screenshots are stored in the [`proof2`](./proof2) folder.
+
 
 ## 📌 Windows Logs
 - [ ] Failed login detection (EventCode 4625)  
