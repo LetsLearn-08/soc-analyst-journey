@@ -41,9 +41,10 @@
 # 🖼️  Checklist – SOC Lab Phase 2
 
 ## 📑 Phase 2 Incident Reports
-- [Firewall Analysis – Port Scan Detection](#-firewall-analysis--incident-report)
-- [Logon Correlation – Failed + Successful Attempts](#-logon-correlation--incident-report)
-- [DNS Query Monitoring – Suspicious Domain Access](#-dns-query-monitoring--incident-report)
+- [Firewall Analysis – Port Scan Detection](firewall_report.md)
+- [Logon Correlation – Failed + Successful Attempts](logon_report.md)
+- [DNS Query Monitoring – Suspicious Domain Access](dns_report.md)
+
 
 ---
 
