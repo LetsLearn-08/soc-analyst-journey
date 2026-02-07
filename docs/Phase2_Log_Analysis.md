@@ -45,10 +45,9 @@
 - [Logon Correlation – Failed + Successful Attempts](logon_report.md)
 - [DNS Query Monitoring – Suspicious Domain Access](dns_report.md)
 
-
----
 ## 📸 Screenshots Proofs
-All Phase 2 screenshots are stored in the [`proof2`](./proof2) folder.
+All Phase 2 screenshots are stored in the proof2 folder:  
+[View on GitHub](https://github.com/LetsLearn-08/soc-analyst-journey/tree/73e6d44fbefb5db38ad618bad571b7079001b7f3/proof2)
 
 
 ## 📌 Windows Logs
