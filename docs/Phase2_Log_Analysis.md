@@ -38,9 +38,18 @@
 
 ---
 
-# 🖼️ Screenshots Checklist – SOC Lab Phase 2
+# 🖼️  Checklist – SOC Lab Phase 2
 
-All Phase 2 screenshots are stored in the -------- folder.
+## 📑 Phase 2 Incident Reports
+- [Firewall Analysis – Port Scan Detection](#-firewall-analysis--incident-report)
+- [Logon Correlation – Failed + Successful Attempts](#-logon-correlation--incident-report)
+- [DNS Query Monitoring – Suspicious Domain Access](#-dns-query-monitoring--incident-report)
+
+---
+
+## 📸 Screenshots Proofs
+All Phase 2 screenshots are stored in the [`proof2`](./proof2) folder.  
+They include raw logs, Splunk queries, and incident report evidence for each detection scenario.
 
 ## 📌 Windows Logs
 - [ ] Failed login detection (EventCode 4625)  
