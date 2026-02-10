@@ -1,9 +1,9 @@
-# 📅 Phase 3 Timeline – Incident Response Playbooks
+# 📅 SOC Journey – Phase 3: Incident Response Playbooks
 
 ## 📅 Timeline
 
 ### Day 31–33: Phishing Simulation
-- Simulated **phishing emails** with malicious attachments/links.  
+- Simulated **phishing emails** using Thunderbird with malicious attachments/links.  
 - Forwarded logs into Splunk for detection.  
 - Built queries to identify suspicious email activity.  
 - Documented **Tier‑1 SOC analyst steps**: identify, isolate, escalate.  
@@ -11,8 +11,8 @@
 ---
 
 ### Day 34–36: Brute Force Attack Simulation
-- Simulated **SSH and RDP brute force attempts** from Kali.  
-- Detected repeated failed login attempts in Windows/Linux logs.  
+- Simulated **SSH and RDP brute force attempts** from Kali Linux.  
+- Detected repeated failed login attempts in Windows logs.  
 - Configured **correlation rules** in Splunk for brute force detection.  
 - Documented **Tier‑1 → Tier‑2 escalation workflow**.  
 
@@ -43,6 +43,7 @@
 ## 🔗 Phase 3 Manual
 You can view the Incident Response Lab manual here:  
 [Incident Response Lab Manual](https://github.com/LetsLearn-08/soc-analyst-journey/blob/65a5a7e6162972ff88a3df76c9a9741cea20b884/INCIDENT-RESPOND-LABSETUP-MANUAL.md)
+
 
 ---
 
