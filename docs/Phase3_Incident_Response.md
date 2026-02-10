@@ -42,7 +42,7 @@
 
 ## 🔗 Phase 3 Manual
 You can view the Incident Response Lab manual here:  
-[Incident Response Lab Manual](https://github.com/LetsLearn-08/soc-lab-journey/blob/main/phase-3/incident-response-lab/incident-response-lab-manual.md)
+[Incident Response Lab Manual](https://github.com/LetsLearn-08/soc-lab-journey/blob/main/phase-3/incident-response-lab-manual.md)
 
 ---
 
