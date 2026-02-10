@@ -160,14 +160,17 @@ By the end, you will:
 ## 🎯 Conclusion
 This lab setup teaches you the **foundations of incident response**:
 
-## 📢 Connect
-
-This repo is part of my cybersecurity learning journey.  
-Follow me on [LinkedIn](www.linkedin.com/in/tanuja-reddy-03aa7b38a) for updates and lab walkthroughs.
-Have a look at my cyber journey as well [GitHub](https://github.com/LetsLearn-08?tab=repositories)
 - **What to do:** Configure attacker, victim, and defender machines.  
 - **How to do it:** Step‑by‑step installation and configuration.  
 - **Why it matters:** Builds real‑world SOC skills in a safe environment.  
 
 Document everything, test playbooks, and practice repeatedly — that’s how you grow from beginner to professional in cybersecurity.
+
+---
+
+## 🤝 Connect With Me
+
+- 🌐 GitHub: [LetsLearn-08](https://github.com/LetsLearn-08?tab=repositories)  
+- 💼 LinkedIn: [Tanuja Reddy](https://www.linkedin.com/in/tanuja-reddy-03aa7b38a)
+
 
