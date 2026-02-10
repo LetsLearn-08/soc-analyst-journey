@@ -39,6 +39,11 @@
 - Validated **escalation paths** with workflow diagrams.  
 
 ---
+## 🔗 Phase 3 Manual Link
+You can view the complete Incident Response Lab manual here:  
+[Incident Response Lab – README.md](https://github.com/LetsLearn-08/Incident-Response-Lab/blob/main/README.md)
+
+---
 
 # 🖼️ Screenshots Checklist – SOC Lab Phase 3
 
