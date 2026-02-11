@@ -47,42 +47,48 @@ You can view the Incident Response Lab manual here:
 
 ---
 
-# 📂 Phase 3 – Attack Simulations
 
-This phase demonstrates detection of multiple attack techniques in the SOC lab. Each scenario includes a description and a link to supporting documentation/screenshots (to be attached later).
+## 📂 Attack Simulations
 
----
+### 🔹 Phishing Simulation
+**Description:**  
+A simulated [phishing attack](https://en.wikipedia.org/wiki/Phishing) was conducted using Thunderbird to send malicious emails with attachments and links. Clicking the malicious link triggered [Microsoft Edge](https://en.wikipedia.org/wiki/Microsoft_Edge) (`msedge.exe`) as a child process.
 
-## 🔹 Phishing Simulation
-**Description:** A phishing email was drafted in Thunderbird. Clicking the malicious link triggered Edge (`msedge.exe`) as a child process. Sysmon Event ID 1 captured this chain, and Splunk confirmed ingestion.  
-
-[📎 Phishing Simulation Documentation](proof/phishing_simulation.md)
+📎 [Read Full Documentation → phishing_simulation.md](proof/phishing_simulation.md)
 
 ---
 
-## 🔹 Brute Force Attack
-**Description:** Multiple failed login attempts were simulated against the Windows VM. Sysmon and Security logs captured authentication failure events, and Splunk searches validated brute force detection.  
+### 🔹 Brute Force Attack
+**Description:**  
+Simulated [brute-force attack](https://en.wikipedia.org/wiki/Brute-force_attack) attempts were performed against [SSH](https://en.wikipedia.org/wiki/Secure_Shell) and [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol) services from Kali Linux.
 
-[📎 Brute Force Documentation](proof/bruteforce_attack.md)
-
----
-
-## 🔹 Malware Execution (EICAR Test File)
-**Description:** The EICAR test file was executed to simulate malware activity. Sysmon logged file creation and process execution events, while Splunk queries confirmed detection and correlation.  
-
-[📎 Malware Simulation Documentation](proof/malware_execution.md)
+📎 [Read Full Documentation → bruteforce_attack.md](proof/bruteforce_attack.md)
 
 ---
 
-## ✅ Summary
-These three scenarios demonstrate end‑to‑end visibility in the SOC lab:
-- **Phishing:** Thunderbird → Edge process chain.  
-- **Brute Force:** Authentication failures logged and correlated.  
-- **Malware:** EICAR execution detected and ingested.  
+### 🔹 Malware Execution (EICAR Test File)
+**Description:**  
+The [EICAR test file](https://en.wikipedia.org/wiki/EICAR_test_file) was deployed using `curl.exe` to simulate malware activity.
 
-Together, they showcase how Sysmon and Splunk provide detection coverage across diverse attack techniques.
+📎 [Read Full Documentation → malware_execution.md](proof/malware_execution.md)
 
 ---
+
+## 📑 Incident Response Playbooks
+Each attack scenario was documented in a standardized format:
+
+**Format:**  
+- **Summary** → Attack description  
+- **Logs** → Sysmon + Splunk evidence  
+- **Detection** → Queries and dashboards  
+- **Response** → Containment, eradication, escalation  
+- **Lessons Learned** → Improvements for SOC workflow  
+
+Stored in: `/docs/Phase3_Incident_Response.md`
+
+
+---
+
 
 # 🖼️ Screenshots Checklist – SOC Lab Phase 3
 
