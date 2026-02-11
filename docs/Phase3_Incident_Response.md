@@ -47,6 +47,43 @@ You can view the Incident Response Lab manual here:
 
 ---
 
+# 📂 Phase 3 – Attack Simulations Proof
+
+This section documents three key attack scenarios captured in the SOC lab. Each link points to supporting screenshots and documentation (to be attached later).
+
+---
+
+## 1. Phishing Simulation
+**Description:** A phishing email was drafted in Thunderbird. Clicking the malicious link triggered Edge (`msedge.exe`) as a child process. Sysmon Event ID 1 captured this chain, and Splunk confirmed ingestion.  
+
+[📎 View Phishing Simulation Proof](proof/phishing_simulation.md)
+
+---
+
+## 2. Brute Force Attack
+**Description:** Multiple failed login attempts were simulated against the Windows VM. Sysmon and Security logs captured Event IDs for authentication failures, and Splunk searches validated detection of brute force behavior.  
+
+[📎 View Brute Force Proof](proof/bruteforce_attack.md)
+
+---
+
+## 3. Malware Execution (EICAR Test File)
+**Description:** The EICAR test file was executed to simulate malware activity. Sysmon logged file creation and process execution events, while Splunk queries confirmed detection and correlation.  
+
+[📎 View Malware Simulation Proof](proof/malware_execution.md)
+
+---
+
+## ✅ Narrative
+These three scenarios demonstrate end‑to‑end detection capabilities in the SOC lab:
+- **Phishing:** Thunderbird → Edge process chain.  
+- **Brute Force:** Authentication failures logged and correlated.  
+- **Malware:** EICAR execution detected and ingested.  
+
+Together, they showcase how Sysmon and Splunk provide visibility into diverse attack techniques.
+
+---
+
 # 🖼️ Screenshots Checklist – SOC Lab Phase 3
 
 ## 📌 Phishing
