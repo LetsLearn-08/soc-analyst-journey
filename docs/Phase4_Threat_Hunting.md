@@ -28,17 +28,49 @@
 - Linked ATT&CK mappings and SIEM queries.  
 - Added screenshots of query results and detections.  
 
+
+---
+# 📊 Phase 4 Detection Summary – SOC Lab
+
+## 🔎 Validated Detections (Sysmon + Splunk)
+
+| Technique (MITRE ATT&CK) | Sysmon Event ID | Example Process | Splunk Query | Screenshot Name |
+|---------------------------|-----------------|-----------------|--------------|-----------------|
+| Registry Persistence (T1547.001) | 13 | `lsass.exe` modifying Run keys | `index=win_logs EventCode=13 TargetObject="*\\Run*" OR TargetObject="*\\RunOnce*"` | `phase4_registry_splunk.png` |
+| Scheduled Task Creation (T1053.005) | 1 | `schtasks.exe`, `taskeng.exe` | `index=win_logs EventCode=1 Image="*schtasks.exe" OR Image="*taskeng.exe"` | `phase4_schtasks_splunk.png` |
+| Privilege Escalation Attempts (T1078) | 1 | `runas.exe`, `psexec.exe` | `index=win_logs EventCode=1 Image="*runas.exe" OR Image="*psexec.exe"` | `phase4_runas_splunk.png` |
+| Suspicious Command Execution (T1059) | 1 | `powershell.exe`, `cmd.exe`, `wmic.exe` | `index=win_logs EventCode=1 Image="*powershell.exe" OR Image="*cmd.exe" OR Image="*wmic.exe"` | `phase4_powershell_splunk.png` |
+| Network Connections (T1071) | 3 | `powershell.exe`, `cmd.exe` | `index=win_logs EventCode=3 Image="*powershell.exe" OR Image="*cmd.exe"` | `phase4_network_splunk.png` |
+| Bonus: DNS Monitoring | 22 | `svchost.exe` querying domains | `index=win_logs EventCode=22 QueryName=*` | `phase4_dns_splunk.png` |
+
 ---
 
-# 🖼️ Screenshots Checklist – SOC Lab Phase 4
+## ⚠️ Warnings & Reminders
+- **Scheduled Task detections**: Registry changes may log (Event ID 13) even if process creation (Event ID 1) doesn’t appear. Validate both sides.  
+- **Privilege escalation attempts**: `runas.exe` / `psexec.exe` may fail silently — always confirm in Event Viewer before assuming Splunk missed it.  
+- **Network connections**: Event ID 3 requires explicit outbound activity (ping, Invoke‑WebRequest). Background DNS queries (Event ID 22) are not enough.  
+- **Cross‑validation**: Always compare Splunk queries with Sysmon logs to avoid false assumptions.  
 
-## 📌 ATT&CK Mapping
-- [ ] ATT&CK mapping table screenshot  
+---
 
-## 🔍 SIEM Queries
-- [ ] Splunk query for brute force detection  
-- [ ] Splunk query for phishing detection  
-- [ ] Splunk query for malware detection  
+
+# 📸 Proof Screenshots – Phase 4
+
+All detection proof screenshots for Phase 4 are stored in the dedicated folder:
+
+👉 [Proof4 Screenshots](./proof/phase4)
+
+## 📌 Checklist
+- [x] Registry Persistence
+- [x] Scheduled Task Creation 
+- [x] Suspicious Command Execution 
+- [x] Privilege Escalation Attempts  
+- [x] Network Connections 
+- [x] Bonus DNS Monitoring 
+
+---
+
+📂 All screenshots are organized in the `proof/phase4` folder for easy navigation and recruiter‑ready documentation.
 
 ---
 
