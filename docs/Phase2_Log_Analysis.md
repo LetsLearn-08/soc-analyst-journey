@@ -45,43 +45,49 @@
 - [Logon Correlation – Failed + Successful Attempts](logon_report.md)
 - [DNS Query Monitoring – Suspicious Domain Access](dns_report.md)
 
+---
+
 ## 📸 Screenshots Proofs
 All Phase 2 screenshots are stored in the proof2 folder:  
 [View on GitHub](https://github.com/LetsLearn-08/soc-analyst-journey/tree/73e6d44fbefb5db38ad618bad571b7079001b7f3/proof2)
 
 
-## 📌 Windows Logs
-- [ ] Failed login detection (EventCode 4625)  
-- [ ] Privilege escalation detection (EventCode 4672)  
-- [ ] PowerShell abuse detection (EventCode 4104)  
-- [ ] Splunk dashboard screenshot  
+---
 
-## 🐧 Linux Logs
-- [ ] SSH brute force detection (auth.log)  
-- [ ] Sudo misuse detection  
-- [ ] Cron job anomaly detection  
-- [ ] Splunk dashboard screenshot  
+## 📊 Phase 2 Learnings & Troubleshooting Issues
 
-## 🔥 Firewall Logs
-- [ ] Nmap scan detection  
-- [ ] Suspicious traffic dashboard  
-- [ ] Brute force traffic detection  
-
-## 📑 Incident Reports
-- [ ] Windows incident report with screenshots  
-- [ ] Linux incident report with screenshots  
-- [ ] Firewall incident report with screenshots  
-
+| **Category**         | **Key Learnings**                                                                 | **Common Troubleshooting Issues**                                                                 |
+|-----------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Windows Logs**      | Event IDs (4625, 4672, 4104) reveal failed logins, privilege misuse, and PowerShell abuse. | Misconfigured audit policies, missing Sysmon rules, Splunk not parsing PowerShell logs correctly. |
+| **Linux Logs**        | Syslogs highlight SSH brute force, sudo misuse, and cron anomalies.               | Forwarder misconfigurations, missing auth.log ingestion, incorrect Splunk query syntax.           |
+| **Firewall Logs**     | Firewall telemetry detects Nmap scans and brute force traffic patterns.           | Logs not forwarded properly, dashboards failing due to missing fields, noisy traffic overwhelming queries. |
+| **Splunk Dashboards** | Dashboards transform raw logs into clear detection patterns.                      | Incorrect field extractions, dashboards not updating, queries too broad or too narrow.            |
+| **Incident Reports**  | Standardized format (Summary → Logs → Detection → Response → Lessons Learned) builds credibility. | Forgetting screenshots, inconsistent formatting, missing correlation between log sources.         |
+| **Validation**        | Simulated attacks confirm detections across Windows, Linux, and Firewall.         | Attack simulations not triggering logs, timing mismatches between attack and ingestion.            |
+| **Documentation**     | Reports + screenshots = proof of detection skills and professional workflow.      | Broken README links, inconsistent file naming in `proof2` folder.                                 |
 ---
 
 # 🌟 Reflection
 
-By the end of Phase 2, I learned that **logs are the lifeblood of detection**.  
-- Windows logs revealed privilege misuse and PowerShell abuse.  
-- Linux logs showed brute force attempts and misconfigurations.  
-- Firewall logs highlighted external threats like scans and brute force traffic.  
 
-This phase taught me how to **connect raw logs to meaningful incidents** and document them clearly for escalation.  
+Phase 2 reinforced that **logs are the lifeblood of detection**. By analyzing Windows, Linux, and Firewall telemetry, I learned how to transform raw events into meaningful incidents and document them for escalation.
+
+### Key Insights
+- **Windows Logs** → revealed privilege misuse and PowerShell abuse.  
+- **Linux Logs** → exposed brute force attempts and misconfigurations.  
+- **Firewall Logs** → highlighted external threats like scans and brute force traffic.  
+
+### Achievements
+- ✅ Built Splunk queries and dashboards for multi‑platform log sources.  
+- ✅ Standardized incident report format (Summary → Logs → Detection → Response → Lessons Learned).  
+- ✅ Captured screenshots and reports as proof of detection skills.  
+
+### Growth Mindset
+- **Patterns matter** → isolated events may be noise, but repeated anomalies signal attacks.  
+- **Incident reporting builds credibility** → clear documentation shows professional workflow.  
+- **Validation is critical** → simulated attacks confirmed detections across all systems.  
+
+This phase taught me how to **connect raw logs to actionable incidents** and communicate findings clearly — a skill every SOC analyst must master.
 
 ---
 
@@ -96,9 +102,17 @@ This phase taught me how to **connect raw logs to meaningful incidents** and doc
 ---
 
 # 🚀 Next Steps
-- Phase 3 → Build **incident response playbooks** for phishing, brute force, and malware.  
-- Phase 4 → Map detections to **MITRE ATT&CK techniques**.  
-- Long-term → Automate detection workflows with correlation rules and threat intel feeds.  
+- **Phase 3 → Incident Response Playbooks & Automation**
+   - Develop structured playbooks for common attack scenarios (phishing, brute force, malware).
+   -  Focus: Automate attack simulations and detection workflows to ensure reproducibility.
+   -   Goal: Demonstrate how automation and playbooks reduce manual effort and strengthen SOC operations. 
+- **Phase 4 → MITRE ATT&CK Mapping & Advanced Detection**
+   -  Map detections to ATT&CK techniques and expand Splunk queries for persistence and privilege escalation.
+   - Focus: Build recruiter‑ready proof with screenshots and ATT&CK‑aligned documentation.
+   - Goal: Showcase advanced detection engineering and correlation capabilities.
+ - **Long-term → Community Cybersecurity Platform**
+   - Consolidate all phases into a reproducible lab environment.
+   - Goal: Enable learners and recruiters to explore cybersecurity labs paired with creative storytelling. 
 
 ---
 
