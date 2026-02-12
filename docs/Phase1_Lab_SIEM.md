@@ -1,4 +1,5 @@
 # 📅 Phase 1 Timeline – SOC Lab Journey
+  Focused on lab setup and initial detections
 
 ## 📅 Timeline
 
@@ -79,47 +80,23 @@ Each section contains labeled screenshots that validate setup, configuration, an
 
 All Phase 1 screenshots are stored in the [proof folder](https://github.com/LetsLearn-08/soc-analyst-journey/tree/635dc47ce7096d3f7d03c5f1e9cbb5fea7b3e252/proof).
 
+---
+
+## 📊 Phase 1 Learnings & Troubleshooting Issues
+
+| **Category**         | **Key Learnings**                                                                 | **Common Troubleshooting Issues**                                                                 |
+|-----------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Lab Setup**         | Hands-on practice beats theory; building VMs makes concepts real.                 | Wrong network mode (NAT vs Host-only), IP conflicts in `192.168.56.0/24`.                         |
+| **Windows VM**        | Audit policies + Sysmon provide rich telemetry.                                   | Incorrect Sysmon command syntax, missing NetworkConnect rule, Splunk inputs.conf stanza errors.   |
+| **Kali Linux VM**     | Attack simulation (Nmap, Hydra) shows how attackers think.                        | Hydra syntax mistakes, forgetting to enable SSH/RDP services before brute force.                  |
+| **Metasploitable VM** | Vulnerable services help visualize exploitation.                                  | OVA import errors, VM not booting due to VirtualBox version mismatch.                             |
+| **SIEM (Splunk) VM**  | Logs tell stories; dashboards reveal attack patterns.                             | Splunk listener not enabled on port 9997, forwarder misconfigured, missing add-ons.               |
+| **Detection**         | Patterns matter more than single events; dashboards highlight brute force & scans.| Dashboards not updating due to missing log sources or misconfigured forwarders.                   |
+| **Documentation**     | Writing configs + saving screenshots makes work reproducible and professional.    | Forgetting to label screenshots consistently, README links breaking due to wrong file paths.      |
 
 
 
-## 📌 Windows VM
-- [ ] VirtualBox creation  
-- [ ] Network interface setup  
-- [ ] Audit policy configuration  
-- [ ] Sysmon installation  
-- [ ] Splunk Forwarder setup  
-- [ ] Event log forwarding  
-- [ ] Dashboard: Failed logins (EventCode 4625)  
-- [ ] Dashboard: Process creation (EventCode 4688)  
-
-
-
-## 🐉 Kali Linux VM
-- [ ] VM setup and interface  
-- [ ] Tool installation (Nmap, Hydra, Nikto)  
-- [ ] SSH brute-force attack  
-- [ ] RDP brute-force attack  
-- [ ] Nmap scan results  
-
-
-
-## 💥 Metasploitable VM
-- [ ] OVA import  
-- [ ] Vulnerable services confirmation  
-- [ ] Nmap scan detection in Splunk  
-
-
-
-## 📊 SIEM (Splunk) VM
-- [ ] Splunk installation on Ubuntu  
-- [ ] Receiving enabled on port 9997  
-- [ ] Installed Splunk Add-ons (Windows, Sysmon, Linux)  
-- [ ] Log ingestion confirmation  
-- [ ] Dashboard: Failed logins  
-- [ ] Dashboard: Process creation  
-- [ ] Dashboard: Suspicious traffic (port scans, brute force attempts)  
-
-
+---
 
 ## ✅ Validation
 - [ ] Attack simulation logs visible in Splunk  
@@ -130,16 +107,25 @@ All Phase 1 screenshots are stored in the [proof folder](https://github.com/Lets
 
 ## 🌟 Reflection
 
-This Phase 1 journey taught me that **cybersecurity is both technical and human**.By Day 15, I had:  
-- The attacker (Kali) shows me how easy it is to exploit weak systems.  
-- The defender (SIEM dashboards) shows me how to catch those attacks.  
-- The analyst (me) learns to connect the dots and tell the story.
-- A working **SOC lab** with 4 VMs.  
-- A **SIEM dashboard** showing real attacks.  
-- Proof of detections saved in this repo.  
-This timeline shows my growth from setup → detection → documentation. 
+Phase 1 taught me that **cybersecurity is both technical and human**. By Day 15, I had built a working SOC lab, simulated real attacks, and validated detections. Key reflections:
 
-This is just the beginning — next, I’ll explore **AI-powered detection** to see how machine learning can help SOC analysts.
+- **Attacker (Kali)** → showed how easy it is to exploit weak systems.  
+- **Defender (SIEM dashboards)** → revealed how detections can stop brute force and scans.  
+- **Analyst (me)** → learned to connect the dots and tell the story behind the logs.  
+
+### Achievements
+- ✅ Built a modular SOC lab with 4 VMs.  
+- ✅ Configured Splunk dashboards to visualize real attacks.  
+- ✅ Captured proof screenshots for reproducibility.  
+
+### Growth Mindset
+- I realized that **logs tell stories** — every failed login or process creation is a clue.  
+- **Patterns matter more than single events** — dashboards helped me see brute force and port scans clearly.  
+- **Documentation is critical** — saving configs and screenshots made my work professional and shareable.  
+
+This timeline shows my growth from **setup → detection → documentation**.  
+It’s just the beginning — next, I’ll explore **AI-powered detection** to see how machine learning can help SOC analysts.
+
 
 ---
 
@@ -171,8 +157,15 @@ Building this Phase 1 SOC lab taught me more than just commands and configs — 
 ---
 
 ## 🚀 Next Steps
-- Phase 2 → Add **AI anomaly detection** to SIEM logs.  
-- Phase 3 → Automate attack simulations and detection workflows.  
+- **[Phase 2](https://github.com/LetsLearn-08/soc-analyst-journey/blob/f9ffec93bdebe24a701bbcd499408d64ae84c2a9/docs/Phase2_Log_Analysis.md)**→
+- Add **AI anomaly detection** to SIEM logs.
+- Expand the SOC lab by integrating machine learning techniques into Splunk.
+- Focus: Detect unusual login patterns, process anomalies, and network traffic using AI models. Goal: Show how automation and anomaly detection can enhance analyst  
+- **[Phase 3](https://github.com/LetsLearn-08/soc-analyst-journey/blob/f9ffec93bdebe24a701bbcd499408d64ae84c2a9/docs/Phase3_Incident_Response.md) **→
+- Automate attack simulations and detection workflows.
+- Automated Attack Simulations & Detection Workflows**
+- Introduce scripted attack simulations (e.g., brute force, port scans, privilege escalation) and automate detection queries. Focus: Build repeatable workflows that generate consistent    proof for dashboards.
+- Goal: Demonstrate how automation reduces manual effort and strengthens SOC playbooks.
 - Long-term → Build a platform where anyone can turn their stories into **cybersecurity labs + anime narratives**.
 
 # Logs tell stories, analysts write the truth.
