@@ -58,8 +58,7 @@
 
 All detection proof screenshots for Phase 4 are stored in the dedicated folder:
 
-👉 [Proof4 Screenshots](./proof4)
-(https://github.com/LetsLearn-08/soc-analyst-journey/tree/a3a74b75bff3d39ec6dbf5a31d52fb9c774c9164/proof4)
+👉 [Proof4 Screenshots](https://github.com/LetsLearn-08/soc-analyst-journey/tree/a3a74b75bff3d39ec6dbf5a31d52fb9c774c9164/proof4)
 
 ## 📌 Checklist
 - [x] Registry Persistence
