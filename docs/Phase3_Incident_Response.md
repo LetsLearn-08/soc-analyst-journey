@@ -88,38 +88,46 @@ Stored in: `/docs/Phase3_Incident_Response.md`
 
 
 ---
+## 📊 Phase 3 Learnings & Troubleshooting Issues
 
-
-# 🖼️ Screenshots Checklist – SOC Lab Phase 3
-
-## 📌 Phishing
-- [ ] Detection logs  
-- [ ] Splunk dashboard screenshot  
-
-## 🔐 Brute Force
-- [ ] Detection logs  
-- [ ] Correlation rule screenshot  
-
-## 🦠 Malware (EICAR)
-- [ ] Detection logs  
-- [ ] AV alert screenshot  
-- [ ] Splunk dashboard screenshot  
-
-## 📑 Incident Reports
-- [ ] Phishing incident report with screenshots  
-- [ ] Brute force incident report with screenshots  
-- [ ] Malware incident report with screenshots  
+| **Category**            | **Key Learnings**                                                                 | **Common Troubleshooting Issues**                                                                 |
+|--------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Phishing Simulation**  | Quick isolation and escalation are critical when malicious emails are detected.   | Email logs not forwarding correctly, Splunk queries missing child process correlation (e.g., msedge.exe). |
+| **Brute Force Detection**| Correlation rules reduce noise and highlight true brute force attempts.           | Splunk correlation searches misconfigured, thresholds too low/high, failed login events not ingested. |
+| **Malware Simulation**   | Containment and eradication steps must be documented clearly.                     | EICAR file not triggering AV alerts, Splunk dashboards missing malware fields, ingestion delays.   |
+| **Playbook Development** | Standardized playbooks ensure reproducibility and clarity across SOC tiers.       | Inconsistent formatting, missing escalation steps, unclear response actions in early drafts.       |
+| **Incident Reporting**   | Reports strengthen communication between Tier‑1 and Tier‑2 analysts.              | Screenshots not linked properly, broken file paths in proof folder, inconsistent report structure. |
+| **Validation**           | Simulated attacks confirm both detection and response workflows.                  | Attack simulations not generating logs, timing mismatches between attack execution and log ingestion. |
+| **Documentation**        | Clear playbooks + incident reports = professional SOC workflow.                   | README links breaking, proof folder not consistently organized, duplicate or mislabeled screenshots. |
 
 ---
 
-# 🌟 Reflection
+## 🖼️ Proof – SOC Lab Phase 3
+All Phase 3 screenshots are stored in the [proof3 folder](https://github.com/LetsLearn-08/soc-analyst-journey/tree/74554db12e84a85240ed5752d68f0d53d7801ec4/proof3).
 
-By the end of Phase 3, I learned how to **translate detections into actionable playbooks**.  
-- Phishing simulations showed the importance of quick isolation.  
-- Brute force attempts highlighted the need for correlation rules.  
-- Malware detection reinforced containment and eradication workflows.  
+---
 
-This phase taught me how to **document escalation paths clearly** and standardize incident response.  
+## 🌟 Reflection
+
+Phase 3 taught me how to **move from detection to structured response**.  
+By simulating phishing, brute force, and malware incidents, I learned that detection alone isn’t enough — analysts must have clear playbooks and escalation paths.
+
+### Key Insights
+- **Phishing simulations** → reinforced the importance of quick isolation and escalation.  
+- **Brute force attempts** → showed the value of correlation rules to reduce noise and highlight true attacks.  
+- **Malware detection (EICAR)** → emphasized containment, eradication, and communication across SOC tiers.  
+
+### Achievements
+- ✅ Developed incident response playbooks for phishing, brute force, and malware.  
+- ✅ Standardized reporting format (Summary → Logs → Detection → Response → Lessons Learned).  
+- ✅ Validated escalation workflows with diagrams and screenshots.  
+
+### Growth Mindset
+- **Response is structured** → playbooks ensure clarity and reproducibility.  
+- **Communication matters** → incident reports strengthen Tier‑1 to Tier‑2 handoffs.  
+- **Persistence pays off** → repeated simulations confirmed detection and response workflows.  
+
+This phase elevated my SOC journey from **log analysis → incident response**, proving that analysts must combine technical detection with disciplined response strategies.
 
 ---
 
@@ -132,10 +140,31 @@ This phase taught me how to **document escalation paths clearly** and standardiz
 
 ---
 
-# 🚀 Next Steps
-- Phase 4 → Map detections to **MITRE ATT&CK techniques**.  
-- Phase 5 → Implement **SIEM automation and threat intelligence feeds**.  
-- Long‑term → Blend SOC playbooks with **pentesting awareness** for a complete defense strategy.  
+## 🚀 Next Steps
+
+- **[Phase 4](https://github.com/LetsLearn-08/soc-analyst-journey/blob/74554db12e84a85240ed5752d68f0d53d7801ec4/docs/Phase4_Threat_Hunting.md) → MITRE ATT&CK Mapping & Advanced Detection**  
+  Map detections from Windows, Linux, and Firewall logs to MITRE ATT&CK techniques.  
+  Focus: Align Sysmon and Splunk queries with ATT&CK tactics (Persistence, Privilege Escalation, Defense Evasion).  
+  Goal: Build recruiter‑ready proof with ATT&CK‑aligned documentation and screenshots.  
+
+- **[Phase 5](https://github.com/LetsLearn-08/soc-analyst-journey/blob/74554db12e84a85240ed5752d68f0d53d7801ec4/docs/Phase5_Advanced_SOC.md) → SIEM Automation & Threat Intelligence Feeds**  
+  Implement automated correlation rules and integrate external threat intelligence feeds.  
+  Focus: Reduce manual effort by automating detection workflows and enriching alerts with IP/domain reputation data.  
+  Goal: Showcase advanced SOC engineering and proactive defense capabilities.  
+
+- **Post‑Phase 5 → Unique SOC Analyst Projects**  
+  Redo all projects with advanced angles:  
+  - Custom dashboards & attack storytelling  
+  - Automation scripts for reproducible detections  
+  - Threat intel enrichment  
+  - SOC playbooks with workflow diagrams  
+  - Beginner’s guide for community sharing  
+  Goal: Transform the SOC lab into a professional portfolio that stands out from standard projects.  
+
+- **Long‑term Vision → Complete Defense Strategy**  
+  Blend SOC playbooks with pentesting awareness to build a holistic defense platform.  
+  Goal: Enable learners and recruiters to explore cybersecurity labs paired with creative storytelling.
+
 
 ---
 
