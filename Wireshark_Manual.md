@@ -107,7 +107,7 @@ By mastering Wireshark, you demonstrate the **network analysis and incident dete
 - Display Filters → See [`filters.md`](filters.md)  
 - Protocols → See [`protocols.md`](protocols.md)  
 - Shortcuts → See [`shortcuts.md`](shortcuts.md)  
-- Tips & Tricks → See [`tips.md`](tips.md)  
+
 
 ---
 
