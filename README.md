@@ -1,9 +1,9 @@
 # 🛡️ SOC Analyst Journey (75-Day Fast Track)
 
-![SOC Analyst](https://img.shields.io/badge/Role-SOC%20Analyst-blue) 
-![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-green) 
-![Learning Path](https://img.shields.io/badge/Track-75%20Days-orange) 
-![Status](https://img.shields.io/badge/Progress-Completed-success)
+[![SOC Analyst](https://img.shields.io/badge/Role-SOC%20Analyst-blue)](https://en.wikipedia.org/wiki/Security_operations_center)  
+[![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-green)](https://en.wikipedia.org/wiki/Computer_security#Importance)  
+[![Learning Path](https://img.shields.io/badge/Track-75%20Days-orange)](https://github.com/LetsLearn-08/SOC-Lab-Journey#-roadmap-75-days)  
+[![Status](https://img.shields.io/badge/Progress-Completed-success)](https://github.com/LetsLearn-08/SOC-Lab-Journey)
 
 
 **Turning Alerts Into Action: A Self‑Driven SOC Path**
