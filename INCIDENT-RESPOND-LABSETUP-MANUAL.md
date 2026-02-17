@@ -11,6 +11,12 @@ By the end, you will:
 
 ---
 
+## 🎯 Why This Lab Matters
+- Demonstrates hands‑on SOC skills recruiters look for
+- Shows ability to configure SIEM, endpoint monitoring, and attacker simulations
+- Provides proof of incident response workflows with documentation
+---
+
 ## 🏗️ Lab Components, Definitions, and Purpose
 
 | Keyword / Tool | Definition | Purpose in Lab |
@@ -142,18 +148,15 @@ By the end, you will:
 ---
 
 ## 📚 Glossary of Keywords
-- [VirtualBox](https://en.wikipedia.org/wiki/VirtualBox)  
+- [VirtualBox](https://www.virtualbox.org/)  
 - [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine)  
-- [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)  
-- [Splunk Enterprise](https://en.wikipedia.org/wiki/Splunk)  
+- [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) → [Sysmon Manual](Sysmon_Manual.md)  
+- [Splunk Enterprise](https://www.splunk.com/) → [Splunk Manual](Splunk_Manual.md)  
 - [Splunk Universal Forwarder](https://docs.splunk.com/Documentation/Forwarder)  
-- [Metasploitable](https://information.rapid7.com/metasploitable-download.html)  
-- [Kali Linux](https://en.wikipedia.org/wiki/Kali_Linux)  
-- [Static IP](https://en.wikipedia.org/wiki/IP_address#Static_IP_addresses)  
-- [Incident Response Playbook](https://www.cisa.gov/resources-tools/resources/incident-response-playbook)  
-- [Phishing](https://en.wikipedia.org/wiki/Phishing)  
-- [Brute Force Attack](https://en.wikipedia.org/wiki/Brute-force_attack)  
-- [Malware](https://en.wikipedia.org/wiki/Malware)  
+- [Wireshark](https://www.wireshark.org/) → [Wireshark Manual](Wireshark_Manual.md)  
+- [AlienVault OTX](https://cybersecurity.att.com/open-threat-exchange) → [OTX Manual](OTX_Manual.md)  
+- [Incident Response Playbook](https://www.cisa.gov/resources-tools/resources/incident-response-playbook) → [Incident Response Manual](INCIDENT-RESPOND-LABSETUP-MANUAL.md)  
+
 
 ---
 
