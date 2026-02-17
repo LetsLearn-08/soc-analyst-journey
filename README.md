@@ -11,6 +11,26 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 
 ---
 
+## 📑 Table of Contents
+
+| Section | Link |
+|---------|------|
+| 📖 Introduction | [Jump to Introduction](#-introduction) |
+| 📝 Summary – Technical Skills | [Jump to Summary](#-summary--technical-skills) |
+| 🚀 Roadmap (75 Days) | [Jump to Roadmap](#-roadmap-75-days) |
+| 📅 Phase 1: Lab Setup & SIEM | [Phase 1 Documentation](docs/Phase1_Lab_SIEM.md) |
+| 📅 Phase 2: Log Analysis & Detection | [Phase 2 Documentation](docs/Phase2_Log_Analysis.md) |
+| 📅 Phase 3: Incident Response Playbooks | [Phase 3 Documentation](docs/Phase3_Incident_Response.md) |
+| 📅 Phase 4: Threat Hunting & MITRE ATT&CK | [Phase 4 Documentation](docs/Phase4_Threat_Hunting.md) |
+| 📅 Phase 5: Advanced SOC + Pentesting Prep | [Phase 5 Documentation](docs/Phase5_Advanced_SOC.md) |
+| 🛠️ Tools & Resources | [Jump to Tools](#️-tools--resources) |
+| 📝 Notes | [Jump to Notes](#-notes) |
+| 🔮 Future Work | [Jump to Future-Work](#-future-work) |
+| 🌐 Portfolio Links | [Jump to Portfolio-Links](#-portfolio-links) |
+
+
+---
+
 ### 📝 Summary – Technical Skills
 
 **Core SOC Skills**
@@ -99,8 +119,6 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 - All labs are self‑built, no external training.
 - Documentation style: beginner‑friendly, checklist‑driven, reproducible.
 - This repo serves as both a **learning log** and a **portfolio** for recruiters.
-
----
 
 This journey is more than just learning tools and writing playbooks—it's about proving that **self‑driven learning can rival formal training**.  
 I believe in building my own path: setting up labs, simulating attacks, detecting threats, and documenting every step.  
