@@ -1,10 +1,6 @@
 # 🛡️ SOC Analyst Journey (75-Day Fast Track)
 
-[![SOC Analyst](https://img.shields.io/badge/Role-SOC%20Analyst-blue)](https://en.wikipedia.org/wiki/Security_operations_center)  
-[![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-green)](https://en.wikipedia.org/wiki/Computer_security#Importance)  
-[![Learning Path](https://img.shields.io/badge/Track-75%20Days-orange)](https://github.com/LetsLearn-08/SOC-Lab-Journey#-roadmap-75-days)  
-[![Status](https://img.shields.io/badge/Progress-Completed-success)](https://github.com/LetsLearn-08/SOC-Lab-Journey)
-
+[![SOC Analyst](https://img.shields.io/badge/Role-SOC%20Analyst-blue)](https://www.coursera.org/articles/soc-analyst) [![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-green)](https://www.upguard.com/blog/why-is-cybersecurity-important) [![Learning Path](https://img.shields.io/badge/Track-75%20Days-orange)](https://github.com/LetsLearn-08/soc-analyst-journey#-roadmap-75-days) [![Status](https://img.shields.io/badge/Progress-Completed-success)](https://github.com/LetsLearn-08/soc-analyst-journey)
 
 **Turning Alerts Into Action: A Self‑Driven SOC Path**
 
@@ -87,18 +83,17 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 
 ---
 
-## 🔗 Tool Manuals
+## 🛠️ Tools & Resources
 
-Beginner-friendly manuals for the tools used in my SOC & Pentester lab journey:
+| Tool | Resource | Manual Link |
+|------|----------|-------------|
+| [Splunk](https://www.splunk.com/) | Official SIEM and observability platform for log ingestion, correlation, and incident detection. | [Splunk Manual](Splunk_Manual.md) |
+| [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) | Microsoft Sysinternals tool for monitoring process creation, network connections, and event logging. | [Sysmon Manual](Sysmon_Manual.md) |
+| [Wireshark](https://www.wireshark.org/) | Leading open-source network protocol analyzer for packet capture and traffic inspection. | [Wireshark Manual](Wireshark_Manual.md) |
+| [AlienVault OTX](https://cybersecurity.att.com/open-threat-exchange) | Crowd-sourced threat intelligence platform providing Indicators of Compromise (IOCs). | [OTX Manual](OTX_Manual.md) |
+| [Incident Response](https://www.ibm.com/topics/incident-response) | IBM’s guide to incident response: structured processes for detecting, containing, and resolving cyberattacks. | [Incident Response Manual](INCIDENT-RESPOND-LABSETUP-MANUAL.md) |
 
-- [Splunk Manual](Splunk_Manual.md)  
-- [Sysmon Manual](Sysmon_Manual.md)  
-- [Wireshark Manual](Wireshark_Manual.md)  
-- [OTX Manual](OTX_Manual.md)  
-- [Incident Response Manual](Incident_Response.md)
-
----
-
+--- 
 
 ## 📝 Notes
 - All labs are self‑built, no external training.
