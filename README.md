@@ -1,11 +1,41 @@
 # 🛡️ SOC Analyst Journey (75-Day Fast Track)
 
+![SOC Analyst](https://img.shields.io/badge/Role-SOC%20Analyst-blue) 
+![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-green) 
+![Learning Path](https://img.shields.io/badge/Track-75%20Days-orange) 
+![Status](https://img.shields.io/badge/Progress-Completed-success)
+
+
 **Turning Alerts Into Action: A Self‑Driven SOC Path**
 
 ## 📖 Introduction
 This repository documents my self-driven journey into becoming a SOC Analyst in **75 days**.  
 It mirrors my pentesting journey notes but focuses on defensive security: labs, SIEM dashboards, incident reports, playbooks, and threat hunting exercises.  
 The goal is to be **job-ready as a SOC Analyst** while building a strong foundation to pivot into **Pentesting/Red Teaming**.
+
+---
+
+### 📝 Summary – Technical Skills
+
+**Core SOC Skills**
+- **SIEM & Monitoring:** Splunk Enterprise (log ingestion, dashboards, correlation searches, automated alerts).  
+- **Endpoint Visibility:** Sysmon (Windows event IDs, custom XML rules for process, network, and registry monitoring).  
+- **Threat Intelligence:** AlienVault OTX (IOC enrichment, watchlists, integration into Splunk queries).  
+- **Network Analysis:** Wireshark (packet capture, traffic inspection, detection of suspicious connections).  
+- **Incident Response:** Playbooks for phishing, brute force, malware; triage workflows and escalation paths.  
+- **Threat Hunting:** MITRE ATT&CK mapping, proactive Splunk queries, detection of adversary techniques.  
+
+**Supporting Skills**
+- **Log Analysis:** Windows Event Logs, Linux syslogs, firewall logs.  
+- **Detection Rules:** PowerShell abuse, privilege escalation, SSH brute force, suspicious Nmap scans.  
+- **Documentation:** Checklist-driven, reproducible `.md` files with recruiter-ready summaries.  
+- **Proof Management:** Organized screenshots in `proof/` folder linked to each phase.  
+- **Pentesting Prep (Intermediate):** Vulnerability scanning with Nmap/Nessus, exploitation labs for validation.  
+
+**Value Statement**
+- I combine hands-on SOC lab experience with clear documentation and beginner-friendly manuals.  
+- This repo demonstrates my ability to **detect, analyze, and respond to threats** while making complex workflows accessible to recruiters and learners.  
+- It reflects both **technical depth** and **communication clarity**, proving readiness for SOC Analyst roles and a foundation to pivot into Pentesting.
 
 ---
 
@@ -57,6 +87,19 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 
 ---
 
+## 🔗 Tool Manuals
+
+Beginner-friendly manuals for the tools used in my SOC & Pentester lab journey:
+
+- [Splunk Manual](Splunk_Manual.md)  
+- [Sysmon Manual](Sysmon_Manual.md)  
+- [Wireshark Manual](Wireshark_Manual.md)  
+- [OTX Manual](OTX_Manual.md)  
+- [Incident Response Manual](Incident_Response.md)
+
+---
+
+
 ## 📝 Notes
 - All labs are self‑built, no external training.
 - Documentation style: beginner‑friendly, checklist‑driven, reproducible.
@@ -70,5 +113,21 @@ I believe in building my own path: setting up labs, simulating attacks, detectin
 Every alert I triage, every log I analyze, and every playbook I write is a step closer to becoming a **protector‑hacker**—someone who defends systems today and prepares for offensive security challenges tomorrow.  
 
 **75 days of focus, persistence, and curiosity will transform me from a fresher into a SOC Analyst ready to pivot into Pentesting.**
+
+----
+
+## 🔮 Future Work
+- Launch separate repo for Azure Sentinel labs.
+- Expand IOC enrichment with more threat intel feeds.
+- Add beginner‑friendly manuals for additional free tools (e.g., Nessus, Elastic SIEM).
+
+---
+
+## 🌐 Portfolio Links
+- [GitHub Profile](https://github.com/LetsLearn-08?tab=repositories)  
+- [LinkedIn Profile](https://www.linkedin.com/in/tanuja-reddy-03aa7b38a)
+
+
+# **From alerts to action — this repo proves my ability to detect, analyze, and respond to threats with clarity and precision.**
 
 
