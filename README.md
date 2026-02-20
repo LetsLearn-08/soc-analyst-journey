@@ -115,20 +115,25 @@ Each project includes:
 
 ---
 
-### 📅 Project Tracker
+# 📅 Project Tracker
+
+This tracker documents my SOC Analyst learning journey — one project per day, each focused on a different MITRE ATT&CK tactic.  
+Each row links to the detailed write‑up for that project.
+
+---
 
 | Day | Project | Detailed Write‑up |
 |-----|---------|-------------------|
-| 1 | 📨 Phishing Simulation – Reconnaissance | [Project 1 Folder](projects/project1_phishing/) |
-| 2 | 🖥️ Sysmon + Wazuh – Initial Access | [Project 2 Folder](projects/project2_sysmon/) |
-| 3 | 🌐 Zeek Threat Hunting – Execution | [Project 3 Folder](projects/project3_zeek/) |
-| 4 | 🧩 IOC Research – Persistence | [Project 4 Folder](projects/project4_ioc_research/) |
-| 5 | 🛡️ IDS Deployment – Defense Evasion | [Project 5 Folder](projects/project5_ids/) |
-| 6 | ⚙️ SOAR Script – Detection & Automation | [Project 6 Folder](projects/project6_soar/) |
-| 7 | 📎 Malware Analysis – Payload Delivery | [Project 7 Folder](projects/project7_malware/) |
-| 8 | 🚨 Incident Response – Containment | [Project 8 Folder](projects/project8_incident_response/) |
-| 9 | ☁️ Cloud Security Monitoring – Lateral Movement | [Project 9 Folder](projects/project9_cloud/) |
-| 10 | 🎯 Honeypot Deployment – Impact | [Project 10 Folder](projects/project10_honeypot/) |
+| 1 | 📨 Phishing Simulation – Reconnaissance | [Project 1](project1_phishing.md) |
+| 2 | 🖥️ Sysmon + Wazuh – Initial Access | [Project 2](project2_sysmon.md) |
+| 3 | 🌐 Zeek Threat Hunting – Execution | [Project 3](project3_zeek.md) |
+| 4 | 🧩 IOC Research – Persistence | [Project 4](project4_ioc_research.md) |
+| 5 | 🛡️ IDS Deployment – Defense Evasion | [Project 5](project5_ids.md) |
+| 6 | ⚙️ SOAR Script – Detection & Automation | [Project 6](project6_soar.md) |
+| 7 | 📎 Malware Analysis – Payload Delivery | [Project 7](project7_malware.md) |
+| 8 | 🚨 Incident Response – Containment | [Project 8](project8_incident_response.md) |
+| 9 | ☁️ Cloud Security Monitoring – Lateral Movement | [Project 9](project9_cloud.md) |
+| 10 | 🎯 Honeypot Deployment – Impact | [Project 10 Write‑up](project10_honeypot.md) |
 
 ---
 
