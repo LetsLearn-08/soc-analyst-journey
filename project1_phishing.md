@@ -64,6 +64,11 @@ This project simulates a real-world phishing attack and how a SOC team detects a
 
 ## 📎 Evidence & Artifacts
 
+
+👉 All screenshots for this lab are stored in the [project1 folder](https://github.com/LetsLearn-08/soc-analyst-journey/tree/94c3e3a456980a95f6392076c615457a3dbdbdfa/project1).  
+Browse the folder directly to review the full set of evidence images.
+
+
 All supporting evidence is stored in the `project1/` folder:
 
 - `Phishing-email.png` → Malicious invoice email in Thunderbird  
