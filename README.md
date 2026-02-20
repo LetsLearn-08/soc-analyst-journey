@@ -23,10 +23,12 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 | 📅 Phase 3: Incident Response Playbooks | [Phase 3 Documentation](docs/Phase3_Incident_Response.md) |
 | 📅 Phase 4: Threat Hunting & MITRE ATT&CK | [Phase 4 Documentation](docs/Phase4_Threat_Hunting.md) |
 | 📅 Phase 5: Advanced SOC + Pentesting Prep | [Phase 5 Documentation](docs/Phase5_Advanced_SOC.md) |
+| 📂 SOC Analyst Projects – Lab Journey | [Jump to Projects](#-soc-analyst-projects--lab-journey) |
 | 🛠️ Tools & Resources | [Jump to Tools](#️-tools--resources) |
 | 📝 Notes | [Jump to Notes](#-notes) |
 | 🔮 Future Work | [Jump to Future-Work](#-future-work) |
 | 🌐 Portfolio Links | [Jump to Portfolio-Links](#-portfolio-links) |
+
 
 
 ---
@@ -102,6 +104,47 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 - 📂 [Phase 5 Documentation](docs/Phase5_Advanced_SOC.md)
 
 ---
+
+## 📂 SOC Analyst Projects – Lab Journey
+
+This repository documents my **hands‑on SOC Analyst journey** through 10 practical projects.  
+Each project includes:
+- **Technical setup & workflow** → showing how tools like Splunk, Sysmon, Zeek, IDS, and SOAR scripts are used.  
+- **Proof screenshots** → stored in dedicated folders for transparency.  
+- **Scenario write‑ups** → real‑life stories involving the *Commoner (employee)*, *Attacker*, *Tier‑1 Analyst*, and *Tier‑2 Analyst*, showing how incidents unfold in daily SOC operations.  
+
+---
+
+### 📅 Project Tracker
+
+| Day | Project | Detailed Write‑up |
+|-----|---------|-------------------|
+| 1 | 📨 Phishing Simulation – Reconnaissance | [Project 1 Folder](projects/project1_phishing/) |
+| 2 | 🖥️ Sysmon + Wazuh – Initial Access | [Project 2 Folder](projects/project2_sysmon/) |
+| 3 | 🌐 Zeek Threat Hunting – Execution | [Project 3 Folder](projects/project3_zeek/) |
+| 4 | 🧩 IOC Research – Persistence | [Project 4 Folder](projects/project4_ioc_research/) |
+| 5 | 🛡️ IDS Deployment – Defense Evasion | [Project 5 Folder](projects/project5_ids/) |
+| 6 | ⚙️ SOAR Script – Detection & Automation | [Project 6 Folder](projects/project6_soar/) |
+| 7 | 📎 Malware Analysis – Payload Delivery | [Project 7 Folder](projects/project7_malware/) |
+| 8 | 🚨 Incident Response – Containment | [Project 8 Folder](projects/project8_incident_response/) |
+| 9 | ☁️ Cloud Security Monitoring – Lateral Movement | [Project 9 Folder](projects/project9_cloud/) |
+| 10 | 🎯 Honeypot Deployment – Impact | [Project 10 Folder](projects/project10_honeypot/) |
+
+---
+
+### 🎭 Storytelling Approach
+Each project is told as a **mini SOC drama**:
+- 👤 **Commoner (Employee/User)** → the everyday person who unknowingly interacts with the attack.  
+- 🎭 **Attacker** → the threat actor initiating the campaign.  
+- 👩‍💻 **Tier‑1 Analyst** → the first responder, triaging alerts.  
+- 👨‍💻 **Tier‑2 Analyst** → the investigator, confirming and escalating.  
+
+This format helps beginners understand **SOC Analyst responsibilities** while showing recruiters my ability to interpret technical skills and apply tools in real‑world scenarios.
+
+---
+
+📌 By the end of this journey, this repo will serve as a **portfolio of real SOC incidents**, blending technical depth with creative storytelling.
+
 
 ## 🛠️ Tools & Resources
 
