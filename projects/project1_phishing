@@ -1,0 +1,115 @@
+# Project One – Phishing Simulation SOC Lab
+
+## 📌 Overview
+
+This project demonstrates a phishing attack simulation in a controlled SOC lab environment.  
+  The workflow covers:
+- Crafting and importing a phishing email (`phish.eml`) into Thunderbird.
+- Clicking the malicious link to trigger Edge and download a payload from Kali.
+- Capturing Sysmon logs and Splunk detections.
+- Documenting the SOC analyst workflow (Tier‑1 → Tier‑2 → Tier‑3).
+- Mapping activity to MITRE ATT&CK techniques.
+
+👉 All screenshots are stored in the [`project1`](./project1) folder.
+
+---
+
+## 📨 Phishing Email
+![Phishing Email](project1/Phishing-email.png)  
+*Phishing email imported into Thunderbird, containing a malicious link.*
+
+---
+
+## 🌐 Malicious Link Click
+![Thunderbird Malicious Link](project1/Thunderbird-malicious-link.png)  
+*User clicks the malicious link in Thunderbird, launching Edge.*
+
+---
+
+## 💾 Payload Delivery
+![Malware Download](project1/malware download.png)  
+*Edge attempts to download `malware.exe` from attacker Kali VM (`192.168.56.104`).*  
+
+![Attacker Payload](project1/attacker payload.png)  
+*Payload hosted on Kali via Python HTTP server.*
+
+---
+
+## 🔍 Sysmon & Splunk Logs
+
+### Sysmon Logs
+![Splunk Windows Logs Event ID 1](project1/splunk-win-logs-1.png)  
+*Event ID 1 – Process creation: Thunderbird spawning Edge.*
+
+![Splunk Windows Logs Event ID 3](project1/splunk-win-logs-3.png)  
+*Event ID 3 – Network connection: Edge connecting to attacker IP.*
+
+### Splunk Queries
+![Splunk Thunderbird Logs](project1/splunk-Thunderbird-logs.png)  
+*Splunk query results showing Thunderbird → Edge process chain.*
+
+![Splunk Thunderbird Logs Event ID 1,3](project1/splunk-Thunderbird-logs-eventid-1,3.png)  
+*Splunk correlation of Event ID 1 (process creation) and Event ID 3 (network connection).*
+
+---
+
+## 🧑‍💻 Analyst Workflow
+
+### Tier‑1 Analyst – Triage
+![Splunk Thunderbird Logs Event ID 1](project1/splunk-Thunderbird-logs-eventid-1.png)  
+*Tier‑1 analyst sees Thunderbird spawning Edge in Splunk. This unusual parent‑child process chain is escalated for deeper investigation.*
+
+---
+
+### Tier‑2 Analyst – Investigation
+![Splunk Thunderbird Logs Event ID 1,3](project1/splunk-Thunderbird-logs-eventid-1,3.png)  
+*Tier‑2 analyst correlates Sysmon Event ID 1 (process creation) and Event ID 3 (network connection). Evidence shows Edge connecting to attacker IP `192.168.56.104` to download `malware.exe`.*
+
+---
+
+### Tier‑3 Analyst – Validation & Response
+![Malware Download Copy](project1/malware download - Copy.png)  
+*Tier‑3 analyst validates that the payload was delivered but not executed. Activity is mapped to MITRE ATT&CK T1566 (Phishing) and T1105 (Ingress Tool Transfer). Recommended response: block attacker IP, tune detection rules, and educate users.*
+
+---
+
+## 🗂️ MITRE ATT&CK Mapping
+- **T1566 – Phishing**: Delivery via malicious email.  
+- **T1105 – Ingress Tool Transfer**: Download of payload (`malware.exe`) via Edge.  
+
+---
+
+## ✅ Outcome
+This lab successfully demonstrates:
+- End‑to‑end phishing chain detection.  
+- Sysmon + Splunk correlation.  
+- SOC analyst workflow documentation.  
+- Recruiter‑friendly evidence with screenshots and MITRE mapping.
+
+---
+
+## 📑 Lessons Learned
+
+Phishing remains one of the **most effective attack vectors** because it targets human behavior rather than technical vulnerabilities. Even trained users can be deceived, making endpoint visibility and behavioral detection essential for SOC operations.
+
+### 🔑 Key Takeaways
+
+| Lesson | Why It Matters | Example in This Project |
+|------|---------------|-------------------------|
+| Human factor is the weakest link | Users can unintentionally initiate attacks | Employee clicked a phishing email |
+| Process chain analysis is critical | Abnormal parent-child relationships reveal threats | Thunderbird spawning Edge |
+| Correlation reduces false positives | Multiple data points add context | Email → browser → download |
+| Frameworks bring consistency | Standardized language improves response | ATT&CK T1566 mapping |
+| Early detection limits impact | Prevents persistence and lateral movement | Attack stopped at recon stage |
+| Analyst judgment is essential | Tools provide data, analysts provide meaning | Tier-1 and Tier-2 validation |
+
+---
+
+## 🧠 Conclusion
+
+This project demonstrates how **SOC analysts combine technical telemetry with investigative thinking**. Detection is not just about running queries — it’s about understanding attacker behavior, validating anomalies, and acting quickly to protect the organization.
+
+---
+
+📂 **SOC Lab Journey Repository**  
+🔗 https://github.com/LetsLearn-08/soc-analyst-journey
