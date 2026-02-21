@@ -96,7 +96,7 @@ All supporting evidence is stored in the `project1/` folder:
 ---
 
 ### Tier‑3 Analyst – Validation & Response
-![Malware Download Copy](project1/malware-download.png)  
+![Malware Download Copy](https://github.com/LetsLearn-08/soc-analyst-journey/blob/fcea7095039cb1303599652b0dfc7cfd60292d0e/project1/malware%20download%20-%20Copy.png)  
 *Tier‑3 analyst validates that the payload was delivered but not executed. Activity is mapped to MITRE ATT&CK T1566 (Phishing) and T1105 (Ingress Tool Transfer). Recommended response: block attacker IP, tune detection rules, and educate users.*
 
 ---
