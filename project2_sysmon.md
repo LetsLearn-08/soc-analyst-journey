@@ -72,24 +72,24 @@ All screenshots for this lab are stored in the [project2 folder](project2/).
 - Additional test file alerts (EICAR, AMTSO, FortiGuard, GTUBE, Sophos) stored in `proof/`  
 
 ---
-
 ## 🧑‍💻 Analyst Workflow
 
 ### Tier‑1 Analyst – Triage
-![Splunk Registry Detection](proof/splunk-registry.png)  
-*Tier‑1 analyst detects registry Run/RunOnce key modification in Splunk.*
+![Splunk Registry Detection](project2/splunk-registry.png)  
+*Tier‑1 analyst detects registry Run/RunOnce key modification in Splunk (EventCode 13, Persistence).*
 
 ---
 
 ### Tier‑2 Analyst – Investigation
-![Splunk Powershell Detection](proof/splunk-powershell.png)  
-*Tier‑2 analyst confirms suspicious PowerShell execution mapped to MITRE ATT&CK T1059.*
+![Splunk Powershell Detection](project2/splunk-powershell.png)  
+*Tier‑2 analyst confirms suspicious PowerShell execution mapped to MITRE ATT&CK T1059 (Command and Scripting Interpreter).*
 
 ---
 
 ### Tier‑3 Analyst – Validation & Response
-![Splunk Network Detection](proof/splunk-network.png)  
-*Tier‑3 analyst validates outbound network connection attempt. Activity mapped to MITRE ATT&CK T1071.004. Recommended response: block suspicious domains, tune detection rules, and investigate persistence mechanisms.*
+![Splunk Network Detection](project2/splunk-network.png)  
+*Tier‑3 analyst validates outbound network connection attempt (EventCode 3). Activity mapped to MITRE ATT&CK T1071.004 (Application Layer Protocol – DNS/Network). Recommended response: block suspicious domains, tune detection rules, and investigate persistence mechanisms.*
+
 
 ---
 
@@ -135,6 +135,7 @@ All screenshots for this lab are stored in the [project2 folder](project2/).
 | Documentation | Proof builds recruiter confidence | Screenshots in `proof/` folder |
 
 ---
+
 
 ## 🎯 Conclusion
 This lab demonstrates detection of **execution and persistence techniques** using Sysmon + Splunk.  
