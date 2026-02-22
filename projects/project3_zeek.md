@@ -108,7 +108,7 @@ All screenshots for this lab are stored in the [project3 folder](project3/).
 - ![Victim Payload Download](project3/victim-vm-payload-invoke.jpeg)  
   *Windows victim downloads malicious.exe.*
 
-- ![Victim Sysmon Events](project3/victim-vm-events-1,3,11,22,13.jpeg)  
+- ![Victim Sysmon Events](project3/victim-vm-events.jpeg)  
   *Sysmon logs registry, process, network, and DNS events.*
 
 - ![Zeek Config File](project3/zeek-postfix-config.png)  
