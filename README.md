@@ -29,8 +29,6 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 | 🔮 Future Work | [Jump to Future-Work](#-future-work) |
 | 🌐 Portfolio Links | [Jump to Portfolio-Links](#-portfolio-links) |
 
-
-
 ---
 
 ### 📝 Summary – Technical Skills
@@ -132,7 +130,6 @@ Each row links to the detailed write‑up for that project.
 | 8 | 📎 Malware Analysis – Payload Delivery | Cuckoo Sandbox, Sysmon | [Project 8](projects/project8_malware.md) |
 | 9 | 🚨 Incident Response Simulation – Containment | Sysmon, Zeek, Splunk | [Project 9](projects/project9_incident_response.md) |
 | 10 | 🎯 Honeypot Deployment & Deception | Cowrie Honeypot | [Project 10](projects/project10_honeypot.md) |
-
 
 ---
 
