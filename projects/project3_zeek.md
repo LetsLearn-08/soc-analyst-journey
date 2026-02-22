@@ -99,31 +99,44 @@ This section explains the lab in simple terms, so even someone without cybersecu
 
 All screenshots for this lab are stored in the [project3 folder](project3/).  
 
-- `zeek-conn.png` → Connection metadata (conn.log)  
-- `zeek-dns.png` → Suspicious DNS queries (dns.log)  
-- `zeek-http.png` → Malicious file download (http.log)  
-- `zeek-files.png` → File transfer metadata (files.log)  
-- `zeek-ssl.png` → Certificate anomalies (ssl.log)  
+- ![Apache Service Status](project3/apache2-status.png)  
+  *Apache running on Kali attacker VM.*
+
+- ![Payload Creation](project3/attacker-vm-payload.png)  
+  *Malicious file hosted via Apache.*
+
+- ![Victim Payload Download](project3/victim-vm-payload-invoke.jpeg)  
+  *Windows victim downloads malicious.exe.*
+
+- ![Victim Sysmon Events](project3/victim-vm-events-1,3,11,22,13.jpeg)  
+  *Sysmon logs registry, process, network, and DNS events.*
+
+- ![Zeek Config File](project3/zeek-postfix-config.png)  
+  *Zeek configured to monitor interface.*
+
+- ![Zeek Logs Evidence](project3/ubuntu-zeek-log-files.png)  
+  *Zeek conn.log and dns.log entries showing attacker traffic.*
 
 ---
 
 ## 🧑‍💻 Analyst Workflow
 
 ### Tier‑1 Analyst – Triage
-![Zeek Connection Detection](project3/zeek-conn.png)  
+![Zeek Connection Detection](project3/ubuntu-zeek-log-files.png)  
 *Tier‑1 analyst detects unusual outbound connections in Zeek conn.log.*
 
 ---
 
 ### Tier‑2 Analyst – Investigation
-![Zeek DNS Detection](project3/zeek-dns.png)  
+![Zeek DNS Detection](project3/ubuntu-zeek-log-files.png)  
 *Tier‑2 analyst confirms suspicious DNS queries mapped to MITRE ATT&CK T1071.004.*
 
 ---
 
 ### Tier‑3 Analyst – Validation & Response
-![Zeek File Download Detection](project3/zeek-http.png)  
+![Zeek File Download Detection](project3/victim-vm-payload-invoke.jpeg)  
 *Tier‑3 analyst validates malicious file download attempt mapped to MITRE ATT&CK T1105. Recommended response: block malicious domains, investigate endpoints, and tune detection rules.*
+
 
 ---
 
