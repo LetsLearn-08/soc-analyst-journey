@@ -120,20 +120,19 @@ Each project includes:
 This tracker documents my SOC Analyst learning journey — one project per day, each focused on a different MITRE ATT&CK tactic.  
 Each row links to the detailed write‑up for that project.
 
----
+| Day | Project | Tools & Frameworks | Detailed Write‑up |
+|-----|---------|---------------------|-------------------|
+| 1 | 📨 Phishing Simulation – Reconnaissance | Thunderbird, Sysmon, Splunk | [Project 1](projects/project1_phishing.md) |
+| 2 | 🛡️ Endpoint Detection & Persistence Monitoring | Sysmon, Splunk | [Project 2](projects/project2_endpoint.md) |
+| 3 | 🌐 Network Threat Hunting with Zeek | Zeek, ELK/Splunk | [Project 3](projects/project3_zeek.md) |
+| 4 | 🛡️ IDS Deployment & Rule Writing | Suricata, Snort | [Project 4](projects/project4_ids.md) |
+| 5 | 🧩 Threat Intelligence Integration | Splunk, MISP | [Project 5](projects/project5_threatintel.md) |
+| 6 | ⚙️ SOAR Playbook Automation | Python, Splunk Phantom | [Project 6](projects/project6_soar.md) |
+| 7 | ☁️ Cloud Security Monitoring – Lateral Movement | AWS CloudTrail, Azure Sentinel | [Project 7](projects/project7_cloud.md) |
+| 8 | 📎 Malware Analysis – Payload Delivery | Cuckoo Sandbox, Sysmon | [Project 8](projects/project8_malware.md) |
+| 9 | 🚨 Incident Response Simulation – Containment | Sysmon, Zeek, Splunk | [Project 9](projects/project9_incident_response.md) |
+| 10 | 🎯 Honeypot Deployment & Deception | Cowrie Honeypot | [Project 10](projects/project10_honeypot.md) |
 
-| Day | Project | Detailed Write‑up |
-|-----|---------|-------------------|
-| 1 | 📨 Phishing Simulation – Reconnaissance | [Project 1](project1_phishing.md) |
-| 2 | 🛡️ Sysmon + Splunk – Execution & Persistence | [Project 2](project2_sysmon.md) |
-| 3 | 🌐 Zeek Threat Hunting – Execution | [Project 3](project3_zeek.md) |
-| 4 | 🧩 IOC Research – Persistence | [Project 4](project4_ioc_research.md) |
-| 5 | 🛡️ IDS Deployment – Defense Evasion | [Project 5](project5_ids.md) |
-| 6 | ⚙️ SOAR Script – Detection & Automation | [Project 6](project6_soar.md) |
-| 7 | 📎 Malware Analysis – Payload Delivery | [Project 7](project7_malware.md) |
-| 8 | 🚨 Incident Response – Containment | [Project 8](project8_incident_response.md) |
-| 9 | ☁️ Cloud Security Monitoring – Lateral Movement | [Project 9](project9_cloud.md) |
-| 10 | 🎯 Honeypot Deployment – Impact | [Project 10 Write‑up](project10_honeypot.md) |
 
 ---
 
