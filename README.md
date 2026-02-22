@@ -125,7 +125,7 @@ Each row links to the detailed write‑up for that project.
 | Day | Project | Detailed Write‑up |
 |-----|---------|-------------------|
 | 1 | 📨 Phishing Simulation – Reconnaissance | [Project 1](project1_phishing.md) |
-| 2 | 🖥️ Sysmon + Wazuh – Initial Access | [Project 2](project2_sysmon.md) |
+| 2 | 🛡️ Sysmon + Splunk – Execution & Persistence | [Project 2](project2_sysmon.md) |
 | 3 | 🌐 Zeek Threat Hunting – Execution | [Project 3](project3_zeek.md) |
 | 4 | 🧩 IOC Research – Persistence | [Project 4](project4_ioc_research.md) |
 | 5 | 🛡️ IDS Deployment – Defense Evasion | [Project 5](project5_ids.md) |
