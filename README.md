@@ -120,8 +120,8 @@ Each row links to the detailed write‑up for that project.
 
 | Day | Project | Tools & Frameworks | Detailed Write‑up |
 |-----|---------|---------------------|-------------------|
-| 1 | 📨 Phishing Simulation – Reconnaissance | Thunderbird, Sysmon, Splunk | [Project 1](projects/project1_phishing.md) |
-| 2 | 🛡️ Endpoint Detection & Persistence Monitoring | Sysmon, Splunk | [Project 2](projects/project2_endpoint.md) |
+| 1 | 📨 Phishing Simulation – Reconnaissance | Thunderbird, Sysmon, Splunk | [Project 1](https://github.com/LetsLearn-08/soc-analyst-journey/blob/c42237e461fc94c68b837c110e9acffaab51812c/project1_phishing.md) |
+| 2 | 🛡️ Endpoint Detection & Persistence Monitoring | Sysmon, Splunk | [Project 2](https://github.com/LetsLearn-08/soc-analyst-journey/blob/c42237e461fc94c68b837c110e9acffaab51812c/project2_sysmon.md) |
 | 3 | 🌐 Network Threat Hunting with Zeek | Zeek, ELK/Splunk | [Project 3](projects/project3_zeek.md) |
 | 4 | 🛡️ IDS Deployment & Rule Writing | Suricata, Snort | [Project 4](projects/project4_ids.md) |
 | 5 | 🧩 Threat Intelligence Integration | Splunk, MISP | [Project 5](projects/project5_threatintel.md) |
