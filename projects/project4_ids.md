@@ -62,41 +62,56 @@ nc -v 192.168.56.102 80
 
 ---
 
-
 ## 🔍 Detection Workflow
 
 1. **Connectivity Check**  
    - Verified VM communication between Kali and Ubuntu IDS.  
-   - Evidence: `connection.png`, `ping-google.png`.
+   - ![Connection Test](project4/connection.png)  
+   - ![Ping Google](project4/ping-google.png)  
+
+---
 
 2. **Tool Installation & Verification**  
    - Installed Nmap, Curl, and Netcat on Kali.  
    - Confirmed versions and readiness for attack simulation.  
-   - Evidence: `nmap-curl-nc-version.png`, `linux-netcat-install.png`.
+   - ![Nmap, Curl, Netcat Versions](project4/nmap-curl-nc-version.png)  
+   - ![Netcat Installation](project4/linux-netcat-install.png)  
+
+---
 
 3. **IDS Setup**  
-   - Installed Suricata on Ubuntu (`ubuntu-suricata-install.png`).  
-   - Wrote custom detection rules (`suricata-rules.png`).  
-   - Started Suricata engine (`suricata-engine.png`).
+   - Installed Suricata on Ubuntu.  
+   - Wrote custom detection rules.  
+   - Started Suricata engine.  
+   - ![Suricata Installation](project4/ubuntu-suricata-install.png)  
+   - ![Suricata Rules](project4/suricata-rules.png)  
+   - ![Suricata Engine Started](project4/suricata-engine.png)  
+
+---
 
 4. **Attack Simulation (Kali VM)**  
    - ICMP ping to IDS (`ping -c 4`).  
    - Nmap SYN scan (`nmap -sS`).  
    - HTTP suspicious request (`curl http://192.168.56.102/cmd.exe`).  
    - Netcat connection to port 80 (`nc -v`).  
-   - Evidence: `nmap-curl-nc-attacks.png`.
+   - ![Attack Simulation](project4/nmap-curl-nc-attacks.png)  
+
+---
 
 5. **Detection & Logging (Ubuntu IDS)**  
    - Suricata captured alerts in `fast.log`.  
    - ICMP ping, port scan, and HTTP suspicious request all detected.  
-   - Evidence: `fast-log.png`, `fast-log-traffic.png`.
+   - ![Fast Log Alerts](project4/fast-log.png)  
+   - ![Fast Log Traffic](project4/fast-log-traffic.png)  
+
+---
 
 6. **Analyst Review**  
    - Tier‑1 triaged Suricata alerts.  
    - Tier‑2 correlated multiple detections to attacker IP `192.168.56.104`.  
    - Tier‑3 validated rules and mapped activity to MITRE ATT&CK.  
-   - Evidence: `suricata-engine.png`, `fast-log.png`, `suricata-rules.png`.
-
+   - ![Suricata Rules File](project4/suricata-rules.png)  
+   - ![Fast Log Alerts](project4/fast-log.png)  
 
 ---
 
