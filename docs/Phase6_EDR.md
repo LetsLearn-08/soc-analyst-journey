@@ -24,7 +24,6 @@ By the end of this phase, you will:
 | Tool | Definition | Purpose in Lab |
 |------|------------|----------------|
 | [Wazuh](https://wazuh.com/) | Open-source security platform with EDR, SIEM, and XDR capabilities. | Collects endpoint telemetry, detects anomalies, integrates with Elastic. |
-| [OSSEC](https://www.ossec.net/) | Host-based intrusion detection system (HIDS). | Monitors logs, file integrity, rootkits, and policy violations. |
 | [Windows Defender](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/) | Built-in Windows AV/EDR solution. | Provides baseline detection, logs suspicious activity. |
 | *(Placeholder: [Cortex XDR](https://www.paloaltonetworks.com/cortex/xdr) / [CrowdStrike Falcon](https://www.crowdstrike.com/))* | Commercial EDR platforms. | Advanced detection and response, to be explored later. |
 
@@ -41,14 +40,8 @@ By the end of this phase, you will:
   systemctl status wazuh-agent
   tail -f /var/ossec/logs/ossec.log
 ````
-### Step 2: OSSEC Setup
-- Install OSSEC on Linux endpoint.
-- Configure agent to monitor /var/log/auth.log, /etc/passwd, and file integrity for /etc/.
-- Validate alerts:
-```
-tail -f /var/ossec/logs/alerts/alerts.log
-```
-### Step 3: Windows Defender Logs
+
+### Step 2: Windows Defender Logs
 - Enable Windows Defender on victim VM.
 - Configure Event Forwarding for key Event IDs:
    - 1116 → Malware detected
