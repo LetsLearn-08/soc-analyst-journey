@@ -1,11 +1,11 @@
-# 🛡️ SOC Analyst Journey (75-Day Fast Track)
+# 🛡️ SOC Analyst Journey 
 
-[![SOC Analyst](https://img.shields.io/badge/Role-SOC%20Analyst-blue)](https://www.coursera.org/articles/soc-analyst) [![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-green)](https://www.upguard.com/blog/why-is-cybersecurity-important) [![Learning Path](https://img.shields.io/badge/Track-75%20Days-orange)](https://github.com/LetsLearn-08/soc-analyst-journey#-roadmap-75-days) [![Status](https://img.shields.io/badge/Progress-Completed-success)](https://github.com/LetsLearn-08/soc-analyst-journey)
+[![SOC Analyst](https://img.shields.io/badge/Role-SOC%20Analyst-blue)](https://www.coursera.org/articles/soc-analyst) [![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-green)](https://www.upguard.com/blog/why-is-cybersecurity-important) [![Learning Path](https://img.shields.io/badge/Track-100%20Days-orange)](https://github.com/LetsLearn-08/soc-analyst-journey#-roadmap-100-days) [![Status](https://img.shields.io/badge/Progress-Completed-success)](https://github.com/LetsLearn-08/soc-analyst-journey)
 
 **Turning Alerts Into Action: A Self‑Driven SOC Path**
 
 ## 📖 Introduction
-This repository documents my self-driven journey into becoming a SOC Analyst in **75 days**.  
+This repository documents my self-driven journey into becoming a SOC Analyst in **100 days**.  
 It mirrors my pentesting journey notes but focuses on defensive security: labs, SIEM dashboards, incident reports, playbooks, and threat hunting exercises.  
 The goal is to be **job-ready as a SOC Analyst** while building a strong foundation to pivot into **Pentesting/Red Teaming**.
 
@@ -17,12 +17,16 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 |---------|------|
 | 📖 Introduction | [Jump to Introduction](#-introduction) |
 | 📝 Summary – Technical Skills | [Jump to Summary](#-summary--technical-skills) |
-| 🚀 Roadmap (75 Days) | [Jump to Roadmap](#-roadmap-75-days) |
+| 🚀 Roadmap  | [Jump to Roadmap](#-roadmap) |
 | 📅 Phase 1: Lab Setup & SIEM | [Phase 1 Documentation](docs/Phase1_Lab_SIEM.md) |
 | 📅 Phase 2: Log Analysis & Detection | [Phase 2 Documentation](docs/Phase2_Log_Analysis.md) |
 | 📅 Phase 3: Incident Response Playbooks | [Phase 3 Documentation](docs/Phase3_Incident_Response.md) |
 | 📅 Phase 4: Threat Hunting & MITRE ATT&CK | [Phase 4 Documentation](docs/Phase4_Threat_Hunting.md) |
 | 📅 Phase 5: Advanced SOC + Pentesting Prep | [Phase 5 Documentation](docs/Phase5_Advanced_SOC.md) |
+| 📅 Phase 6: EDR Tools | [Phase 6 Documentation](docs/Phase6_EDR.md) | 
+| 📅 Phase 7: Vulnerability Management | [Phase 7 Documentation](docs/Phase7_VulnerabilityMgmt.md) |
+| 📅 Phase 8: Cloud Security Basics | [Phase 8 Documentation](docs/Phase8_CloudSecurity.md) | 
+| 📅 Phase 9: Threat Intelligence | [Phase 9 Documentation](docs/Phase9_ThreatIntel.md) |
 | 📂 SOC Analyst Projects – Lab Journey | [Jump to Projects](#-soc-analyst-projects--lab-journey) |
 | 🛠️ Tools & Resources | [Jump to Tools](#️-tools--resources) |
 | 📝 Notes | [Jump to Notes](#-notes) |
@@ -33,29 +37,40 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 
 ### 📝 Summary – Technical Skills
 
-**Core SOC Skills**
-- **SIEM & Monitoring:** Splunk Enterprise (log ingestion, dashboards, correlation searches, automated alerts).  
-- **Endpoint Visibility:** Sysmon (Windows event IDs, custom XML rules for process, network, and registry monitoring).  
-- **Threat Intelligence:** AlienVault OTX (IOC enrichment, watchlists, integration into Splunk queries).  
-- **Network Analysis:** Wireshark (packet capture, traffic inspection, detection of suspicious connections).  
-- **Incident Response:** Playbooks for phishing, brute force, malware; triage workflows and escalation paths.  
-- **Threat Hunting:** MITRE ATT&CK mapping, proactive Splunk queries, detection of adversary techniques.  
+| Phase | Focus Area | Tools / Methods | Key Outcomes |
+|-------|------------|-----------------|-----------------|
+| Phase 1 | Lab Setup & SIEM | Splunk Enterprise, Sysmon | Log ingestion, dashboards, correlation searches, automated alerts |
+| Phase 2 | Log Analysis & Detection | Windows Event Logs, Linux syslogs, firewall logs | Event visibility, detection of suspicious activity |
+| Phase 3 | Incident Response Playbooks | SOAR workflows, phishing/brute force/malware playbooks | Triage, escalation, containment |
+| Phase 4 | Threat Hunting & MITRE ATT&CK | Suricata IDS, custom rules, ATT&CK mapping | Proactive detection of adversary techniques |
+| Phase 5 | Advanced SOC + Pentesting Prep | Nmap, Nessus, exploitation labs | Vulnerability scanning, validation of detections |
+| Phase 6 | EDR Tools | Wazuh, OSSEC, Windows Defender logs *(placeholder: Cortex XDR / CrowdStrike)* | Endpoint visibility, host intrusion detection |
+| Phase 7 | Vulnerability Management | OpenVAS, Nmap service detection, CVE tracking *(placeholder: Nessus Essentials)* | System hardening, CVE awareness |
+| Phase 8 | Cloud Security Basics | Azure Entra ID, AWS IAM, GCP IAM *(placeholder: TryHackMe labs)* | Identity & access management across cloud platforms |
+| Phase 9 | Threat Intelligence | AlienVault OTX, Abuse.ch feeds, MITRE ATT&CK Navigator | IOC enrichment, adversary profiling, Splunk integration |
 
-**Supporting Skills**
-- **Log Analysis:** Windows Event Logs, Linux syslogs, firewall logs.  
-- **Detection Rules:** PowerShell abuse, privilege escalation, SSH brute force, suspicious Nmap scans.  
-- **Documentation:** Checklist-driven, reproducible `.md` files with recruiter-ready summaries.  
-- **Proof Management:** Organized screenshots in `proof/` folder linked to each phase.  
-- **Pentesting Prep (Intermediate):** Vulnerability scanning with Nmap/Nessus, exploitation labs for validation.  
+### 🛡️ Core SOC Skills
 
-**Value Statement**
-- I combine hands-on SOC lab experience with clear documentation and beginner-friendly manuals.  
-- This repo demonstrates my ability to **detect, analyze, and respond to threats** while making complex workflows accessible to recruiters and learners.  
-- It reflects both **technical depth** and **communication clarity**, proving readiness for SOC Analyst roles and a foundation to pivot into Pentesting.
+| Focus Area | Tools / Methods | Key Outcomes |
+|------------|-----------------|--------------|
+| SIEM & Monitoring | Splunk Enterprise | Log ingestion, dashboards, correlation searches, automated alerts |
+| Endpoint Visibility | Sysmon, Wazuh, OSSEC, Windows Defender | Windows Event IDs, custom XML rules, host intrusion detection |
+| Threat Intelligence | AlienVault OTX, Abuse.ch, MITRE ATT&CK Navigator | IOC enrichment, adversary profiling, ATT&CK mapping |
+| Network Analysis | Wireshark, Suricata IDS, Nmap | Packet capture, IDS rules, service detection |
+| Incident Response | SOAR workflows, playbooks | Phishing, brute force, malware triage, escalation paths |
+| Vulnerability Management | OpenVAS, Nessus Essentials | System hardening, CVE awareness, vulnerability assessment |
+| Cloud Security | Azure Entra ID, AWS IAM, GCP IAM | Identity & access management across cloud platforms |
+| Threat Hunting | Splunk queries, MITRE ATT&CK | Proactive detection of adversary techniques |
+
+
+- I combine hands‑on SOC lab experience with clear documentation and beginner‑friendly manuals.
+- This repo demonstrates my ability to detect, analyze, and respond to threats while making complex workflows accessible to recruiters and learners.
+- It reflects both technical depth and communication clarity, proving readiness for SOC Analyst roles and a foundation to pivot into Pentesting.
 
 ---
 
-## 🚀 Roadmap (75 Days)
+
+## 🚀 Roadmap 
 
 ### 📅 Phase 1: Lab Setup & SIEM (Days 1–15)
 - Build virtual lab with Windows, Kali, and Metasploitable VMs.
@@ -102,14 +117,53 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 - 📂 [Phase 5 Documentation](docs/Phase5_Advanced_SOC.md)
 
 ---
+### 📅 Phase 6: EDR Tools (Days 76-80)
+- Deploy Wazuh (open-source) for endpoint monitoring.
+- Configure OSSEC for host intrusion detection.
+- Collect and analyze Windows Defender logs.
+- *(Placeholder: Cortex XDR / CrowdStrike for enterprise context)*  
+- **Deliverable**: Detection reports with screenshots of EDR alerts and rule configurations.
+- 📂 [Phase 6 Documentation](docs/Phase6_EDR.md)
+---
+
+### 📅 Phase 7: Vulnerability Management (Days 80-85)
+- Perform OpenVAS scans for system vulnerabilities.
+- Use Nmap for service detection and enumeration.
+- Track CVEs using MITRE CVE database.
+- *(Placeholder: Nessus Essentials for extended scanning)*  
+- **Deliverable**: Vulnerability assessment reports with screenshots + CVE references.
+- 📂 [Phase 7 Documentation](docs/Phase7_VulnerabilityMgmt.md)
+---
+
+### 📅 Phase 8: Cloud Security Basics (Days 86-95)
+- Configure Azure Entra ID sandbox for IAM policies.
+- Explore AWS IAM (free tier) for role-based access.
+- Test GCP IAM (free tier) for identity management.
+- *(Placeholder: TryHackMe Premium labs for advanced scenarios)*  
+- **Deliverable**: IAM configuration screenshots + documentation of access policies.
+- 📂 [Phase 8 Documentation](docs/Phase8_CloudSecurity.md)
+---
+
+### 📅 Phase 9: Threat Intelligence (Days 96-100)
+- Integrate AlienVault OTX feeds into Splunk queries.
+- Use Abuse.ch feeds for malware and botnet tracking.
+- Map adversary techniques with MITRE ATT&CK Navigator.
+- Build IOC tables and adversary profiles.  
+- **Deliverable**: Threat intelligence report with IOC tables, ATT&CK mappings, and screenshots.
+- 📂 [Phase 9 Documentation](docs/Phase9_ThreatIntel.md)
+---
 
 ## 📂 SOC Analyst Projects – Lab Journey
 
 This repository documents my **hands‑on SOC Analyst journey** through 10 practical projects.  
 Each project includes:
-- **Technical setup & workflow** → showing how tools like Splunk, Sysmon, Zeek, IDS, and SOAR scripts are used.  
-- **Proof screenshots** → stored in dedicated folders for transparency.  
-- **Scenario write‑ups** → real‑life stories involving the *Commoner (employee)*, *Attacker*, *Tier‑1 Analyst*, and *Tier‑2 Analyst*, showing how incidents unfold in daily SOC operations.  
+
+| Component | Description | Example Evidence |
+|-----------|-------------|------------------|
+| 🛠️ Technical Setup & Workflow | Tools like Splunk, Sysmon, Zeek, IDS, and SOAR scripts configured in lab environments. | Config files, SIEM dashboards, IDS rules |
+| 📸 Proof Screenshots | Transparent evidence stored in dedicated `proof/` folders. | Screenshots of alerts, logs, dashboards |
+| 🎭 Scenario Write‑ups | Real‑life SOC stories involving the *Commoner (employee)*, *Attacker*, *Tier‑1 Analyst*, and *Tier‑2 Analyst*. | Markdown reports mapping incidents to MITRE ATT&CK |
+
 
 ---
 
@@ -156,10 +210,21 @@ This format helps beginners understand **SOC Analyst responsibilities** while sh
 | [Wireshark](https://www.wireshark.org/) | Leading open-source network protocol analyzer for packet capture and traffic inspection. | [Wireshark Manual](Wireshark_Manual.md) |
 | [AlienVault OTX](https://cybersecurity.att.com/open-threat-exchange) | Crowd-sourced threat intelligence platform providing Indicators of Compromise (IOCs). | [OTX Manual](OTX_Manual.md) |
 | [Incident Response](https://www.ibm.com/topics/incident-response) | IBM’s guide to incident response: structured processes for detecting, containing, and resolving cyberattacks. | [Incident Response Manual](INCIDENT-RESPOND-LABSETUP-MANUAL.md) |
-
+| [Wazuh](https://wazuh.com/) | Open-source EDR and SIEM platform for endpoint monitoring and threat detection. | [Wazuh Manual](docs/Wazuh_Manual.md) | 
+| [OSSEC](https://www.ossec.net/) | Host-based intrusion detection system for log analysis and file integrity monitoring. | [OSSEC Manual](docs/OSSEC_Manual.md) | 
+| [Windows Defender](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/) | Built-in endpoint protection for Windows, providing logs and malware detection. | [Windows Defender Manual](docs/WindowsDefender_Manual.md) | 
+| [OpenVAS](https://www.openvas.org/) | Open-source vulnerability scanner for system and network assessments. | [OpenVAS Manual](docs/OpenVAS_Manual.md) | 
+| [Nmap](https://nmap.org/) | Network mapper for service detection, port scanning, and vulnerability discovery. | [Nmap Manual](docs/Nmap_Manual.md) |
+| [Nessus Essentials](https://www.tenable.com/products/nessus/nessus-essentials) | Free vulnerability scanner for extended system assessments. | [Nessus Manual](docs/Nessus_Manual.md) | 
+| [Azure Entra ID](https://learn.microsoft.com/en-us/entra/) | Microsoft’s cloud identity and access management solution. | [Azure Manual](docs/Azure_Manual.md) | 
+| [AWS IAM](https://aws.amazon.com/iam/) | Identity and Access Management service for AWS cloud. | [AWS IAM Manual](docs/AWS_IAM_Manual.md) | 
+| [GCP IAM](https://cloud.google.com/iam) | Google Cloud’s identity and access management service. | [GCP IAM Manual](docs/GCP_IAM_Manual.md) | 
+| [MITRE ATT&CK Navigator](https://attack.mitre.org/resources/navigator/) | Framework for mapping adversary techniques and detection coverage. | [ATTACK Navigator Manual](docs/ATTACK_Navigator_Manual.md) | 
+| [Abuse.ch](https://abuse.ch/) | Threat intelligence feeds for malware, botnets, and phishing campaigns. | [Abuse.ch Manual](docs/Abusech_Manual.md) |
 --- 
 
 ## 📝 Notes
+
 - All labs are self‑built, no external training.
 - Documentation style: beginner‑friendly, checklist‑driven, reproducible.
 - This repo serves as both a **learning log** and a **portfolio** for recruiters.
@@ -169,7 +234,7 @@ I believe in building my own path: setting up labs, simulating attacks, detectin
 
 Every alert I triage, every log I analyze, and every playbook I write is a step closer to becoming a **protector‑hacker**—someone who defends systems today and prepares for offensive security challenges tomorrow.  
 
-**75 days of focus, persistence, and curiosity will transform me from a fresher into a SOC Analyst ready to pivot into Pentesting.**
+**100 days of focus, persistence, and curiosity will transform me from a fresher into a SOC Analyst ready to pivot into Pentesting.**
 
 ----
 
