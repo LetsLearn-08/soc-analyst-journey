@@ -66,16 +66,16 @@ nc -v 192.168.56.102 80
 
 1. **Connectivity Check**  
    - Verified VM communication between Kali and Ubuntu IDS.  
-   - ![Connection Test](project4/connection.png)  
-   - ![Ping Google](project4/ping-google.png)  
+   - ![Connection Test](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/connection.png?raw=true)  
+   - ![Ping Google](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/ping-google.png?raw=true)  
 
 ---
 
 2. **Tool Installation & Verification**  
    - Installed Nmap, Curl, and Netcat on Kali.  
    - Confirmed versions and readiness for attack simulation.  
-   - ![Nmap, Curl, Netcat Versions](project4/nmap-curl-nc-version.png)  
-   - ![Netcat Installation](project4/linux-netcat-install.png)  
+   - ![Nmap, Curl, Netcat Versions](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/nmap-curl-nc-version.png?raw=true)  
+   - ![Netcat Installation](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/linux-netcat-install.png?raw=true)  
 
 ---
 
@@ -83,9 +83,9 @@ nc -v 192.168.56.102 80
    - Installed Suricata on Ubuntu.  
    - Wrote custom detection rules.  
    - Started Suricata engine.  
-   - ![Suricata Installation](project4/ubuntu-suricata-install.png)  
-   - ![Suricata Rules](project4/suricata-rules.png)  
-   - ![Suricata Engine Started](project4/suricata-engine.png)  
+   - ![Suricata Installation](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/ubuntu-suricata-install.png?raw=true)  
+   - ![Suricata Rules](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/suricata-rules.png?raw=true)  
+   - ![Suricata Engine Started](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/suricata-engine.png?raw=true)  
 
 ---
 
@@ -94,15 +94,15 @@ nc -v 192.168.56.102 80
    - Nmap SYN scan (`nmap -sS`).  
    - HTTP suspicious request (`curl http://192.168.56.102/cmd.exe`).  
    - Netcat connection to port 80 (`nc -v`).  
-   - ![Attack Simulation](project4/nmap-curl-nc-attacks.png)  
+   - ![Attack Simulation](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/nmap-curl-nc-attacks.png?raw=true)  
 
 ---
 
 5. **Detection & Logging (Ubuntu IDS)**  
    - Suricata captured alerts in `fast.log`.  
    - ICMP ping, port scan, and HTTP suspicious request all detected.  
-   - ![Fast Log Alerts](project4/fast-log.png)  
-   - ![Fast Log Traffic](project4/fast-log-traffic.png)  
+   - ![Fast Log Alerts](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/fast-log.png?raw=true)  
+   - ![Fast Log Traffic](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/fast-log-traffic.png?raw=true)  
 
 ---
 
@@ -110,29 +110,28 @@ nc -v 192.168.56.102 80
    - Tier‑1 triaged Suricata alerts.  
    - Tier‑2 correlated multiple detections to attacker IP `192.168.56.104`.  
    - Tier‑3 validated rules and mapped activity to MITRE ATT&CK.  
-   - ![Suricata Rules File](project4/suricata-rules.png)  
-   - ![Fast Log Alerts](project4/fast-log.png)  
+   - ![Suricata Rules File](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/suricata-rules.png?raw=true)  
+   - ![Fast Log Alerts](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/fast-log.png?raw=true)  
 
 ---
 
 ## 🧑‍💻 Analyst Workflow
 
 ### Tier‑1 Analyst – Triage
-![Suricata Engine Started](project4/suricata-engine.png)  
+![Suricata Engine Started](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/suricata-engine.png?raw=true)  
 *Tier‑1 analyst sees Suricata engine running and begins monitoring `fast.log` for alerts. Initial detections of ICMP traffic confirm that the IDS is active and logging.*
 
 ---
 
 ### Tier‑2 Analyst – Investigation
-![Suricata Fast Log Output](project4/fast-log.png)  
+![Suricata Fast Log Output](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/fast-log.png?raw=true)  
 *Tier‑2 analyst correlates alerts: ICMP ping, port scan attempts, and suspicious HTTP requests. Evidence shows attacker IP `192.168.56.104` probing the IDS with multiple techniques.*
 
 ---
 
 ### Tier‑3 Analyst – Validation & Response
-![Suricata Rules File](project4/suricata-rules.png)  
+![Suricata Rules File](https://github.com/LetsLearn-08/soc-analyst-journey/blob/d3addb38ab368d66fb45b0dff2060fd1d674f264/project4/suricata-rules.png?raw=true)  
 *Tier‑3 analyst validates that custom rules triggered correctly. Activity is mapped to MITRE ATT&CK techniques (T1016, T1046, T1190). Recommended response: block attacker IP, tune detection rules, and document findings.*
-
 
 ---
 
