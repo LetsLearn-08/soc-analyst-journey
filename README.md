@@ -43,22 +43,22 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 | Phase 2 | Log Analysis & Detection | Windows Event Logs, Linux syslogs, firewall logs | Event visibility, detection of suspicious activity |
 | Phase 3 | Incident Response Playbooks | SOAR workflows, phishing/brute force/malware playbooks | Triage, escalation, containment |
 | Phase 4 | Threat Hunting & MITRE ATT&CK | Suricata IDS, custom rules, ATT&CK mapping | Proactive detection of adversary techniques |
-| Phase 5 | Advanced SOC + Pentesting Prep | Nmap, Nessus, exploitation labs | Vulnerability scanning, validation of detections |
-| Phase 6 | EDR Tools | Wazuh, OSSEC, Windows Defender logs *(placeholder: Cortex XDR / CrowdStrike)* | Endpoint visibility, host intrusion detection |
+| Phase 5 | Advanced SOC + Pentesting Prep | Nmap, exploitation labs | Vulnerability scanning, validation of detections |
+| Phase 6 | EDR Tools | Windows Defender logs *(placeholder:  CrowdStrike)* | Endpoint visibility, host intrusion detection |
 | Phase 7 | Vulnerability Management | OpenVAS, Nmap service detection, CVE tracking *(placeholder: Nessus Essentials)* | System hardening, CVE awareness |
 | Phase 8 | Cloud Security Basics | Azure Entra ID, AWS IAM, GCP IAM *(placeholder: TryHackMe labs)* | Identity & access management across cloud platforms |
-| Phase 9 | Threat Intelligence | AlienVault OTX, Abuse.ch feeds, MITRE ATT&CK Navigator | IOC enrichment, adversary profiling, Splunk integration |
+| Phase 9 | Threat Intelligence | AlienVault OTX, MITRE ATT&CK Navigator | IOC enrichment, adversary profiling, Splunk integration |
 
 ### 🛡️ Core SOC Skills
 
 | Focus Area | Tools / Methods | Key Outcomes |
 |------------|-----------------|--------------|
 | SIEM & Monitoring | Splunk Enterprise | Log ingestion, dashboards, correlation searches, automated alerts |
-| Endpoint Visibility | Sysmon, Wazuh, OSSEC, Windows Defender | Windows Event IDs, custom XML rules, host intrusion detection |
-| Threat Intelligence | AlienVault OTX, Abuse.ch, MITRE ATT&CK Navigator | IOC enrichment, adversary profiling, ATT&CK mapping |
+| Endpoint Visibility | Sysmon,  Windows Defender | Windows Event IDs, custom XML rules, host intrusion detection |
+| Threat Intelligence | AlienVault OTX,, MITRE ATT&CK Navigator | IOC enrichment, adversary profiling, ATT&CK mapping |
 | Network Analysis | Wireshark, Suricata IDS, Nmap | Packet capture, IDS rules, service detection |
 | Incident Response | SOAR workflows, playbooks | Phishing, brute force, malware triage, escalation paths |
-| Vulnerability Management | OpenVAS, Nessus Essentials | System hardening, CVE awareness, vulnerability assessment |
+| Vulnerability Management | OpenVAS | System hardening, CVE awareness, vulnerability assessment |
 | Cloud Security | Azure Entra ID, AWS IAM, GCP IAM | Identity & access management across cloud platforms |
 | Threat Hunting | Splunk queries, MITRE ATT&CK | Proactive detection of adversary techniques |
 
@@ -118,8 +118,6 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 
 ---
 ### 📅 Phase 6: EDR Tools (Days 76-80)
-- Deploy Wazuh (open-source) for endpoint monitoring.
-- Configure OSSEC for host intrusion detection.
 - Collect and analyze Windows Defender logs.
 - *(Placeholder: Cortex XDR / CrowdStrike for enterprise context)*  
 - **Deliverable**: Detection reports with screenshots of EDR alerts and rule configurations.
@@ -235,12 +233,6 @@ Every alert I triage, every log I analyze, and every playbook I write is a step 
 
 ----
 
-## 🔮 Future Work
-- Launch separate repo for Azure Sentinel labs.
-- Expand IOC enrichment with more threat intel feeds.
-- Add beginner‑friendly manuals for additional free tools (e.g., Nessus, Elastic SIEM).
-
----
 
 ## 🌐 Portfolio Links
 - [GitHub Profile](https://github.com/LetsLearn-08?tab=repositories)  
