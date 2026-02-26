@@ -210,12 +210,9 @@ This format helps beginners understand **SOC Analyst responsibilities** while sh
 | [Wireshark](https://www.wireshark.org/) | Leading open-source network protocol analyzer for packet capture and traffic inspection. | [Wireshark Manual](Wireshark_Manual.md) |
 | [AlienVault OTX](https://cybersecurity.att.com/open-threat-exchange) | Crowd-sourced threat intelligence platform providing Indicators of Compromise (IOCs). | [OTX Manual](OTX_Manual.md) |
 | [Incident Response](https://www.ibm.com/topics/incident-response) | IBM’s guide to incident response: structured processes for detecting, containing, and resolving cyberattacks. | [Incident Response Manual](INCIDENT-RESPOND-LABSETUP-MANUAL.md) |
-| [Wazuh](https://wazuh.com/) | Open-source EDR and SIEM platform for endpoint monitoring and threat detection. | [Wazuh Manual](docs/Wazuh_Manual.md) | 
-| [OSSEC](https://www.ossec.net/) | Host-based intrusion detection system for log analysis and file integrity monitoring. | [OSSEC Manual](docs/OSSEC_Manual.md) | 
 | [Windows Defender](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/) | Built-in endpoint protection for Windows, providing logs and malware detection. | [Windows Defender Manual](docs/WindowsDefender_Manual.md) | 
 | [OpenVAS](https://www.openvas.org/) | Open-source vulnerability scanner for system and network assessments. | [OpenVAS Manual](docs/OpenVAS_Manual.md) | 
 | [Nmap](https://nmap.org/) | Network mapper for service detection, port scanning, and vulnerability discovery. | [Nmap Manual](docs/Nmap_Manual.md) |
-| [Nessus Essentials](https://www.tenable.com/products/nessus/nessus-essentials) | Free vulnerability scanner for extended system assessments. | [Nessus Manual](docs/Nessus_Manual.md) | 
 | [Azure Entra ID](https://learn.microsoft.com/en-us/entra/) | Microsoft’s cloud identity and access management solution. | [Azure Manual](docs/Azure_Manual.md) | 
 | [AWS IAM](https://aws.amazon.com/iam/) | Identity and Access Management service for AWS cloud. | [AWS IAM Manual](docs/AWS_IAM_Manual.md) | 
 | [GCP IAM](https://cloud.google.com/iam) | Google Cloud’s identity and access management service. | [GCP IAM Manual](docs/GCP_IAM_Manual.md) | 
