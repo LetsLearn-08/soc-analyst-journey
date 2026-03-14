@@ -71,74 +71,44 @@ index=main (source=aws_console OR source=azure_signin)
 | stats dc(Country) as country_count values(Country) as countries by userIdentity.userName, userPrincipalName
 | where country_count > 1
 ```
+## 📊 Proof of Work – Screenshots
 
-## 📊 Proof of Work
+All screenshots for Phase 8 are stored in the [`proof8`](./proof8) folder.  
+This folder contains complete visual evidence of Splunk setup, event generation, log ingestion, dashboard creation, and alert configuration.
 
-This section contains the screenshots captured during the **Cloud Security Monitoring lab project**. Each image demonstrates a specific step in configuring, ingesting, and monitoring cloud login events.
-
----
-
-### 1. Splunk Setup
-- **HEC Port Configuration (`HEC-port.png`)**  
-  Shows how the HTTP Event Collector (HEC) was enabled in Splunk to receive cloud events.  
-- **Token Creation (`Token-creation.png`)**  
-  Demonstrates the creation of a Splunk HEC token used for authentication when sending logs.
+👉 [View All Proof Screenshots](./proof8)
 
 ---
 
-### 2. Event Generation
-- **AWS Batch JSON (`aws-batch-json.png`)**  
-  Example of simulated AWS failed login events in JSON format.  
-- **Azure Batch JSON (`azure-batch-json.png`)**  
-  Example of simulated Azure failed login events in JSON format.  
-- **Test Commands (`test-commands.png`)**  
-  Proof of `curl` commands used to send events into Splunk.
+### Highlighted Screenshots
+
+#### Splunk Setup
+![HEC Port Configuration](proof8/HEC-port.png)  
+*Shows how the HTTP Event Collector (HEC) was enabled in Splunk.*
+
+![Token Creation](proof8/Token-creation.png)  
+*Demonstrates creation of a Splunk HEC token for authentication.*
 
 ---
 
-### 3. Log Ingestion
-- **AWS Events JSON (`aws-events-json.png`)**  
-  Screenshot of AWS login events ingested into Splunk.  
-- **Azure Events JSON (`azure-events-json.png`)**  
-  Screenshot of Azure login events ingested into Splunk.  
-- **Splunk Logs (`splunk-logs.png`)**  
-  Shows raw logs inside Splunk confirming successful ingestion.
+#### Dashboard Creation
+![AWS Failed Logins Dashboard](proof8/AWS-Failed-Logins-dashboard.png)  
+*Panel showing failed AWS ConsoleLogin attempts.*
+
+![Azure Failed Logins Dashboard](proof8/Azure-Failed-Login-dashboard.png)  
+*Panel showing failed Azure SignInLogs events.*
+
+![Failed Logins Over Time](proof8/Failed-Logins-Over-Time.png)  
+*Timeline visualization of login attempts.*
 
 ---
 
-### 4. Dashboard Creation
-- **Dashboard Creation (`dashboard-creation.png`)**  
-  Proof of building a custom Splunk dashboard.  
-- **AWS Failed Logins Dashboard (`AWS-Failed-Logins-dashboard.png`)**  
-  Visual panel showing failed AWS ConsoleLogin attempts.  
-- **Azure Failed Logins Dashboard (`Azure-Failed-Login-dashboard.png`)**  
-  Visual panel showing failed Azure SignInLogs events.  
-- **Combined Dashboard (`aws-console-or-azure-signin-splunk.png`)**  
-  Unified view of AWS + Azure failed logins.  
-- **Failed Logins Over Time (`Failed-Logins-Over-Time.png`)**  
-  Timeline visualization of login attempts.
+#### Alert Configuration
+![Cloud Failed Login Alert Dashboard](proof8/cloud-failed-login-alert-dashboard.png)  
+*Dashboard panel showing alert conditions.*
 
----
-
-### 5. Alert Configuration
-- **Cloud Failed Login Alert Dashboard (`cloud-failed-login-alert-dashboard.png`)**  
-  Dashboard panel showing alert conditions.  
-- **Splunk Alert (`splunk-alert.png`)**  
-  Proof of alert firing when >5 failed logins are detected.  
-- **Splunk Alert Generation (`aplunk-alert-generation.png`)**  
-  Configuration screen for alert setup.
-
----
-
-### 6. Validation
-- **Console Login Test (`console-login-test.png`)**  
-  Test run showing simulated login attempts.  
-- **Splunk Running (`splunk-running.png`)**  
-  Confirmation that Splunk service was active during testing.  
-- **Splunk Console Login Events (`splunk=console-login-events.png`)**  
-  Search results showing ingested console login events.  
-- **Splunk Signin Logs (`splunk-signin-logs.png`)**  
-  Search results showing ingested Azure sign‑in logs.
+![Splunk Alert](proof8/splunk-alert.png)  
+*Proof of alert firing when more than five failed logins are detected.*
 
 ---
 
