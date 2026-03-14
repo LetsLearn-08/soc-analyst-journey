@@ -22,7 +22,7 @@ It explains the fundamentals of cloud computing, introduces key security concept
 ---
 
 ## 🛠️ Lab Project
-👉 **Hands‑On Practice:** [Cloud Security Monitoring – Lab Project](https://github.com/LetsLearn-08/soc-analyst-journey/tree/main/Project-8-Cloud-Security-Monitoring)
+👉 **Hands‑On Practice:** [Cloud Security Monitoring – Lab Project](https://github.com/LetsLearn-08/soc-analyst-journey/Labwork.md)
 
 This lab simulates failed login events from AWS and Azure, ingests them into Splunk, builds dashboards, and configures alerts to detect suspicious behavior.
 
