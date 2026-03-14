@@ -134,11 +134,21 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 ---
 
 ### 📅 Phase 8: Cloud Security Basics (Days 86-95)
-- Configure Azure Entra ID sandbox for IAM policies.
-- Explore AWS IAM (free tier) for role-based access.
-- Test GCP IAM (free tier) for identity management.
-- *(Placeholder: TryHackMe Premium labs for advanced scenarios)*  
-- **Deliverable**: IAM configuration screenshots + documentation of access policies.
+
+**Focus:** Identity and Access Management (IAM) across major cloud providers.
+- **Azure Entra ID (Days 86–88):**  
+  Set up a sandbox tenant, create users/groups, and configure IAM policies.  
+  *Deliverable:* Screenshots of user creation + policy assignments.
+- **AWS IAM (Days 89–91):**  
+  Use AWS Free Tier to create roles/policies, assign permissions, and test role‑based access.  
+  *Deliverable:* Screenshots of IAM roles + access tests.
+- **GCP IAM (Days 92–93):**  
+  Configure IAM roles in GCP Free Tier, assign permissions, and restrict resource access.  
+  *Deliverable:* Screenshots of IAM role creation + access restrictions.
+- **Advanced Practice (Days 94–95):**  
+  *(Optional)* TryHackMe Premium labs for advanced IAM scenarios. Document differences between Azure, AWS, and GCP IAM.  
+  *Deliverable:* Notes comparing IAM implementations.
+- **Lab Reference:** [Cloud Security Monitoring – Lab Project](
 - 📂 [Phase 8 Documentation](docs/Phase8_CloudSecurity.md)
 ---
 
