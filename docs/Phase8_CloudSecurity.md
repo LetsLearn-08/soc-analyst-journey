@@ -180,3 +180,8 @@ By completing this phase, learners will be able to:
 
 ## 🏁 Conclusion
 This phase delivers a **step‑by‑step introduction to cloud security monitoring**. Learners can replicate the lab project, gain confidence in configuring IAM and monitoring login events, and produce recruiter‑ready documentation. The linked lab project serves as practical proof of learning, bridging theoretical knowledge with hands‑on SOC skills.
+
+
+## 🤝 Connect With Me
+- 🌐 GitHub: [LetsLearn-08](https://github.com/LetsLearn-08?tab=repositories)  
+- 💼 LinkedIn: [Tanuja Reddy](https://www.linkedin.com/in/tanuja-reddy-03aa7b38a)
