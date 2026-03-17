@@ -66,6 +66,7 @@ This setup allows us to clearly distinguish between normal IoT activity and mali
 ![Malicious Sensor Deployed](project8/malicious-sensor-deployed.png)  
 *Deployment of Sensor 99, simulating malicious activity with abnormal values.*
 
+
 ---
 
 ### 2. Splunk Universal Forwarder
@@ -78,6 +79,7 @@ This ensures that every new line appended to the CSV file is forwarded to the in
 
 ![Inputs.conf Configuration](project8/IoT-project-inputs-conf.png)  
 *Configuration of Splunk Universal Forwarder to monitor IoT logs.*
+
 
 ---
 
