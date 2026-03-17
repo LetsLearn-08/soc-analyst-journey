@@ -14,7 +14,7 @@
 7. [Alerts](#-alerts)
 8. [Outcomes](#-outcomes)
 9. [Academic Context](#-academic-context)
-10.[Connect](#-connect)
+10. [Connect](#-connect)
 
 ---
 
