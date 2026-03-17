@@ -67,6 +67,7 @@ This setup allows us to clearly distinguish between normal IoT activity and mali
 *Deployment of Sensor 99, simulating malicious activity with abnormal values.*
 
 
+
 ---
 
 ### 2. Splunk Universal Forwarder
@@ -79,6 +80,7 @@ This ensures that every new line appended to the CSV file is forwarded to the in
 
 ![Inputs.conf Configuration](project8/IoT-project-inputs-conf.png)  
 *Configuration of Splunk Universal Forwarder to monitor IoT logs.*
+
 
 
 ---
@@ -111,6 +113,7 @@ The following screenshots demonstrate the end‑to‑end workflow:
 
 ![Node.js Installation](project8/Node-js-installation.png)  
 *Installation process of Node.js to enable Node‑RED runtime.*
+
 
 ---
 
