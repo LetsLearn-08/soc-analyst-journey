@@ -189,7 +189,7 @@ Each row links to the detailed write‑up for that project.
 | 5 | 🧩 Threat Intelligence Integration | Splunk, MISP | [Project 5](projects/project5_threatintel.md) |
 | 6 | 🖥️ Endpoint Detection & Response (EDR) | Wazuh, Windows Defender, Splunk | [Project 6](projects/project6_edr.md) |
 | 7 | ☁️ Cloud Security Monitoring – Lateral Movement | AWS CloudTrail, Azure Sentinel | [Project 7](projects/project7_cloud.md) |
-| 8 | 📎 Malware Analysis – Payload Delivery | Cuckoo Sandbox, Sysmon | [Project 8](projects/project8_malware.md) |
+| 8 | 📡 IoT Security - Log Integration | Node‑RED, Sysmon, Splunk Forwarder | [Project 8](projects/project8_iot.md) |
 | 9 | 🚨 Incident Response Simulation – Containment | Sysmon, Zeek, Splunk | [Project 9](projects/project9_incident_response.md) |
 | 10 | 🎯 Honeypot Deployment & Deception | Cowrie Honeypot | [Project 10](projects/project10_honeypot.md) |
 
