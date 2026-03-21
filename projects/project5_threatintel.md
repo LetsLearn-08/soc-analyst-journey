@@ -19,6 +19,7 @@ She created **Event #1**, populated it with the domain, URL, IP address (`203.0.
 This way, the team transformed raw detection into **structured intelligence** — ready to be correlated, automated, and acted upon.
 ---
 
+
 ## 🛠️ Environment Setup
 - **Platform**: Ubuntu Server (SIEM VM)  
 - **Tools Installed**: MISP, MariaDB, Apache  
@@ -31,6 +32,9 @@ This way, the team transformed raw detection into **structured intelligence** �
 
 ![User Linkage](projects/Project5/user_link.png)  
 *Admin user linked to organisation*
+
+![Redis Server Installation](projects/Project5/redis-server-installation.png)  
+*Redis server setup for background workers*
 
 ---
 
@@ -48,6 +52,7 @@ Created **Event #1** with the following metadata:
 
 ![Event Overview](projects/Project5/event_overview.png)  
 *Event summary page*
+
 
 
 ---
