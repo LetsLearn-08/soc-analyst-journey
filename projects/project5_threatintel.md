@@ -26,11 +26,11 @@ This way, the team transformed raw detection into **structured intelligence** �
 - **Organisation**: `SOC_Project_Demo`  
 
 ### Screenshots
-![Organisation Setup](Project5/org_setup.png)  
-*Organisation renamed and configured*
+![MISP Interface](Project5/misp-interface.png)  
+*First login to the MISP web interface*
 
-![User Linkage](Project5/user_link.png)  
-*Admin user linked to organisation*
+![Ownership Fix](Project5/misp-ownership.png)  
+*Adjusted file ownership for MISP directories*
 
 ---
 
@@ -43,12 +43,14 @@ Created **Event #1** with the following metadata:
 - **Event Info**: SOC Demo Event  
 
 ### Screenshots
-![Event Creation](Project5/event_creation.png)  
-*Event metadata filled*
+![Threat Intel Demo Event](Project5/threat-intel-demo-event.png)  
+*Demo event created with attributes*
 
-![Event Overview](Project5/event_overview.png)  
-*Event summary page*
+![MISP Attributes](Project5/misp-attributes.png)  
+*Indicators of compromise (IOCs) added to the event*
 
+![MISP Tables](Project5/misp-tables.png)  
+*Database tables populated after event creation*
 
 
 ---
@@ -64,69 +66,45 @@ Indicators added to Event #1:
 | URL    | `http://malicious-download.com/payload.exe` | Malware delivery link            |
 | IP     | `203.0.113.45`                              | Command & Control server         |
 
-Screenshots in `project5/`:  
-- `attributes_added.png` → IOC entry form  
-- `attributes_list.png` → Attribute list view  
+
+## 📑 Attribute Documentation
+### Screenshots
+![MISP Attributes](Project5/misp-attributes.png)  
+*IOC entry form showing domains, IPs, and hashes*
+
+![Threat Intel Demo Event](Project5/threat-intel-demo-event.png)  
+*Event view showing all IOCs added to the demo event*
 
 ---
+# 📑 Proof of Artifacts
 
-## 📷 Proof of Artifacts
+## ⚙️ MISP Installation & Configuration
+### Screenshots
+![Clone GitHub MISP](Project5/clone-github-misp.png)  
+*MISP cloned from GitHub repository*
 
-Every stage of Project 5 has been documented with screenshots to ensure transparency, reproducibility, and examiner‑ready evidence.  
-Below is a descriptive walkthrough of the key artifacts stored in the `projects/Project5/` folder (33 screenshots in total). Each item includes a direct inline image:
+![MISP Core Dependencies](Project5/misp-core-dependencies.png)  
+*Installed core dependencies for MISP*
 
-### 🔧 Environment Setup
-![PHP Installation](Project5/php-installation.png)  
-*Proof of PHP installation required for MISP*
+![MISP Configuration](Project5/misp-conf.png)  
+*Configuration file updated for MISP*
 
-![Composer Installation](Project5/composer-installation.png)  
-*Composer installed to manage dependencies*
-
-![Bootstrap PHP Config](Project5/bootstrap-php-config.png)  
-*PHP configuration verified for MISP compatibility*
-
-![Redis Server Installation](Project5/redis-server-installation.png)  
-*Redis server setup for background workers*
-
----
-
-### 🛠️ MISP Installation & Configuration
 ![MISP Interface](Project5/misp-interface.png)  
 *First login to the MISP web interface*
 
-![Organisation Setup](Project5/org_setup.png)  
-*Organisation renamed and configured for SOC demo*
-
-![User Linkage](Project5/user_link.png)  
-*Admin user linked to the organisation*
-
-![Add Event](Project5/misp-add-event.png)  
-*Event creation form filled with metadata*
 
 ---
 
-### 📂 Event Documentation
-![Event Creation](Project5/event_creation.png)  
-*Event metadata entered (date, distribution, threat level)*
+## 🔗 Worker & API Integration
+### Screenshots
+![Worker Starting](Project5/worker-starting.png)  
+*Background worker initiated for scheduled tasks*
 
-![Event Overview](Project5/event_overview.png)  
-*Event summary page showing SOC Demo Event*
+![Redis Server Installation](Project5/redis-server-installation.png)  
+*Redis server installed to support background jobs*
 
-![Attributes Added](Project5/attributes_added.png)  
-*Indicators of compromise (IOCs) added to the event*
-
-![Attributes List](Project5/attributes_list.png)  
-*List view of all IOCs (domain, IP, hashes, URL)*
-
----
-
-### 🔗 API Integration
-![API Event View](Project5/api_event_view.png)  
-*Event retrieved via REST API call*
-
-![API Attributes](Project5/api_attributes.png)  
-*JSON output showing IOCs accessible programmatically*
-y*
+![MISP Logs](Project5/misp-logs.png)  
+*Log output confirming successful worker execution*
 
 ### 🧩 Supporting Configuration & Troubleshooting
 Additional screenshots (terminal commands, configuration edits, service checks, CakePHP setup, worker status, dependency fixes) are included to demonstrate the **struggle and persistence** behind the clean final output.
