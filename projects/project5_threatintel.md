@@ -19,7 +19,6 @@ She created **Event #1**, populated it with the domain, URL, IP address (`203.0.
 This way, the team transformed raw detection into **structured intelligence** — ready to be correlated, automated, and acted upon.
 ---
 
-
 ## 🛠️ Environment Setup
 - **Platform**: Ubuntu Server (SIEM VM)  
 - **Tools Installed**: MISP, MariaDB, Apache  
@@ -27,14 +26,11 @@ This way, the team transformed raw detection into **structured intelligence** �
 - **Organisation**: `SOC_Project_Demo`  
 
 ### Screenshots
-![Organisation Setup](projects/Project5/org_setup.png)  
+![Organisation Setup](Project5/org_setup.png)  
 *Organisation renamed and configured*
 
-![User Linkage](projects/Project5/user_link.png)  
+![User Linkage](Project5/user_link.png)  
 *Admin user linked to organisation*
-
-![Redis Server Installation](projects/Project5/redis-server-installation.png)  
-*Redis server setup for background workers*
 
 ---
 
@@ -47,10 +43,10 @@ Created **Event #1** with the following metadata:
 - **Event Info**: SOC Demo Event  
 
 ### Screenshots
-![Event Creation](projects/Project5/event_creation.png)  
+![Event Creation](Project5/event_creation.png)  
 *Event metadata filled*
 
-![Event Overview](projects/Project5/event_overview.png)  
+![Event Overview](Project5/event_overview.png)  
 *Event summary page*
 
 
@@ -80,56 +76,57 @@ Every stage of Project 5 has been documented with screenshots to ensure transpar
 Below is a descriptive walkthrough of the key artifacts stored in the `projects/Project5/` folder (33 screenshots in total). Each item includes a direct inline image:
 
 ### 🔧 Environment Setup
-![PHP Installation](projects/Project5/php-installation.png)  
+![PHP Installation](Project5/php-installation.png)  
 *Proof of PHP installation required for MISP*
 
-![Composer Installation](projects/Project5/composer-installation.png)  
+![Composer Installation](Project5/composer-installation.png)  
 *Composer installed to manage dependencies*
 
-![Bootstrap PHP Config](projects/Project5/bootstrap-php-config.png)  
+![Bootstrap PHP Config](Project5/bootstrap-php-config.png)  
 *PHP configuration verified for MISP compatibility*
 
-![Redis Server Installation](projects/Project5/redis-server-installation.png)  
+![Redis Server Installation](Project5/redis-server-installation.png)  
 *Redis server setup for background workers*
 
 ---
 
 ### 🛠️ MISP Installation & Configuration
-![MISP Interface](projects/Project5/misp-interface.png)  
+![MISP Interface](Project5/misp-interface.png)  
 *First login to the MISP web interface*
 
-![Organisation Setup](projects/Project5/org_setup.png)  
+![Organisation Setup](Project5/org_setup.png)  
 *Organisation renamed and configured for SOC demo*
 
-![User Linkage](projects/Project5/user_link.png)  
+![User Linkage](Project5/user_link.png)  
 *Admin user linked to the organisation*
 
-![Add Event](projects/Project5/misp-add-event.png)  
+![Add Event](Project5/misp-add-event.png)  
 *Event creation form filled with metadata*
 
 ---
 
 ### 📂 Event Documentation
-![Event Creation](projects/Project5/event_creation.png)  
+![Event Creation](Project5/event_creation.png)  
 *Event metadata entered (date, distribution, threat level)*
 
-![Event Overview](projects/Project5/event_overview.png)  
+![Event Overview](Project5/event_overview.png)  
 *Event summary page showing SOC Demo Event*
 
-![Attributes Added](projects/Project5/attributes_added.png)  
+![Attributes Added](Project5/attributes_added.png)  
 *Indicators of compromise (IOCs) added to the event*
 
-![Attributes List](projects/Project5/attributes_list.png)  
+![Attributes List](Project5/attributes_list.png)  
 *List view of all IOCs (domain, IP, hashes, URL)*
 
 ---
 
 ### 🔗 API Integration
-![API Event View](projects/Project5/api_event_view.png)  
+![API Event View](Project5/api_event_view.png)  
 *Event retrieved via REST API call*
 
-![API Attributes](projects/Project5/api_attributes.png)  
+![API Attributes](Project5/api_attributes.png)  
 *JSON output showing IOCs accessible programmatically*
+y*
 
 ### 🧩 Supporting Configuration & Troubleshooting
 Additional screenshots (terminal commands, configuration edits, service checks, CakePHP setup, worker status, dependency fixes) are included to demonstrate the **struggle and persistence** behind the clean final output.
