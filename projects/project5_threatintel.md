@@ -17,7 +17,6 @@ To ensure the organisation could defend against this threat in the future, **Siv
 She created **Event #1**, populated it with the domain, URL, IP address (`203.0.113.45`), and file hashes, and shared it across the SOC.  
 
 This way, the team transformed raw detection into **structured intelligence** — ready to be correlated, automated, and acted upon.
-
 ---
 
 ## 🛠️ Environment Setup
@@ -26,9 +25,12 @@ This way, the team transformed raw detection into **structured intelligence** �
 - **User**: `admin@admin.test`  
 - **Organisation**: `SOC_Project_Demo`  
 
-Screenshots in `project5/`:  
-- `org_setup.png` → Organisation renamed and configured  
-- `user_link.png` → Admin user linked to organisation  
+### Screenshots
+![Organisation Setup](project5/org_setup.png)  
+*Organisation renamed and configured*
+
+![User Linkage](project5/user_link.png)  
+*Admin user linked to organisation*
 
 ---
 
@@ -40,9 +42,12 @@ Created **Event #1** with the following metadata:
 - **Analysis**: Initial  
 - **Event Info**: SOC Demo Event  
 
-Screenshots in `project5/`:  
-- `event_creation.png` → Event metadata filled  
-- `event_overview.png` → Event summary page  
+### Screenshots
+![Event Creation](project5/event_creation.png)  
+*Event metadata filled*
+
+![Event Overview](project5/event_overview.png)  
+*Event summary page*
 
 ---
 
@@ -63,33 +68,36 @@ Screenshots in `project5/`:
 
 ---
 
-## 📷 Proof Artifacts
+## 📷 Proof of Artifacts
 
-Here are the key screenshots documenting each step:
+Every stage of Project 5 has been documented with screenshots to ensure transparency, reproducibility, and examiner‑ready evidence.  
+Below is a descriptive walkthrough of the key artifacts stored in the `project5/` folder (31 screenshots in total). Each item includes a direct link to the image:
 
-- Organisation setup  
-  ![Organisation Setup](project5/org_setup.png)
+### 🔧 Environment Setup
+- [php-installation.png](project5/php-installation.png) → Proof of PHP installation required for MISP.  
+- [composer-installation.png](project5/composer-installation.png) → Composer installed to manage dependencies.  
+- [bootstrap-php-config.png](project5/bootstrap-php-config.png) → PHP configuration verified for MISP compatibility.  
+- [redis-server-installation.png](project5/redis-server-installation.png) → Redis server setup for background workers.  
 
-- User linkage  
-  ![User Linkage](project5/user_link.png)
+### 🛠️ MISP Installation & Configuration
+- [misp-interface.png](project5/misp-interface.png) → First login to the MISP web interface.  
+- [org_setup.png](project5/org_setup.png) → Organisation renamed and configured for SOC demo.  
+- [user_link.png](project5/user_link.png) → Admin user linked to the organisation.  
+- [misp-add-event.png](project5/misp-add-event.png) → Event creation form filled with metadata.  
 
-- Event creation form  
-  ![Event Creation](project5/event_creation.png)
+### 📂 Event Documentation
+- [event_creation.png](project5/event_creation.png) → Event metadata entered (date, distribution, threat level).  
+- [event_overview.png](project5/event_overview.png) → Event summary page showing SOC Demo Event.  
+- [attributes_added.png](project5/attributes_added.png) → Indicators of compromise (IOCs) added to the event.  
+- [attributes_list.png](project5/attributes_list.png) → List view of all IOCs (domain, IP, hashes, URL).  
 
-- Event summary page  
-  ![Event Overview](project5/event_overview.png)
+### 🔗 API Integration
+- [api_event_view.png](project5/api_event_view.png) → Event retrieved via REST API call.  
+- [api_attributes.png](project5/api_attributes.png) → JSON output showing IOCs accessible programmatically.  
 
-- Adding indicators  
-  ![Attributes Added](project5/attributes_added.png)
+### 🧩 Supporting Configuration & Troubleshooting
+Additional screenshots (terminal commands, configuration edits, service checks, CakePHP setup, worker status, dependency fixes) are included to demonstrate the **struggle and persistence** behind the clean final output.
 
-- IOC list view  
-  ![Attributes List](project5/attributes_list.png)
-
-- API integration proof  
-  ![API Event View](project5/api_event_view.png)
-
-- Attribute JSON proof  
-  ![API Attributes](project5/api_attributes.png)
 
 ---
 
