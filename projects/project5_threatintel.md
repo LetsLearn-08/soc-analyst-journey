@@ -26,10 +26,10 @@ This way, the team transformed raw detection into **structured intelligence** �
 - **Organisation**: `SOC_Project_Demo`  
 
 ### Screenshots
-![Organisation Setup](project5/org_setup.png)  
+![Organisation Setup](projects/Project5/org_setup.png)  
 *Organisation renamed and configured*
 
-![User Linkage](project5/user_link.png)  
+![User Linkage](projects/Project5/user_link.png)  
 *Admin user linked to organisation*
 
 ---
@@ -43,11 +43,12 @@ Created **Event #1** with the following metadata:
 - **Event Info**: SOC Demo Event  
 
 ### Screenshots
-![Event Creation](project5/event_creation.png)  
+![Event Creation](projects/Project5/event_creation.png)  
 *Event metadata filled*
 
-![Event Overview](project5/event_overview.png)  
+![Event Overview](projects/Project5/event_overview.png)  
 *Event summary page*
+
 
 ---
 
@@ -71,29 +72,59 @@ Screenshots in `project5/`:
 ## 📷 Proof of Artifacts
 
 Every stage of Project 5 has been documented with screenshots to ensure transparency, reproducibility, and examiner‑ready evidence.  
-Below is a descriptive walkthrough of the key artifacts stored in the `project5/` folder (31 screenshots in total). Each item includes a direct link to the image:
+Below is a descriptive walkthrough of the key artifacts stored in the `projects/Project5/` folder (33 screenshots in total). Each item includes a direct inline image:
 
 ### 🔧 Environment Setup
-- [php-installation.png](project5/php-installation.png) → Proof of PHP installation required for MISP.  
-- [composer-installation.png](project5/composer-installation.png) → Composer installed to manage dependencies.  
-- [bootstrap-php-config.png](project5/bootstrap-php-config.png) → PHP configuration verified for MISP compatibility.  
-- [redis-server-installation.png](project5/redis-server-installation.png) → Redis server setup for background workers.  
+![PHP Installation](projects/Project5/php-installation.png)  
+*Proof of PHP installation required for MISP*
+
+![Composer Installation](projects/Project5/composer-installation.png)  
+*Composer installed to manage dependencies*
+
+![Bootstrap PHP Config](projects/Project5/bootstrap-php-config.png)  
+*PHP configuration verified for MISP compatibility*
+
+![Redis Server Installation](projects/Project5/redis-server-installation.png)  
+*Redis server setup for background workers*
+
+---
 
 ### 🛠️ MISP Installation & Configuration
-- [misp-interface.png](project5/misp-interface.png) → First login to the MISP web interface.  
-- [org_setup.png](project5/org_setup.png) → Organisation renamed and configured for SOC demo.  
-- [user_link.png](project5/user_link.png) → Admin user linked to the organisation.  
-- [misp-add-event.png](project5/misp-add-event.png) → Event creation form filled with metadata.  
+![MISP Interface](projects/Project5/misp-interface.png)  
+*First login to the MISP web interface*
+
+![Organisation Setup](projects/Project5/org_setup.png)  
+*Organisation renamed and configured for SOC demo*
+
+![User Linkage](projects/Project5/user_link.png)  
+*Admin user linked to the organisation*
+
+![Add Event](projects/Project5/misp-add-event.png)  
+*Event creation form filled with metadata*
+
+---
 
 ### 📂 Event Documentation
-- [event_creation.png](project5/event_creation.png) → Event metadata entered (date, distribution, threat level).  
-- [event_overview.png](project5/event_overview.png) → Event summary page showing SOC Demo Event.  
-- [attributes_added.png](project5/attributes_added.png) → Indicators of compromise (IOCs) added to the event.  
-- [attributes_list.png](project5/attributes_list.png) → List view of all IOCs (domain, IP, hashes, URL).  
+![Event Creation](projects/Project5/event_creation.png)  
+*Event metadata entered (date, distribution, threat level)*
+
+![Event Overview](projects/Project5/event_overview.png)  
+*Event summary page showing SOC Demo Event*
+
+![Attributes Added](projects/Project5/attributes_added.png)  
+*Indicators of compromise (IOCs) added to the event*
+
+![Attributes List](projects/Project5/attributes_list.png)  
+*List view of all IOCs (domain, IP, hashes, URL)*
+
+---
 
 ### 🔗 API Integration
-- [api_event_view.png](project5/api_event_view.png) → Event retrieved via REST API call.  
-- [api_attributes.png](project5/api_attributes.png) → JSON output showing IOCs accessible programmatically.  
+![API Event View](projects/Project5/api_event_view.png)  
+*Event retrieved via REST API call*
+
+![API Attributes](projects/Project5/api_attributes.png)  
+*JSON output showing IOCs accessible programmatically*
 
 ### 🧩 Supporting Configuration & Troubleshooting
 Additional screenshots (terminal commands, configuration edits, service checks, CakePHP setup, worker status, dependency fixes) are included to demonstrate the **struggle and persistence** behind the clean final output.
