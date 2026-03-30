@@ -2,97 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tanuja Maddi</title>
+  <title>Tanuja Maddi | SOC Analyst</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="#home">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
-      <li><a href="#skills">SKILLS</a></li>
-      <li><a href="#experience">EXPERIENCE</a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#journey">SOC ANALYST JOURNEY</a></li>
+      <li><a href="#projects">PROJECT TRACKER</a></li>
+      <li><a href="#tools">TOOLS & RESOURCES</a></li>
+      <li><a href="#links">PORTFOLIO LINKS</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero / Home Section -->
   <header id="home">
-    <h1>Hi, I'm Tanuja</h1>
-    <p>SOC Analyst | Cybersecurity Enthusiast</p>
-    <button>View Work</button>
-    <button>Resume</button>
+    <div class="hero">
+      <img src="profile.jpg" alt="Profile Image" class="profile-img">
+      <h1>TANUJA MADDI</h1>
+      <h2 class="typewriter" id="role"></h2>
+      <p>Osmania University, India</p>
+      <div class="connect">
+        <a href="https://linkedin.com/in/tanuja-reddy-03aa7b38a">LinkedIn</a>
+        <a href="https://github.com/LetsLearn-08">GitHub</a>
+        <a href="mailto:your.email@example.com">Email</a>
+        <a href="tel:+91XXXXXXXXXX">Phone</a>
+      </div>
+    </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>// ABOUT ME</h2>
-    <p>BCA in Cybersecurity & Networking at Osmania University. Hands-on SOC and pentesting lab experience. Skilled in SIEM, IDS, SOAR, and cloud security.</p>
-  </section>
-
-  <!-- Skills Section -->
+  <!-- Skills News Ticker -->
   <section id="skills">
-    <h2>> SKILLS_MATRIX</h2>
-    <div class="skills-container">
-      <div class="skill">Splunk</div>
-      <div class="skill">Sysmon</div>
-      <div class="skill">Wireshark</div>
-      <div class="skill">Zeek</div>
-      <div class="skill">Suricata</div>
-      <div class="skill">Metasploit</div>
-      <div class="skill">MISP</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Python</div>
-      <div class="skill">AWS IAM</div>
-      <div class="skill">Azure Entra ID</div>
-      <div class="skill">OpenVAS</div>
+    <h2>// SKILLS MATRIX</h2>
+    <div class="skills-ticker">
+      <p>
+        Splunk • Sysmon • Wireshark • Zeek • Suricata • MISP • SQL • Python • AWS IAM • Azure Entra ID
+      </p>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience">
-    <h2>// EXPERIENCE</h2>
-    <div class="job">
-      <h3>SOC Analyst Journey</h3>
-      <p>100-day self-driven SOC Analyst learning path:</p>
-      <ul>
-        <li>Phase 1: Lab Setup & SIEM (Splunk, Sysmon)</li>
-        <li>Phase 2: Log Analysis & Detection</li>
-        <li>Phase 3: Incident Response Playbooks</li>
-        <li>Phase 4: Threat Hunting & MITRE ATT&CK</li>
-        <li>Phase 5: Advanced SOC + Pentesting Prep</li>
-        <li>Phase 6: Endpoint Detection & Response</li>
-        <li>Phase 7: Vulnerability Management</li>
-        <li>Phase 8: Cloud Security Basics (AWS, Azure, GCP)</li>
-        <li>Phase 9: Threat Intelligence Integration</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>// PROJECTS</h2>
-    <div class="project-card">
-      <h3>SOC Analyst Journey</h3>
-      <p>10 practical SOC projects documented with proof artifacts and MITRE ATT&CK mapping.</p>
-      <a href="https://github.com/LetsLearn-08/soc-analyst-journey">View Project</a>
-    </div>
-    <div class="project-card">
-      <h3>GitHub Portfolio</h3>
-      <p>Personal portfolio showcasing cybersecurity projects and skills.</p>
-      <a href="https://github.com/LetsLearn-08?tab=repositories">View Projects</a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>// CONTACT</h2>
-    <p>Email: madditanujareddy@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a">Profile</a></p>
-    <p>HackerRank: <a href="https://www.hackerrank.com/madditanujareddy">madditanujareddy</a></p>
-    <p>CodeChef: <a href="https://www.codechef.com/users/tanuja_08">tanuja_08</a></p>
-  </section>
 </body>
+
+<!-- Typewriter Script -->
+<script>
+  const text = "SOC Analyst";
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("role").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 150);
+    }
+  }
+  window.onload = typeWriter;
+</script>
+
 </html>
