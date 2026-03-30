@@ -5,32 +5,44 @@
   box-sizing: border-box;
 }
 
-/* Connect Section */
-.connect-item {
-  display: inline-block;
-  text-align: center;
-  margin: 0 20px;
+.connect {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* spacing between logos */
 }
 
 .connect .icon {
-  width: 56px;   /* larger icons */
-  margin: 0 auto;
-  display: block;
+  width: 56px;   /* larger logos */
   transition: transform 0.3s, filter 0.3s;
 }
 
-.connect-item .btn {
-  margin-top: 12px;
-  padding: 12px 24px;   /* bigger button */
-  font-size: 1.1em;     /* larger text */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.connect .icon:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 8px #00FFFF);
 }
 
-.connect-item:hover .btn {
-  box-shadow: 0 0 15px #00FFFF;
-  transform: translateY(-2px);
+.resume-center {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.resume-center .btn {
+  padding: 12px 28px;
+  font-size: 1.1em;
+  background-color: #000;
+  color: #00FFFF;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.6);
+  transition: all 0.3s ease;
+}
+
+.resume-center .btn:hover {
+  background-color: #111;
+  color: #FFFFFF;
+  box-shadow: 0 0 20px #00FFFF;
+  transform: translateY(-3px);
 }
 
 /* Body */
@@ -279,4 +291,31 @@ section h2 {
   100% { transform: translateY(0); }
 }
 @keyframes pulseGlow {
-  0%   { box-shadow: 0 0 10px #
+  0%   { box-shadow: 0 0 10px #00FFFF; }
+  50%  { box-shadow: 0 0 25px #00FFFF; }
+  100% { box-shadow: 0 0 10px #00FFFF; }
+}
+
+/* Center About Me and Portfolio Links sections */
+#about .about-grid,
+#links .about-grid {
+  display: flex;              /* override grid */
+  justify-content: center;    /* center horizontally */
+}
+
+#about .about-card,
+#links .about-card {
+  max-width: 700px;           /* keeps content neat */
+  text-align: center;         /* center text inside */
+}
+
+#about .about-card h3,
+#links .about-card h3 {
+  text-align: center;
+}
+
+#about .about-card p,
+#links .about-card p {
+  text-align: center;
+  font-size: 1.1em;
+}
