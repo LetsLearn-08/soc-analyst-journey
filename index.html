@@ -113,31 +113,76 @@
     <!-- Project cards here (already correct in your version) -->
   </section>
 
-  <!-- Tools Section -->
   <section id="tools">
-    <h2>// TOOLS & RESOURCES</h2>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>Core Security Tools</h3>
-        <ul>
-          <li>Splunk (SIEM)</li>
-          <li>Sysmon (Windows Event Logging)</li>
-          <li>Wireshark (Packet Analysis)</li>
-          <li>Zeek & Suricata (Network IDS)</li>
-          <li>MISP (Threat Intelligence)</li>
-        </ul>
-      </div>
-      <div class="about-card">
-        <h3>Learning Resources</h3>
-        <p>
-          - <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK Framework</a><br>
-          - <a href="https://www.sans.org/cyber-security-courses/" target="_blank">SANS Cybersecurity Courses</a><br>
-          - <a href="https://learn.microsoft.com/en-us/azure/security/" target="_blank">Azure Security Docs</a><br>
-          - <a href="https://docs.aws.amazon.com/security/" target="_blank">AWS Security Documentation</a>
-        </p>
-      </div>
+  <h2>// TOOLS & RESOURCES</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>Core Security Tools</h3>
+      <ul>
+        <li>Splunk (SIEM)</li>
+        <li>Sysmon (Windows Event Logging)</li>
+        <li>Wireshark (Packet Analysis)</li>
+        <li>Zeek & Suricata (Network IDS)</li>
+        <li>MISP (Threat Intelligence)</li>
+      </ul>
     </div>
-  </section>
+    <div class="about-card">
+      <h3>Learning Resources</h3>
+      <p>
+        - <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK Framework</a><br>
+        - <a href="https://www.sans.org/cyber-security-courses/" target="_blank">SANS Cybersecurity Courses</a><br>
+        - <a href="https://learn.microsoft.com/en-us/azure/security/" target="_blank">Azure Security Docs</a><br>
+        - <a href="https://docs.aws.amazon.com/security/" target="_blank">AWS Security Documentation</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Extended Tools Table -->
+  <div class="about-card">
+    <h3>Extended Tools & Manuals</h3>
+    <table class="tools-table">
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Resource</th>
+          <th>Manual Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.splunk.com/" target="_blank">Splunk</a></td>
+          <td>Official SIEM and observability platform for log ingestion, correlation, and incident detection.</td>
+          <td><a href="Splunk_Manual.md" target="_blank">Splunk Manual</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon" target="_blank">Sysmon</a></td>
+          <td>Microsoft Sysinternals tool for monitoring process creation, network connections, and event logging.</td>
+          <td><a href="Sysmon_Manual.md" target="_blank">Sysmon Manual</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.wireshark.org/" target="_blank">Wireshark</a></td>
+          <td>Leading open-source network protocol analyzer for packet capture and traffic inspection.</td>
+          <td><a href="Wireshark_Manual.md" target="_blank">Wireshark Manual</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.ibm.com/topics/incident-response" target="_blank">Incident Response</a></td>
+          <td>IBM’s guide to incident response: structured processes for detecting, containing, and resolving cyberattacks.</td>
+          <td><a href="INCIDENT-RESPOND-LABSETUP-MANUAL.md" target="_blank">Incident Response Manual</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/" target="_blank">Windows Defender</a></td>
+          <td>Built-in endpoint protection for Windows, providing logs and malware detection.</td>
+          <td><a href="docs/WindowsDefender_Manual.md" target="_blank">Windows Defender Manual</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://nmap.org/" target="_blank">Nmap</a></td>
+          <td>Network mapper for service detection, port scanning, and vulnerability discovery.</td>
+          <td><a href="docs/Nmap_Manual.md" target="_blank">Nmap Manual</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
   <!-- Portfolio Links -->
   <section id="links">
@@ -160,54 +205,45 @@
   </section>
 
  
-<!-- Typewriter Script -->
 <script>
-  // Typewriter effect
-  const text = "SOC Analyst";
-  let i = 0;
+  // Typewriter effect cycling between multiple roles
+  const roles = ["SOC Analyst", "Security Analyst"];
+  let roleIndex = 0;
+  let charIndex = 0;
+  const speed = 150; // typing speed in ms
+  const eraseSpeed = 80; // erasing speed
+  const delayBetweenRoles = 1200; // pause before erasing
+
   function typeWriter() {
-    if (i < text.length) {
-      document.getElementById("role").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 150);
+    const roleElement = document.getElementById("role");
+    const currentRole = roles[roleIndex];
+
+    if (charIndex < currentRole.length) {
+      roleElement.innerHTML += currentRole.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeWriter, speed);
+    } else {
+      setTimeout(eraseText, delayBetweenRoles);
     }
   }
+
+  function eraseText() {
+    const roleElement = document.getElementById("role");
+    const currentRole = roles[roleIndex];
+
+    if (charIndex > 0) {
+      roleElement.innerHTML = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(eraseText, eraseSpeed);
+    } else {
+      roleIndex = (roleIndex + 1) % roles.length; // move to next role
+      setTimeout(typeWriter, speed);
+    }
+  }
+
   window.onload = typeWriter;
-
-  // Skills ticker horizontal scroller
-  const ticker = document.getElementById("ticker");
-  let offset = 0;
-  function scrollTicker() {
-    offset -= 2; // speed
-    if (Math.abs(offset) >= ticker.scrollWidth / 2) {
-      offset = 0; // reset loop
-    }
-    ticker.style.transform = `translateX(${offset}px)`;
-    requestAnimationFrame(scrollTicker);
-  }
-  scrollTicker();
-
-  // Section highlighting in nav
-  const sections = document.querySelectorAll("section, header");
-  const navLinks = document.querySelectorAll("nav a");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
-  });
 </script>
+
 </body>
 
 </html>
