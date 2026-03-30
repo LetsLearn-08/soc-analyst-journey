@@ -98,11 +98,15 @@ nav ul li a:hover {
   animation: float 4s ease-in-out infinite;
 }
 .hero h1 {
-  font-size: 3em; /* larger name */
+  font-size: 3em;
   color: #00FFFF;
   text-shadow: 0 0 14px #00FFFF;
   margin-top: 20px;
+  border-bottom: 2px solid #00FFFF; /* glowing underline */
+  display: inline-block;
+  padding-bottom: 5px;
 }
+
 .typewriter {
   font-size: 1.6em; /* larger role text */
   color: #E3DAC9;
