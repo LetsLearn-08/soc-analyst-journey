@@ -95,6 +95,7 @@ section h2 {
   animation: fadeInDown 1s ease forwards;
 }
 
+
 /* Skills Matrix Grid */
 .skills-grid {
   display: grid;
@@ -324,3 +325,14 @@ section h2 {
 }
 .tools-table tr:nth-child(even) { animation-delay: 0.2s; }
 .tools-table tr:nth-child(odd) { animation-delay: 0.4s; }
+
+#role::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
