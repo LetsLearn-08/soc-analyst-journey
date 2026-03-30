@@ -1,0 +1,131 @@
+/* Dark background with animated cyber grid */
+body {
+  background-color: #0d0d0d;
+  color: #f2f2f2;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(#1a1a1a 1px, transparent 1px),
+                    linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+
+/* Navigation bar */
+nav {
+  background-color: #1a1a1a;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffd60a;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ffd60a;
+}
+
+/* Hero section */
+header {
+  text-align: center;
+  padding: 50px;
+}
+
+header h1 {
+  color: #ffd60a;
+  text-shadow: 0 0 15px #ffd60a, 0 0 30px #ffd60a;
+}
+
+button {
+  border: 2px solid #ffd60a;
+  background: transparent;
+  color: #ffd60a;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffd60a;
+  color: #0d0d0d;
+  box-shadow: 0 0 15px #ffd60a;
+}
+
+/* Section headings */
+h2 {
+  color: #ffd60a;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #ffd60a, 0 0 20px #ffd60a;
+}
+
+/* Skills section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill {
+  border: 2px solid #ffd60a;
+  color: #ffd60a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.skill:hover {
+  background-color: #ffd60a;
+  color: #0d0d0d;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffd60a;
+}
+
+/* Experience & Projects cards with highlight effects */
+.job, .project-card {
+  border: 2px solid #ffd60a;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #1a1a1a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 214, 10, 0.3);
+}
+
+.job:hover, .project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px #ffd60a;
+}
+
+.project-card h3, .job h3 {
+  color: #ffd60a;
+  text-shadow: 0 0 10px #ffd60a;
+}
+
+.project-card a {
+  color: #ffd60a;
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-shadow 0.3s ease;
+}
+
+.project-card a:hover {
+  text-shadow: 0 0 10px #ffd60a;
+}
