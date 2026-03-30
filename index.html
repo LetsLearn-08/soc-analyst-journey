@@ -44,20 +44,22 @@
     </div>
   </header>
 
-  <!-- Skills News Ticker -->
-  <section id="skills">
-    <h2>// SKILLS MATRIX</h2>
-    <div class="skills-ticker">
-      <p>
-        Splunk • Sysmon • Wireshark • Zeek • Suricata • MISP • SQL • Python • AWS IAM • Azure Entra ID
-      </p>
+<!-- Skills News Ticker -->
+<section id="skills">
+  <h2>// SKILLS MATRIX</h2>
+  <div class="skills-ticker">
+    <div class="ticker-content" id="ticker">
+      <span>Splunk • Sysmon • Wireshark • Zeek • Suricata • MISP • SQL • Python • AWS IAM • Azure Entra ID • </span>
+      <span>Splunk • Sysmon • Wireshark • Zeek • Suricata • MISP • SQL • Python • AWS IAM • Azure Entra ID • </span>
     </div>
-  </section>
+  </div>
+</section>
 
 </body>
 
 <!-- Typewriter Script -->
 <script>
+  // Typewriter effect
   const text = "SOC Analyst";
   let i = 0;
   function typeWriter() {
@@ -68,6 +70,42 @@
     }
   }
   window.onload = typeWriter;
+
+  // Skills ticker horizontal scroller
+  const ticker = document.getElementById("ticker");
+  let offset = 0;
+  function scrollTicker() {
+    offset -= 2; // speed
+    if (Math.abs(offset) >= ticker.scrollWidth / 2) {
+      offset = 0; // reset loop
+    }
+    ticker.style.transform = `translateX(${offset}px)`;
+    requestAnimationFrame(scrollTicker);
+  }
+  scrollTicker();
+
+  // Section highlighting in nav
+  const sections = document.querySelectorAll("section, header");
+  const navLinks = document.querySelectorAll("nav a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
 </script>
+
+
 
 </html>
