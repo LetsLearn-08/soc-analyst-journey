@@ -1,4 +1,4 @@
-/* Dark background with animated cyber grid */
+/* Global background with animated cyber grid */
 body {
   background-color: #0d0d0d;
   color: #f2f2f2;
@@ -99,33 +99,48 @@ h2 {
   box-shadow: 0 0 15px #ffd60a;
 }
 
-/* Experience & Projects cards with highlight effects */
+/* Experience & Projects cards highlighted */
 .job, .project-card {
   border: 2px solid #ffd60a;
   padding: 20px;
   margin: 20px 0;
   background-color: #1a1a1a;
+  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(255, 214, 10, 0.3);
+  box-shadow: 0 0 15px rgba(255, 214, 10, 0.3);
 }
 
 .job:hover, .project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 25px #ffd60a;
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px #ffd60a, 0 0 40px rgba(255, 214, 10, 0.6);
 }
 
-.project-card h3, .job h3 {
+.job h3, .project-card h3 {
   color: #ffd60a;
-  text-shadow: 0 0 10px #ffd60a;
+  text-shadow: 0 0 10px #ffd60a, 0 0 20px #ffd60a;
+  margin-bottom: 10px;
 }
 
 .project-card a {
   color: #ffd60a;
   text-decoration: none;
   font-weight: bold;
-  transition: text-shadow 0.3s ease;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
 .project-card a:hover {
+  color: #fff;
+  text-shadow: 0 0 15px #ffd60a;
+}
+
+/* Contact section links */
+#contact a {
+  color: #ffd60a;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+}
+
+#contact a:hover {
   text-shadow: 0 0 10px #ffd60a;
 }
+
