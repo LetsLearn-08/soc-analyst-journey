@@ -5,6 +5,67 @@
   box-sizing: border-box;
 }
 
+/* Tools & Resources Table Styling */
+.tools-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #E3DAC9; /* silver-white text */
+  border: 2px solid #FFD700; /* radiant white-gold border */
+  box-shadow: 0 0 15px #FFD700; /* glowing effect */
+  border-radius: 6px;
+}
+
+.tools-table th, .tools-table td {
+  border: 1px solid #FFD700;
+  padding: 12px;
+  text-align: left;
+}
+
+.tools-table th {
+  background-color: #000;
+  color: #FFD700;
+  text-shadow: 0 0 6px #FFD700;
+}
+
+.tools-table tr:nth-child(even) {
+  background-color: #111;
+}
+
+.tools-table a {
+  color: #E3DAC9; /* silver-white links */
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.tools-table a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 6px #FFD700;
+}
+
+/* Row hover glow effect */
+.tools-table tr:hover {
+  background-color: #222;
+  box-shadow: 0 0 12px #FFD700;
+  transition: 0.3s ease;
+}
+
+/* Fade-in animation for rows */
+.tools-table tr {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.tools-table tr:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.tools-table tr:nth-child(odd) {
+  animation-delay: 0.4s;
+}
+
+/* Body */
 body {
   font-family: 'Poppins', sans-serif;
   background: url('background.png') no-repeat center center fixed;
@@ -35,7 +96,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #E3DAC9; /* silver-white links */
+  color: #E3DAC9;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
@@ -43,7 +104,7 @@ nav ul li a {
 
 nav ul li a.active,
 nav ul li a:hover {
-  color: #FFD700; /* radiant white-gold */
+  color: #FFD700;
   text-shadow: 0 0 8px #FFD700;
   transform: scale(1.1);
 }
@@ -54,7 +115,7 @@ nav ul li a:hover {
   padding: 12px 24px;
   margin: 10px;
   background-color: #000;
-  color: #FFD700; /* white-gold text */
+  color: #FFD700;
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
@@ -129,7 +190,7 @@ section h2 {
   animation: fadeInDown 1s ease forwards;
 }
 
-/* Skills Matrix - News Headline Flow */
+/* Skills Matrix */
 .skills-ticker {
   overflow: hidden;
   background-color: rgba(0,0,0,0.85);
@@ -150,7 +211,7 @@ section h2 {
 
 /* Section Backgrounds */
 #about, #journey, #projects, #tools, #links {
-  background-color: #000; /* black panels */
+  background-color: #000;
   padding: 50px 0;
 }
 
@@ -184,7 +245,7 @@ section h2 {
 }
 
 .about-card a {
-  color: #E3DAC9; /* silver-white links */
+  color: #E3DAC9;
   text-decoration: none;
   transition: color 0.3s, text-shadow 0.3s;
 }
