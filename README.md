@@ -30,7 +30,6 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 | 📂 SOC Analyst Projects – Lab Journey | [Jump to Projects](#-soc-analyst-projects--lab-journey) |
 | 🛠️ Tools & Resources | [Jump to Tools](#️-tools--resources) |
 | 📝 Notes | [Jump to Notes](#-notes) |
-| 🔮 Future Work | [Jump to Future-Work](#-future-work) |
 | 🌐 Portfolio Links | [Jump to Portfolio-Links](#-portfolio-links) |
 
 ---
@@ -47,7 +46,7 @@ The goal is to be **job-ready as a SOC Analyst** while building a strong foundat
 | Phase 6 | EDR Tools | Windows Defender logs *(placeholder:  CrowdStrike)* | Endpoint visibility, host intrusion detection |
 | Phase 7 | Vulnerability Management | OpenVAS, Nmap service detection, CVE tracking *(placeholder: Nessus Essentials)* | System hardening, CVE awareness |
 | Phase 8 | Cloud Security Basics | Azure Entra ID, AWS IAM, GCP IAM *(placeholder: TryHackMe labs)* | Identity & access management across cloud platforms |
-| Phase 9 | Threat Intelligence | AlienVault OTX, MITRE ATT&CK Navigator | IOC enrichment, adversary profiling, Splunk integration |
+
 
 ### 🛡️ Core SOC Skills
 
@@ -216,17 +215,11 @@ This format helps beginners understand **SOC Analyst responsibilities** while sh
 | [Splunk](https://www.splunk.com/) | Official SIEM and observability platform for log ingestion, correlation, and incident detection. | [Splunk Manual](Splunk_Manual.md) |
 | [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) | Microsoft Sysinternals tool for monitoring process creation, network connections, and event logging. | [Sysmon Manual](Sysmon_Manual.md) |
 | [Wireshark](https://www.wireshark.org/) | Leading open-source network protocol analyzer for packet capture and traffic inspection. | [Wireshark Manual](Wireshark_Manual.md) |
-| [AlienVault OTX](https://cybersecurity.att.com/open-threat-exchange) | Crowd-sourced threat intelligence platform providing Indicators of Compromise (IOCs). | [OTX Manual](OTX_Manual.md) |
 | [Incident Response](https://www.ibm.com/topics/incident-response) | IBM’s guide to incident response: structured processes for detecting, containing, and resolving cyberattacks. | [Incident Response Manual](INCIDENT-RESPOND-LABSETUP-MANUAL.md) |
 | [Windows Defender](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/) | Built-in endpoint protection for Windows, providing logs and malware detection. | [Windows Defender Manual](docs/WindowsDefender_Manual.md) | 
-| [OpenVAS](https://www.openvas.org/) | Open-source vulnerability scanner for system and network assessments. | [OpenVAS Manual](docs/OpenVAS_Manual.md) | 
 | [Nmap](https://nmap.org/) | Network mapper for service detection, port scanning, and vulnerability discovery. | [Nmap Manual](docs/Nmap_Manual.md) |
-| [Azure Entra ID](https://learn.microsoft.com/en-us/entra/) | Microsoft’s cloud identity and access management solution. | [Azure Manual](docs/Azure_Manual.md) | 
-| [AWS IAM](https://aws.amazon.com/iam/) | Identity and Access Management service for AWS cloud. | [AWS IAM Manual](docs/AWS_IAM_Manual.md) | 
-| [GCP IAM](https://cloud.google.com/iam) | Google Cloud’s identity and access management service. | [GCP IAM Manual](docs/GCP_IAM_Manual.md) | 
-| [MITRE ATT&CK Navigator](https://attack.mitre.org/resources/navigator/) | Framework for mapping adversary techniques and detection coverage. | [ATTACK Navigator Manual](docs/ATTACK_Navigator_Manual.md) | 
-| [Abuse.ch](https://abuse.ch/) | Threat intelligence feeds for malware, botnets, and phishing campaigns. | [Abuse.ch Manual](docs/Abusech_Manual.md) |
---- 
+
+---
 
 ## 📝 Notes
 
@@ -247,6 +240,8 @@ Every alert I triage, every log I analyze, and every playbook I write is a step 
 ## 🌐 Portfolio Links
 - [GitHub Profile](https://github.com/LetsLearn-08?tab=repositories)  
 - [LinkedIn Profile](https://www.linkedin.com/in/tanuja-reddy-03aa7b38a)
+- [HackerRank Profile](https://www.hackerrank.com/madditanujareddy)  
+- [CodeChef Profile](https://www.codechef.com/users/tanuja_08)
 
 
 # **From alerts to action — this repo proves my ability to detect, analyze, and respond to threats with clarity and precision.**
