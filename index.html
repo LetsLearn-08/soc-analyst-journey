@@ -43,14 +43,20 @@
     </div>
   </header>
 
-  <!-- Skills News Ticker -->
+  <!-- Skills Matrix -->
   <section id="skills">
     <h2>// SKILLS MATRIX</h2>
-    <div class="skills-ticker">
-      <div class="ticker-content" id="ticker">
-        <span>Splunk • Sysmon • Wireshark • Zeek • Suricata • MISP • SQL • Python • AWS IAM • Azure Entra ID • </span>
-        <span>Splunk • Sysmon • Wireshark • Zeek • Suricata • MISP • SQL • Python • AWS IAM • Azure Entra ID • </span>
-      </div>
+    <div class="skills-grid">
+      <div class="skill-box">Splunk</div>
+      <div class="skill-box">Sysmon</div>
+      <div class="skill-box">Wireshark</div>
+      <div class="skill-box">Zeek</div>
+      <div class="skill-box">Suricata</div>
+      <div class="skill-box">MISP</div>
+      <div class="skill-box">SQL</div>
+      <div class="skill-box">Python</div>
+      <div class="skill-box">AWS IAM</div>
+      <div class="skill-box">Azure Entra ID</div>
     </div>
   </section>
 
@@ -82,141 +88,147 @@
     <h2>// SOC ANALYST JOURNEY</h2>
     <div class="about-grid">
       <div class="about-card">
-        <h3>10-Day Project Roadmap</h3>
+        <h3>Project Roadmap</h3>
         <ul>
-          <li>Day 1: Phishing Simulation – Reconnaissance</li>
-          <li>Day 2: Endpoint Detection & Persistence Monitoring</li>
-          <li>Day 3: Network Threat Hunting with Zeek</li>
-          <li>Day 4: IDS Deployment & Rule Writing</li>
-          <li>Day 5: Threat Intelligence Integration with MISP</li>
-          <li>Day 6: SOAR Playbook Automation</li>
-          <li>Day 7: Cloud Security Monitoring – Lateral Movement</li>
-          <li>Day 8: Malware Analysis – Payload Delivery</li>
-          <li>Day 9: Incident Response Simulation – Containment</li>
-          <li>Day 10: Honeypot Deployment & Deception</li>
+          <li><a href="https://github.com/LetsLearn-08/soc-analyst-journey/blob/main/project1_phishing.md" target="_blank">Project 1: Phishing Simulation</a></li>
+          <li><a href="https://github.com/LetsLearn-08/soc-analyst-journey/blob/main/project2_sysmon.md" target="_blank">Project 2: Endpoint Detection</a></li>
+          <li><a href="https://github.com/LetsLearn-08/soc-analyst-journey/blob/main/projects/project3_zeek.md" target="_blank">Project 3: Network Threat Hunting</a></li>
+          <li><a href="https://github.com/LetsLearn-08/soc-analyst-journey/blob/main/projects/project4_ids.md" target="_blank">Project 4: IDS Deployment</a></li>
+          <li><a href="https://github.com/LetsLearn-08/soc-analyst-journey/blob/main/projects/project5_threatintel.md" target="_blank">Project 5: Threat Intelligence</a></li>
+          <li><a href="https://github.com/LetsLearn-08/soc-analyst-journey/blob/main/projects/project8_iot.md" target="_blank">Project 8: IoT Security</a></li>
         </ul>
       </div>
       <div class="about-card">
         <h3>Documentation</h3>
         <p>
           Each project is documented with labeled screenshots, Splunk queries, Sysmon rules, and MITRE ATT&CK mappings.<br>
-          Explore the full journey here:  
-          <a href="https://github.com/LetsLearn-08/soc-analyst-journey" target="_blank">SOC Analyst Journey Repository</a>
+          <a href="https://github.com/LetsLearn-08/soc-analyst-journey" target="_blank" class="btn">View Full Repository</a>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Project Tracker -->
   <section id="projects">
     <h2>// PROJECT TRACKER</h2>
-    <!-- Project cards here (already correct in your version) -->
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Phase Completion</h3>
+        <p>Track SOC Analyst projects and mark completed phases.</p>
+        <a href="https://github.com/LetsLearn-08/soc-analyst-journey" target="_blank" class="btn">View Repository</a>
+      </div>
+      <div class="project-card">
+        <h3>Current Status</h3>
+        <p>Monitor ongoing tasks, pending documentation, and screenshot proofs.</p>
+        <a href="https://github.com/LetsLearn-08/soc-analyst-journey/tree/main/proof" target="_blank" class="btn">View Proof Folder</a>
+      </div>
+    </div>
   </section>
 
+  <!-- Tools & Resources -->
   <section id="tools">
-  <h2>// TOOLS & RESOURCES</h2>
+    <h2>// TOOLS & RESOURCES</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Core Security Tools</h3>
+        <ul>
+          <li>Splunk (SIEM)</li>
+          <li>Sysmon (Windows Event Logging)</li>
+          <li>Wireshark (Packet Analysis)</li>
+          <li>Zeek & Suricata (Network IDS)</li>
+          <li>MISP (Threat Intelligence)</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3>Learning Resources</h3>
+        <p>
+          - <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK Framework</a><br>
+          - <a href="https://www.sans.org/cyber-security-courses/" target="_blank">SANS Cybersecurity Courses</a><br>
+          - <a href="https://learn.microsoft.com/en-us/azure/security/" target="_blank">Azure Security Docs</a><br>
+          - <a href="https://docs.aws.amazon.com/security/" target="_blank">AWS Security Documentation</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Extended Tools Table -->
+    <div class="about-card">
+  <h3>Extended Tools & Manuals</h3>
+  <table class="tools-table">
+    <thead>
+      <tr>
+        <th>Tool</th>
+        <th>Resource</th>
+        <th>Manual Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://www.splunk.com/" target="_blank">Splunk</a></td>
+        <td>SIEM and observability platform.</td>
+        <td><a href="Splunk_Manual.md" target="_blank" class="btn">Splunk Manual</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon" target="_blank">Sysmon</a></td>
+        <td>Windows Event Logging tool.</td>
+        <td><a href="Sysmon_Manual.md" target="_blank" class="btn">Sysmon Manual</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.wireshark.org/" target="_blank">Wireshark</a></td>
+        <td>Packet capture and traffic inspection.</td>
+        <td><a href="Wireshark_Manual.md" target="_blank" class="btn">Wireshark Manual</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.ibm.com/topics/incident-response" target="_blank">Incident Response</a></td>
+        <td>Structured processes for detecting and resolving cyberattacks.</td>
+        <td><a href="INCIDENT-RESPOND-LABSETUP-MANUAL.md" target="_blank" class="btn">Incident Response Manual</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/" target="_blank">Windows Defender</a></td>
+        <td>Built-in endpoint protection for Windows.</td>
+        <td><a href="docs/WindowsDefender_Manual.md" target="_blank" class="btn">Windows Defender Manual</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://nmap.org/" target="_blank">Nmap</a></td>
+        <td>Network mapper for service detection and vulnerability discovery.</td>
+        <td><a href="docs/Nmap_Manual.md" target="_blank" class="btn">Nmap Manual</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<section id="links">
+  <h2>// PORTFOLIO LINKS</h2>
   <div class="about-grid">
     <div class="about-card">
-      <h3>Core Security Tools</h3>
-      <ul>
-        <li>Splunk (SIEM)</li>
-        <li>Sysmon (Windows Event Logging)</li>
-        <li>Wireshark (Packet Analysis)</li>
-        <li>Zeek & Suricata (Network IDS)</li>
-        <li>MISP (Threat Intelligence)</li>
-      </ul>
+      <h3>Profiles</h3>
+      <p>
+        <a href="https://github.com/LetsLearn-08?tab=repositories" target="_blank" class="btn">GitHub Portfolio</a><br>
+        <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a" target="_blank" class="btn">LinkedIn Profile</a><br>
+        <a href="https://www.hackerrank.com/madditanujareddy" target="_blank" class="btn">HackerRank Profile</a><br>
+        <a href="https://www.codechef.com/users/tanuja_08" target="_blank" class="btn">CodeChef Profile</a>
+      </p>
     </div>
     <div class="about-card">
-      <h3>Learning Resources</h3>
+      <h3>Resume</h3>
       <p>
-        - <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK Framework</a><br>
-        - <a href="https://www.sans.org/cyber-security-courses/" target="_blank">SANS Cybersecurity Courses</a><br>
-        - <a href="https://learn.microsoft.com/en-us/azure/security/" target="_blank">Azure Security Docs</a><br>
-        - <a href="https://docs.aws.amazon.com/security/" target="_blank">AWS Security Documentation</a>
+        <a href="resume.pdf" target="_blank" class="btn">Download Resume (PDF)</a>
       </p>
     </div>
   </div>
-
-  <!-- Extended Tools Table -->
-  <div class="about-card">
-    <h3>Extended Tools & Manuals</h3>
-    <table class="tools-table">
-      <thead>
-        <tr>
-          <th>Tool</th>
-          <th>Resource</th>
-          <th>Manual Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="https://www.splunk.com/" target="_blank">Splunk</a></td>
-          <td>Official SIEM and observability platform for log ingestion, correlation, and incident detection.</td>
-          <td><a href="Splunk_Manual.md" target="_blank">Splunk Manual</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon" target="_blank">Sysmon</a></td>
-          <td>Microsoft Sysinternals tool for monitoring process creation, network connections, and event logging.</td>
-          <td><a href="Sysmon_Manual.md" target="_blank">Sysmon Manual</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://www.wireshark.org/" target="_blank">Wireshark</a></td>
-          <td>Leading open-source network protocol analyzer for packet capture and traffic inspection.</td>
-          <td><a href="Wireshark_Manual.md" target="_blank">Wireshark Manual</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://www.ibm.com/topics/incident-response" target="_blank">Incident Response</a></td>
-          <td>IBM’s guide to incident response: structured processes for detecting, containing, and resolving cyberattacks.</td>
-          <td><a href="INCIDENT-RESPOND-LABSETUP-MANUAL.md" target="_blank">Incident Response Manual</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/" target="_blank">Windows Defender</a></td>
-          <td>Built-in endpoint protection for Windows, providing logs and malware detection.</td>
-          <td><a href="docs/WindowsDefender_Manual.md" target="_blank">Windows Defender Manual</a></td>
-        </tr>
-        <tr>
-          <td><a href="https://nmap.org/" target="_blank">Nmap</a></td>
-          <td>Network mapper for service detection, port scanning, and vulnerability discovery.</td>
-          <td><a href="docs/Nmap_Manual.md" target="_blank">Nmap Manual</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </section>
-
-  <!-- Portfolio Links -->
-  <section id="links">
-    <h2>// PORTFOLIO LINKS</h2>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>Profiles</h3>
-        <p>
-          <a href="https://github.com/LetsLearn-08?tab=repositories" target="_blank">GitHub Portfolio</a><br>
-          <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a" target="_blank">LinkedIn Profile</a>
-        </p>
-      </div>
-      <div class="about-card">
-        <h3>Resume</h3>
-        <p>
-          <a href="resume.pdf" target="_blank">Download Resume (PDF)</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
- 
 <script>
-  // Typewriter effect cycling between multiple roles
-  const roles = ["SOC Analyst", "Security Analyst"];
+  const roles = ["SOC Analyst", "Security Analyst", "Threat Hunter"];
   let roleIndex = 0;
   let charIndex = 0;
-  const speed = 150; // typing speed in ms
-  const eraseSpeed = 80; // erasing speed
+  const speed = 150;       // typing speed in ms
+  const eraseSpeed = 80;   // erasing speed in ms
   const delayBetweenRoles = 1200; // pause before erasing
 
   function typeWriter() {
     const roleElement = document.getElementById("role");
     const currentRole = roles[roleIndex];
+
+    if (charIndex === 0) roleElement.innerHTML = ""; // clear before typing
 
     if (charIndex < currentRole.length) {
       roleElement.innerHTML += currentRole.charAt(charIndex);
@@ -241,9 +253,7 @@
     }
   }
 
-  window.onload = typeWriter;
+  document.addEventListener("DOMContentLoaded", typeWriter);
 </script>
-
 </body>
-
 </html>
