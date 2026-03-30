@@ -6,15 +6,15 @@
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #0a0a0a;
-  color: #D3D3D3;
+  font-family: 'Poppins', sans-serif;
+  background-color: #354230; /* Kombu Green */
+  color: #E3DAC9; /* Bone */
   line-height: 1.6;
 }
 
 /* Navigation */
 nav {
-  background-color: #111;
+  background-color: #4B3621; /* Café Noir */
   padding: 12px 0;
   position: fixed;
   width: 100%;
@@ -34,35 +34,36 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #D3D3D3;
+  color: #E3DAC9; /* Bone */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   transition: color 0.3s, transform 0.3s;
 }
 
 nav ul li a.active,
 nav ul li a:hover {
-  color: #ffd60a;
+  color: #D2B48C; /* Tan */
   transform: scale(1.1);
 }
+
 /* Buttons */
 .btn {
   display: inline-block;
   padding: 12px 24px;
   margin: 10px;
-  background-color: #ffd60a;
-  color: #111;
+  background-color: #8A9A5B; /* Moss Green */
+  color: #354230; /* Kombu Green */
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(255,214,10,0.6);
+  box-shadow: 0 0 10px rgba(227,218,201,0.6); /* Bone glow */
 }
 
 .btn:hover {
-  background-color: #111;
-  color: #ffd60a;
-  box-shadow: 0 0 15px rgba(255,214,10,0.9);
+  background-color: #D2B48C; /* Tan */
+  color: #4B3621; /* Café Noir */
+  box-shadow: 0 0 20px rgba(227,218,201,0.9);
   transform: translateY(-3px);
 }
 
@@ -76,14 +77,14 @@ nav ul li a:hover {
 .profile-img {
   width: 160px;
   border-radius: 50%;
-  border: 4px solid #ffd60a;
-  box-shadow: 0 0 20px rgba(255,214,10,0.6);
+  border: 4px solid #8A9A5B; /* Moss Green */
+  box-shadow: 0 0 20px rgba(138,154,91,0.6);
   animation: float 4s ease-in-out infinite;
 }
 
 .tagline {
   font-style: italic;
-  color: #ffd60a;
+  color: #D2B48C; /* Tan */
   margin-top: 12px;
   animation: fadeInUp 1.2s ease forwards;
 }
@@ -100,34 +101,48 @@ nav ul li a:hover {
 
 .connect .icon:hover {
   transform: scale(1.3);
-  filter: drop-shadow(0 0 6px #ffd60a);
+  filter: drop-shadow(0 0 6px #D2B48C);
 }
 
 /* Section Headings */
 section h2 {
-  color: #ffd60a;
+  color: #C0C0C0; /* Silver tone */
   text-align: center;
   margin: 70px 0 35px;
   font-size: 1.8em;
   animation: fadeInDown 1s ease forwards;
 }
 
-/* Skills Ticker */
+/* Skills Matrix - Newspaper Flow */
 .skills-ticker {
   overflow: hidden;
-  white-space: nowrap;
-  background-color: #111;
+  background-color: #354230; /* Kombu Green */
   padding: 18px 0;
-  border-top: 2px solid #ffd60a;
-  border-bottom: 2px solid #ffd60a;
+  border-top: 2px solid #8A9A5B;
+  border-bottom: 2px solid #8A9A5B;
 }
 
 .ticker-content {
-  display: inline-block;
+  display: flex;
+  animation: tickerScroll 20s linear infinite;
+}
+
+.skill-box {
+  background-color: #4B3621; /* Café Noir */
+  color: #E3DAC9; /* Bone */
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(210,180,140,0.6); /* Tan glow */
+  font-weight: 600;
   white-space: nowrap;
-  will-change: transform;
-  font-weight: bold;
-  font-size: 1.1em;
+  transition: transform 0.3s;
+}
+
+.skill-box:hover {
+  transform: scale(1.1);
+  background-color: #8A9A5B; /* Moss Green */
+  color: #354230; /* Kombu Green */
 }
 
 /* About, Journey, Tools, Links Cards */
@@ -139,52 +154,49 @@ section h2 {
 }
 
 .about-card {
-  background-color: #004747;
+  background-color: #354230; /* Kombu Green */
   padding: 35px;
-  border-left: 6px solid #ffd60a;
+  border-left: 6px solid #C0C0C0; /* Silver */
   border-radius: 8px;
-  box-shadow: 0 0 18px rgba(0,0,0,0.5);
+  box-shadow: 0 0 18px rgba(227,218,201,0.5);
   animation: fadeInUp 1.2s ease forwards;
 }
 
 .about-card h3 {
-  color: #ffd60a;
+  color: #D2B48C; /* Tan */
   margin-bottom: 18px;
 }
 
 .about-card p,
 .about-card ul {
-  color: #D3D3D3;
+  color: #E3DAC9; /* Bone */
   line-height: 1.7;
 }
 
 /* Project Cards */
 .project-card {
-  background-color: #111;
+  background-color: #4B3621; /* Café Noir */
   margin: 25px auto;
   padding: 25px;
   max-width: 850px;
-  border-left: 6px solid #ffd60a;
+  border-left: 6px solid #C0C0C0; /* Silver */
   border-radius: 8px;
-  box-shadow: 0 0 18px rgba(0,0,0,0.5);
+  box-shadow: 0 0 18px rgba(210,180,140,0.5);
   animation: fadeInUp 1.2s ease forwards;
 }
 
 .project-card h3 {
-  color: #ffd60a;
+  color: #D2B48C; /* Tan */
 }
 
 .project-card h4 {
-  color: #aaa;
+  color: #E3DAC9; /* Bone */
   margin-bottom: 10px;
 }
 
 .project-card ul {
   margin: 12px 0 0 25px;
-  color: #D3D3D3;
-}
-html {
-  scroll-behavior: smooth;
+  color: #E3DAC9;
 }
 
 /* Animations */
@@ -207,4 +219,9 @@ html {
   0% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
   100% { transform: translateY(0); }
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
