@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sysmon Lab Setup – Beginner’s Manual</title>
+  <link rel="stylesheet" href="style.css"> <!-- reuse glowing CSS -->
+</head>
+<body>
+  <div class="about-card">
+    <h2>Sysmon Lab Setup – Beginner’s Manual</h2>
+
+    <h3>📖 Introduction</h3>
+    <p>Sysmon (System Monitor) is a <strong>Windows system monitoring tool</strong> from Microsoft Sysinternals. It provides deep visibility into processes, network connections, and file changes — data critical for detecting attacker activity.</p>
+    <ul>
+      <li>Capture detailed forensic logs from the Windows VM</li>
+      <li>Detect suspicious processes, registry changes, and network activity</li>
+      <li>Forward logs into Splunk for centralized analysis</li>
+      <li>Practice mapping detections to MITRE ATT&amp;CK techniques</li>
+    </ul>
+
+    <h3>🎯 Why This Lab Matters</h3>
+    <ul>
+      <li>Shows ability to configure endpoint monitoring beyond default Windows logs</li>
+      <li>Provides visibility into attacker techniques like persistence, privilege escalation, and lateral movement</li>
+      <li>Builds proof of detection rules mapped to MITRE ATT&amp;CK</li>
+    </ul>
+
+    <h3>🏗️ Sysmon Components</h3>
+    <table class="tools-table">
+      <thead>
+        <tr><th>Component</th><th>Definition</th><th>Purpose in Lab</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon">Sysmon</a></td><td>Windows system service and driver logging detailed activity.</td><td>Provides forensic visibility missed by default logs.</td></tr>
+        <tr><td><a href="https://github.com/SwiftOnSecurity/sysmon-config">Sysmon Config File</a></td><td>XML ruleset defining what Sysmon logs.</td><td>Customizes detection and reduces noise.</td></tr>
+        <tr><td>Event Viewer Integration</td><td>Sysmon logs under Applications and Services Logs → Microsoft → Windows → Sysmon.</td><td>Allows analysts to validate captured events.</td></tr>
+        <tr><td>Splunk Forwarder Stanza</td><td>Configuration in inputs.conf for Sysmon logs.</td><td>Ensures telemetry is forwarded to Splunk.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🔑 Key Event IDs for SOC Analysts</h3>
+    <h4>Sysmon Event IDs</h4>
+    <table class="tools-table">
+      <thead><tr><th>Event ID</th><th>Description</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td>1 – Process Creation</td><td>Logs process creation with command line.</td><td>Detects suspicious executables, PowerShell abuse.</td></tr>
+        <tr><td>3 – Network Connection</td><td>Logs TCP/UDP connections.</td><td>Identifies unusual outbound connections.</td></tr>
+        <tr><td>7 – Image Loaded</td><td>Logs DLLs loaded by processes.</td><td>Detects DLL injection.</td></tr>
+        <tr><td>10 – Process Access</td><td>Logs when one process opens another.</td><td>Detects privilege escalation.</td></tr>
+        <tr><td>13 – Registry Value Set</td><td>Logs registry modifications.</td><td>Detects persistence mechanisms.</td></tr>
+        <tr><td>22 – DNS Query</td><td>Logs DNS queries.</td><td>Detects suspicious domains.</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Windows Security Event IDs</h4>
+    <table class="tools-table">
+      <thead><tr><th>Event ID</th><th>Description</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td>4624</td><td>Successful logon.</td><td>Tracks valid user logins.</td></tr>
+        <tr><td>4625</td><td>Failed logon.</td><td>Detects brute force attempts.</td></tr>
+        <tr><td>4672</td><td>Special privileges assigned.</td><td>Detects privilege escalation.</td></tr>
+        <tr><td>4688</td><td>Process creation.</td><td>Detects suspicious executables.</td></tr>
+        <tr><td>4697</td><td>Service installation.</td><td>Detects persistence via services.</td></tr>
+        <tr><td>4720</td><td>User account creation.</td><td>Detects unauthorized accounts.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>⚙️ Step‑by‑Step Setup</h3>
+    <h4>Step 1: Install Sysmon</h4>
+    <pre>sysmon -accepteula -i sysmonconfig.xml</pre>
+
+    <h4>Step 2: Validate Sysmon Events</h4>
+    <p>Check logs in Event Viewer under Applications and Services Logs → Microsoft → Windows → Sysmon.</p>
+
+    <h4>Step 3: Forward Sysmon Logs to Splunk</h4>
+    <pre>[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+disabled = 0</pre>
+
+    <h3>🚨 Detection Playbooks</h3>
+    <table class="tools-table">
+      <thead><tr><th>Incident</th><th>Sysmon Event</th><th>Detection SPL</th><th>Response</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Suspicious Process Creation</td><td>Event ID 1</td><td><pre>index=sysmon_logs EventID=1 | search Image="*powershell.exe*"</pre></td><td>Investigate, isolate host</td><td>Detects PowerShell abuse.</td></tr>
+        <tr><td>Unusual Network Connection</td><td>Event ID 3</td><td><pre>index=sysmon_logs EventID=3 | stats count by DestinationIp</pre></td><td>Block IP, alert SOC</td><td>Detects suspicious external connections.</td></tr>
+        <tr><td>DLL Injection</td><td>Event ID 7</td><td><pre>index=sysmon_logs EventID=7 | search ImageLoaded="*evil.dll*"</pre></td><td>Terminate process</td><td>Detects malicious DLLs.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🎯 Conclusion</h3>
+    <p>Sysmon is the <strong>eyes and ears of your Windows VM</strong>. By documenting events, forwarding them to Splunk, and building detection playbooks, you prove endpoint monitoring and detection engineering skills recruiters expect.</p>
+
+    <h3>🤝 Connect With Me</h3>
+    <ul>
+      <li>🌐 GitHub: <a href="https://github.com/LetsLearn-08?tab=repositories">LetsLearn-08</a></li>
+      <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a">Tanuja Reddy</a></li>
+    </ul>
+  </div>
+</body>
+</html>
