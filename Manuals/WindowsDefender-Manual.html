@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Windows Defender Manual</title>
+  <link rel="stylesheet" href="style.css"> <!-- reuse glowing CSS -->
+</head>
+<body>
+  <div class="about-card">
+    <h2>Windows Defender Manual</h2>
+
+    <h3>📖 Introduction</h3>
+    <p>This manual explains how to configure and use <strong>Microsoft Defender Antivirus (Windows Defender)</strong> in your Incident Response Lab. It provides <em>endpoint protection</em> against malware, phishing, and suspicious activity.</p>
+    <ul>
+      <li>Understand how Defender works as a built‑in security tool</li>
+      <li>Learn how to configure logging and alerts</li>
+      <li>Practice detecting and responding to threats using Defender</li>
+    </ul>
+
+    <h3>🎯 Why This Manual Matters</h3>
+    <ul>
+      <li>Shows recruiters you can configure native endpoint security tools</li>
+      <li>Demonstrates integration of Defender logs into SIEM (Splunk)</li>
+      <li>Provides proof of detection workflows with documentation</li>
+    </ul>
+
+    <h3>🏗️ Components</h3>
+    <table class="tools-table">
+      <thead><tr><th>Keyword / Tool</th><th>Definition</th><th>Purpose in Lab</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/microsoft-defender-antivirus-windows">Windows Defender Antivirus</a></td><td>Built‑in Windows security tool.</td><td>Detects and blocks malicious files/processes.</td></tr>
+        <tr><td><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security">Defender Firewall</a></td><td>Network traffic filtering tool.</td><td>Prevents unauthorized connections.</td></tr>
+        <tr><td><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-security">Defender Security Center</a></td><td>GUI dashboard for Defender.</td><td>Manage antivirus, firewall, and protection settings.</td></tr>
+        <tr><td><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/event-viewer">Event Viewer</a></td><td>Windows log viewer.</td><td>Displays Defender alerts and system events.</td></tr>
+        <tr><td><a href="https://docs.splunk.com/Documentation/Forwarder">Splunk Integration</a></td><td>Forwarding Defender logs to Splunk.</td><td>Centralized detection and correlation.</td></tr>
+        <tr><td><a href="https://learn.microsoft.com/en-us/powershell/">PowerShell</a></td><td>Command‑line automation tool.</td><td>Configure Defender policies and extract logs.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>⚙️ Step‑by‑Step Setup</h3>
+    <h4>Step 1: Enable Windows Defender</h4>
+    <p>Go to <strong>Windows Security → Virus & Threat Protection</strong> and confirm Real‑time protection is ON.</p>
+
+    <h4>Step 2: Configure Defender Firewall</h4>
+    <p>Open <strong>Windows Security → Firewall & Network Protection</strong> and ensure firewall is ON for all profiles.</p>
+
+    <h4>Step 3: Enable Logging</h4>
+    <p>Check logs in Event Viewer under <code>Applications and Services Logs → Microsoft → Windows → Windows Defender</code>. Verify Event IDs like 1116 for malware detection.</p>
+
+    <h4>Step 4: Forward Logs to Splunk</h4>
+    <pre>[WinEventLog://Microsoft-Windows-Windows Defender/Operational]
+disabled = 0</pre>
+
+    <h4>Step 5: Use PowerShell</h4>
+    <pre>Get-MpComputerStatus</pre>
+    <pre>Start-MpScan -ScanType QuickScan</pre>
+    <pre>Update-MpSignature</pre>
+
+    <h3>🚨 Incident Response Playbooks</h3>
+    <table class="tools-table">
+      <thead><tr><th>Incident</th><th>Detection</th><th>Response</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Malware Infection</td><td>Defender Event ID 1116</td><td>Quarantine file, run full scan</td><td>Contain and remove malware.</td></tr>
+        <tr><td>Suspicious Network Traffic</td><td>Firewall logs</td><td>Block IP, alert SOC</td><td>Prevent lateral movement.</td></tr>
+        <tr><td>Unauthorized App Execution</td><td>Defender alert + Sysmon</td><td>Kill process, IOC hunt</td><td>Stop persistence attempts.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>✅ Validation Checklist</h3>
+    <ul>
+      <li>Defender Antivirus enabled</li>
+      <li>Firewall ON for all profiles</li>
+      <li>Logs visible in Event Viewer</li>
+      <li>Splunk ingestion validated</li>
+      <li>PowerShell commands tested</li>
+      <li>Screenshots stored in proof/ folder</li>
+    </ul>
+
+    <h3>🎯 Conclusion</h3>
+    <p>Windows Defender provides <strong>built‑in endpoint protection</strong> that integrates seamlessly with your SOC lab. By enabling logging, forwarding events to Splunk, and practicing playbooks, you gain <em>real‑world detection and response skills</em> recruiters value.</p>
+
+    <h3>🤝 Connect With Me</h3>
+    <ul>
+      <li>🌐 GitHub: <a href="https://github.com/LetsLearn-08?tab=repositories">LetsLearn-08</a></li>
+      <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a">Tanuja Reddy</a></li>
+    </ul>
+  </div>
+</body>
+</html>
