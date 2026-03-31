@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nmap Manual – Beginner’s Guide</title>
+  <link rel="stylesheet" href="style.css"> <!-- reuse glowing CSS -->
+</head>
+<body>
+  <div class="about-card">
+    <h2>Nmap Manual – Beginner’s Guide</h2>
+
+    <h3>📖 Introduction</h3>
+    <p>Nmap (Network Mapper) is one of the most widely used tools for <strong>network discovery, vulnerability scanning, and penetration testing</strong>. It is essential for both attackers and defenders in SOC workflows.</p>
+    <ul>
+      <li>Understand how Nmap works and its role in attacker/defender workflows</li>
+      <li>Learn essential scanning techniques</li>
+      <li>Practice documenting scan results for SOC and incident response</li>
+    </ul>
+
+    <h3>🎯 Why This Manual Matters</h3>
+    <ul>
+      <li>Nmap is a core skill recruiters expect in cybersecurity roles</li>
+      <li>Demonstrates reconnaissance and detection of open ports/services</li>
+      <li>Provides proof of network visibility and vulnerability assessment</li>
+    </ul>
+
+    <h3>🏗️ Components</h3>
+    <table class="tools-table">
+      <thead><tr><th>Keyword / Tool</th><th>Definition</th><th>Purpose in Lab</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://nmap.org/">Nmap</a></td><td>Open‑source network scanner.</td><td>Identifies live systems, open ports, and services.</td></tr>
+        <tr><td>Port Scanning</td><td>Probe network ports for availability.</td><td>Detects exploitable services.</td></tr>
+        <tr><td>Service Detection</td><td>Identify applications running on ports.</td><td>Helps defenders patch exposed software.</td></tr>
+        <tr><td>OS Fingerprinting</td><td>Guess operating system of a host.</td><td>Provides attacker/defender context.</td></tr>
+        <tr><td>Vulnerability Scanning</td><td>Use Nmap Scripting Engine (NSE).</td><td>Detects misconfigurations and CVEs.</td></tr>
+        <tr><td>NSE</td><td>Lua‑based scripting framework.</td><td>Automates advanced scans.</td></tr>
+        <tr><td>Kali Linux</td><td>Penetration testing distribution.</td><td>Attacker VM for reconnaissance.</td></tr>
+        <tr><td>Metasploitable</td><td>Vulnerable Linux VM.</td><td>Safe target for scanning practice.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>⚙️ Step‑by‑Step Setup</h3>
+    <h4>Step 1: Install Nmap</h4>
+    <pre>sudo apt update
+sudo apt install nmap</pre>
+
+    <h4>Step 2: Basic Host Discovery</h4>
+    <pre>nmap -sn 192.168.56.0/24</pre>
+
+    <h4>Step 3: Port Scanning</h4>
+    <pre>nmap -p 1-65535 192.168.56.106</pre>
+
+    <h4>Step 4: Service & Version Detection</h4>
+    <pre>nmap -sV 192.168.56.106</pre>
+
+    <h4>Step 5: OS Fingerprinting</h4>
+    <pre>nmap -O 192.168.56.106</pre>
+
+    <h4>Step 6: Vulnerability Scanning with NSE</h4>
+    <pre>nmap --script vuln 192.168.56.107</pre>
+
+    <h4>Step 7: Documentation</h4>
+    <pre>nmap -sV -oN proof/nmap-scan.txt 192.168.56.107</pre>
+
+    <h3>🚨 Incident Response Playbooks</h3>
+    <table class="tools-table">
+      <thead><tr><th>Incident</th><th>Detection</th><th>Response</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Unauthorized Port Exposure</td><td>Nmap scan shows open ports</td><td>Close ports, update firewall rules</td><td>Prevent exploitation.</td></tr>
+        <tr><td>Vulnerable Service</td><td>NSE script detects CVE</td><td>Patch/update service, IOC hunt</td><td>Reduce attack surface.</td></tr>
+        <tr><td>Rogue Host Discovery</td><td>Unexpected host in scan</td><td>Investigate, isolate, alert SOC</td><td>Detect lateral movement or unauthorized devices.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>✅ Validation Checklist</h3>
+    <ul>
+      <li>Nmap installed on Kali Linux</li>
+      <li>Host discovery tested (-sn)</li>
+      <li>Port scanning validated (-p)</li>
+      <li>Service detection performed (-sV)</li>
+      <li>OS fingerprinting tested (-O)</li>
+      <li>Vulnerability scan run with NSE</li>
+      <li>Results documented in proof/ folder</li>
+    </ul>
+
+    <h3>🎯 Conclusion</h3>
+    <p>Nmap is a <strong>foundational tool</strong> for both attackers and defenders. Practicing host discovery, port scanning, service detection, OS fingerprinting, and vulnerability scanning builds <em>real‑world reconnaissance and incident response skills</em>.</p>
+
+    <h3>🤝 Connect With Me</h3>
+    <ul>
+      <li>🌐 GitHub: <a href="https://github.com/LetsLearn-08?tab=repositories">LetsLearn-08</a></li>
+      <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a">Tanuja Reddy</a></li>
+    </ul>
+  </div>
+</body>
+</html>
