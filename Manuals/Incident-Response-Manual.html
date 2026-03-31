@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Incident Response Lab Setup – Beginner’s Manual</title>
+  <link rel="stylesheet" href="style.css"> <!-- reuse glowing CSS -->
+</head>
+<body>
+  <div class="about-card">
+    <h2>Incident Response Lab Setup – Beginner’s Manual</h2>
+
+    <h3>📖 Introduction</h3>
+    <p>This manual explains how to set up an <strong>Incident Response Lab</strong> — a safe environment to learn how cyberattacks happen and how defenders respond. Think of it as your personal <em>mini SOC (Security Operations Center)</em>.</p>
+    <ul>
+      <li>Understand attacker vs. defender workflows</li>
+      <li>Learn how logs are collected and analyzed</li>
+      <li>Practice responding to simulated incidents</li>
+    </ul>
+
+    <h3>🎯 Why This Lab Matters</h3>
+    <ul>
+      <li>Demonstrates hands‑on SOC skills recruiters look for</li>
+      <li>Shows ability to configure SIEM, endpoint monitoring, and attacker simulations</li>
+      <li>Provides proof of incident response workflows with documentation</li>
+    </ul>
+
+    <h3>🏗️ Lab Components</h3>
+    <table class="tools-table">
+      <thead><tr><th>Keyword / Tool</th><th>Definition</th><th>Purpose in Lab</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.virtualbox.org/">VirtualBox</a></td><td>Free virtualization software.</td><td>Hosts all lab machines.</td></tr>
+        <tr><td>Virtual Machine (VM)</td><td>Simulated computer running inside VirtualBox.</td><td>Each VM plays attacker, victim, or defender role.</td></tr>
+        <tr><td><a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon">Sysmon</a></td><td>Windows tool logging system activity.</td><td>Provides forensic visibility.</td></tr>
+        <tr><td><a href="https://www.splunk.com/">Splunk Enterprise</a></td><td>SIEM tool for logs and alerts.</td><td>Acts as SOC brain.</td></tr>
+        <tr><td><a href="https://docs.splunk.com/Documentation/Forwarder">Splunk Universal Forwarder</a></td><td>Lightweight agent.</td><td>Sends logs to Splunk.</td></tr>
+        <tr><td><a href="https://information.rapid7.com/metasploitable-download.html">Metasploitable</a></td><td>Deliberately vulnerable Linux VM.</td><td>Safe exploitation target.</td></tr>
+        <tr><td><a href="https://en.wikipedia.org/wiki/Kali_Linux">Kali Linux</a></td><td>Penetration testing distribution.</td><td>Attacker machine with tools.</td></tr>
+        <tr><td>Static IP</td><td>Fixed network address.</td><td>Ensures consistent communication.</td></tr>
+        <tr><td><a href="https://www.cisa.gov/resources-tools/resources/incident-response-playbook">Incident Response Playbook</a></td><td>Step‑by‑step guide for attacks.</td><td>Standardizes detection and response.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>⚙️ Step‑by‑Step Setup</h3>
+    <h4>Step 1: Install VirtualBox</h4>
+    <p>Download from <a href="https://www.virtualbox.org/">official site</a> and install.</p>
+
+    <h4>Step 2: Create VMs</h4>
+    <ul>
+      <li>Windows VM (Victim)</li>
+      <li>Kali Linux VM (Attacker)</li>
+      <li>Splunk SIEM VM (Defender)</li>
+      <li>Metasploitable VM (Target)</li>
+    </ul>
+
+    <h4>Step 3: Configure Networking</h4>
+    <p>Assign static IPs to each VM in VirtualBox network settings.</p>
+
+    <h4>Step 4: Install Sysmon</h4>
+    <pre>sysmon -accepteula -i sysmonconfig.xml</pre>
+
+    <h4>Step 5: Install Splunk Enterprise</h4>
+    <pre>netstat -an | grep 9997</pre>
+
+    <h4>Step 6: Install Splunk Universal Forwarder</h4>
+    <pre>splunk list forward-server</pre>
+
+    <h4>Step 7: Configure Kali Linux</h4>
+    <pre>apt install nmap metasploit-framework burpsuite</pre>
+
+    <h4>Step 8: Set Up Metasploitable</h4>
+    <p>Download from Rapid7 and run in VirtualBox with static IP.</p>
+
+    <h4>Step 9: Documentation</h4>
+    <p>Store screenshots in <code>proof/</code> folder with clear labels.</p>
+
+    <h3>🚨 Incident Response Playbooks</h3>
+    <table class="tools-table">
+      <thead><tr><th>Incident</th><th>Definition</th><th>Detection</th><th>Response</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Phishing</td><td>Fraudulent emails tricking users.</td><td>Email logs, Sysmon process</td><td>Quarantine, user alert</td><td>Train defenders to spot malicious emails.</td></tr>
+        <tr><td>Brute Force Attack</td><td>Repeated login attempts.</td><td>Authentication logs</td><td>Account lockout, SIEM alert</td><td>Prevent unauthorized access.</td></tr>
+        <tr><td>Malware</td><td>Malicious software.</td><td>Sysmon + Splunk correlation</td><td>Isolate host, IOC hunt</td><td>Contain and eradicate infection.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>✅ Validation Checklist</h3>
+    <ul>
+      <li>All VMs configured with static IPs</li>
+      <li>Sysmon installed with correct rules</li>
+      <li>Splunk ingestion validated</li>
+      <li>Incident playbooks tested</li>
+      <li>Screenshots stored in proof/</li>
+    </ul>
+
+    <h3>🎯 Conclusion</h3>
+    <p>This lab setup teaches you the <strong>foundations of incident response</strong>. Configure attacker, victim, and defender machines, document everything, and practice repeatedly to grow into a professional SOC analyst.</p>
+
+    <h3>🤝 Connect With Me</h3>
+    <ul>
+      <li>🌐 GitHub: <a href="https://github.com/LetsLearn-08?tab=repositories">LetsLearn-08</a></li>
+      <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a">Tanuja Reddy</a></li>
+    </ul>
+  </div>
+</body>
+</html>
