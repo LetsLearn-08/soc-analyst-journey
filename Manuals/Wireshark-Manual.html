@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wireshark Lab Setup – Beginner’s Manual</title>
+  <link rel="stylesheet" href="style.css"> <!-- reuse glowing CSS -->
+</head>
+<body>
+  <div class="about-card">
+    <h2>Wireshark Lab Setup – Beginner’s Manual</h2>
+
+    <h3>📖 Introduction</h3>
+    <p>Wireshark is an <strong>open-source network protocol analyzer</strong> widely used in SOCs and incident response. It acts as the <em>SOC’s microscope</em>, allowing analysts to capture and inspect raw packet traffic to detect attacker techniques.</p>
+    <ul>
+      <li>Capture and analyze live network traffic</li>
+      <li>Apply filters to isolate suspicious activity</li>
+      <li>Decode protocols like TCP, DNS, HTTP, and ICMP</li>
+      <li>Document findings with screenshots for recruiter‑ready proof</li>
+    </ul>
+
+    <h3>🎯 Why This Lab Matters</h3>
+    <ul>
+      <li>Shows ability to analyze raw network traffic — a core SOC skill</li>
+      <li>Provides visibility into attacker techniques like port scans, beaconing, and exfiltration</li>
+      <li>Builds proof of detection workflows with filters, screenshots, and playbooks</li>
+    </ul>
+
+    <h3>🏗️ Wireshark Components</h3>
+    <table class="tools-table">
+      <thead><tr><th>Component</th><th>Definition</th><th>Purpose in Lab</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.wireshark.org/">Wireshark</a></td><td>Open-source protocol analyzer.</td><td>Captures and inspects packet traffic.</td></tr>
+        <tr><td>Capture Filters</td><td>Rules applied before capture begins.</td><td>Reduce noise, focus traffic.</td></tr>
+        <tr><td>Display Filters</td><td>Syntax applied after capture.</td><td>Highlight suspicious traffic patterns.</td></tr>
+        <tr><td>Protocol Decoders</td><td>Parsers for TCP, DNS, HTTP, ICMP.</td><td>Help analysts understand attacker techniques.</td></tr>
+        <tr><td>Statistics Tools</td><td>Features like Conversations and Endpoints.</td><td>Summarize flows and detect anomalies.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>⚙️ Step‑by‑Step Setup</h3>
+    <h4>Step 1: Install Wireshark</h4>
+    <p>Download from <a href="https://www.wireshark.org/">official site</a> and install on your VM or host machine.</p>
+
+    <h4>Step 2: Configure Capture Filters</h4>
+    <pre>tcp port 80</pre>
+
+    <h4>Step 3: Apply Display Filters</h4>
+    <pre>http.request</pre>
+
+    <h4>Step 4: Use Protocol Decoders</h4>
+    <p>Inspect packet details in the middle pane to understand anomalies.</p>
+
+    <h4>Step 5: Document Findings</h4>
+    <p>Save annotated screenshots in <code>screenshots/</code> folder with clear labels.</p>
+
+    <h3>🚨 Incident Response Playbooks</h3>
+    <table class="tools-table">
+      <thead><tr><th>Incident</th><th>Detection Filter</th><th>Response</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Port Scan</td><td><pre>tcp.flags.syn==1 && tcp.flags.ack==0</pre></td><td>Identify source IP, block attacker</td><td>Detects SYN scan behavior.</td></tr>
+        <tr><td>Suspicious DNS Beaconing</td><td><pre>dns && ip.dst==&lt;suspicious_IP&gt;</pre></td><td>Investigate domain, enrich with threat intel</td><td>Detects repeated DNS queries.</td></tr>
+        <tr><td>HTTP Data Exfiltration</td><td><pre>http && ip.src==&lt;internal_IP&gt;</pre></td><td>Terminate connection, investigate host</td><td>Detects large outbound HTTP traffic.</td></tr>
+        <tr><td>ICMP Tunneling</td><td><pre>icmp && data.len&gt;100</pre></td><td>Block ICMP traffic, alert SOC</td><td>Detects covert channels.</td></tr>
+        <tr><td>Unencrypted Credentials</td><td><pre>http.request.method==POST && tcp.port==80</pre></td><td>Alert SOC, enforce HTTPS</td><td>Detects sensitive data sent in cleartext.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>✅ Validation Checklist</h3>
+    <ul>
+      <li>Wireshark installed and running</li>
+      <li>Capture filters tested</li>
+      <li>Display filters validated</li>
+      <li>Protocols decoded and anomalies identified</li>
+      <li>Screenshots stored in <code>screenshots/</code></li>
+      <li>Incident playbooks tested</li>
+    </ul>
+
+    <h3>🎯 Conclusion</h3>
+    <p>Wireshark is the <strong>SOC’s microscope</strong>. By documenting filters, screenshots, and playbooks, you prove your ability to perform <em>network analysis and incident detection</em> — critical skills for SOC analysts.</p>
+
+    <h3>🤝 Connect With Me</h3>
+    <ul>
+      <li>🌐 GitHub: <a href="https://github.com/LetsLearn-08?tab=repositories">LetsLearn-08</a></li>
+      <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/tanuja-reddy-03aa7b38a">Tanuja Reddy</a></li>
+    </ul>
+  </div>
+</body>
+</html>
