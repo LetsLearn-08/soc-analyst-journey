@@ -216,8 +216,8 @@ This format helps beginners understand **SOC Analyst responsibilities** while sh
 | [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) | Microsoft Sysinternals tool for monitoring process creation, network connections, and event logging. | [Sysmon Manual](Sysmon_Manual.md) |
 | [Wireshark](https://www.wireshark.org/) | Leading open-source network protocol analyzer for packet capture and traffic inspection. | [Wireshark Manual](Wireshark_Manual.md) |
 | [Incident Response](https://www.ibm.com/topics/incident-response) | IBM’s guide to incident response: structured processes for detecting, containing, and resolving cyberattacks. | [Incident Response Manual](INCIDENT-RESPOND-LABSETUP-MANUAL.md) |
-| [Windows Defender](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/) | Built-in endpoint protection for Windows, providing logs and malware detection. | [Windows Defender Manual](docs/WindowsDefender_Manual.md) | 
-| [Nmap](https://nmap.org/) | Network mapper for service detection, port scanning, and vulnerability discovery. | [Nmap Manual](docs/Nmap_Manual.md) |
+| [Windows Defender](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/) | Built-in endpoint protection for Windows, providing logs and malware detection. | [Windows Defender Manual](docs/WindowsDefender-Manual.md) | 
+| [Nmap](https://nmap.org/) | Network mapper for service detection, port scanning, and vulnerability discovery. | [Nmap Manual](docs/Nmap-Manual.md) |
 
 ---
 
