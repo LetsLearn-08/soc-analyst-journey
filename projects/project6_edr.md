@@ -51,7 +51,7 @@ Created **Dashboard: DNS Anomaly Detection – SOC Lab** with the following pane
 - **Entropy Detection (randomized domains)** (scatter plot)  
 
 ### Dashboard Artifacts
-- 📄 **HTML Export**: [dns-anomaly-dashboard.html](Project6/dns-dashboard.html)  
+- 📄 **HTML Export**: [Download Dashboard HTML](Project6/dns-dashboard.html)  
 - 🖼️ **PNG Screenshot**: ![Splunk Dashboard](Project6/splunk-dashboard.jpeg)  
 
 ---
