@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DNS Anomaly Detection – SOC Lab</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap');
+
+  :root {
+    --bg-deep:    #020810;
+    --bg-panel:   #060e1a;
+    --bg-card:    #091525;
+    --accent1:    #00ffe7;
+    --accent2:    #ff3e6c;
+    --accent3:    #f0c040;
+    --accent4:    #3a7bfd;
+    --accent5:    #a259ff;
+    --text-hi:    #e8f4ff;
+    --text-mid:   #7aa4c8;
+    --text-lo:    #3a5a7a;
+    --border:     rgba(0,255,231,0.12);
+    --glow1:      0 0 18px rgba(0,255,231,0.22);
+    --glow2:      0 0 14px rgba(255,62,108,0.22);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--text-hi);
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── Scan-line overlay ─── */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,255,231,0.014) 2px,
+      rgba(0,255,231,0.014) 4px
+    );
+    pointer-events:none;
+    z-index:9999;
+  }
+
+  /* ─── Header ─── */
+  header {
+    padding: 28px 40px 24px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, rgba(0,255,231,0.04) 0%, transparent 60%);
+    position: relative;
+  }
+  header::after {
+    content:'';
+    position:absolute; bottom:0; left:40px; right:40px;
+    height:1px;
+    background: linear-gradient(90deg, var(--accent1), transparent);
+  }
+  .header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .title-block {}
+  .sys-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--accent1);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+  h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(20px, 3vw, 34px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text-hi);
+    text-shadow: 0 0 30px rgba(0,255,231,0.35);
+    line-height: 1.1;
+  }
+  h1 span { color: var(--accent1); }
+  .subtitle {
+    font-size: 13px;
+    color: var(--text-mid);
+    margin-top: 8px;
+    max-width: 620px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+  }
+  .header-stats {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  .stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 18px;
+    text-align: center;
+    min-width: 90px;
+  }
+  .stat-val {
+    font-family: 'Orbitron', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent1);
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--text-lo);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ─── Badge / live indicator ─── */
+  .live-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--accent1);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1px solid rgba(0,255,231,0.3);
+    border-radius: 4px;
+    background: rgba(0,255,231,0.04);
+  }
+  .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent1);
+    animation: pulse 1.4s ease-in-out infinite;
+    box-shadow: 0 0 8px var(--accent1);
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.4; transform:scale(0.7); }
+  }
+
+  /* ─── Main grid ─── */
+  main {
+    padding: 28px 40px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+
+  /* ─── Panels ─── */
+  .panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+  .panel::before {
+    content:'';
+    position:absolute; top:0; left:0; right:0;
+    height:2px;
+    background: linear-gradient(90deg, var(--accent1), transparent 70%);
+  }
+  .panel.wide { grid-column: 1 / -1; }
+  .panel:nth-child(1) { animation-delay: 0.05s; }
+  .panel:nth-child(2) { animation-delay: 0.10s; }
+  .panel:nth-child(3) { animation-delay: 0.15s; }
+  .panel:nth-child(4) { animation-delay: 0.20s; }
+  .panel:nth-child(5) { animation-delay: 0.25s; }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(16px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  .panel-title-group {}
+  .panel-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--accent1);
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin-bottom: 2px;
+  }
+  .panel-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-hi);
+    text-transform: uppercase;
+  }
+  .panel-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .badge-bar   { background: rgba(0,255,231,0.1);  color: var(--accent1); border:1px solid rgba(0,255,231,0.25); }
+  .badge-pie   { background: rgba(162,89,255,0.1); color: var(--accent5); border:1px solid rgba(162,89,255,0.25); }
+  .badge-tbl   { background: rgba(255,62,108,0.1); color: var(--accent2); border:1px solid rgba(255,62,108,0.25); }
+  .badge-line  { background: rgba(58,123,253,0.1); color: var(--accent4); border:1px solid rgba(58,123,253,0.25); }
+  .badge-scat  { background: rgba(240,192,64,0.1); color: var(--accent3); border:1px solid rgba(240,192,64,0.25); }
+
+  .chart-wrap {
+    position: relative;
+    width: 100%;
+  }
+  .chart-wrap canvas { width:100% !important; }
+
+  /* ─── Table ─── */
+  .tbl-outer {
+    max-height: 340px;
+    overflow-y: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+  .tbl-outer::-webkit-scrollbar { width:5px; }
+  .tbl-outer::-webkit-scrollbar-track { background: transparent; }
+  .tbl-outer::-webkit-scrollbar-thumb { background: var(--accent1); border-radius:3px; opacity:0.4; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+  }
+  thead tr {
+    background: rgba(0,255,231,0.06);
+    position: sticky; top: 0;
+    z-index: 2;
+  }
+  th {
+    padding: 10px 14px;
+    text-align: left;
+    color: var(--accent1);
+    letter-spacing: 1.5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+  tbody tr {
+    border-bottom: 1px solid rgba(0,255,231,0.05);
+    transition: background 0.15s;
+  }
+  tbody tr:hover { background: rgba(0,255,231,0.04); }
+  td {
+    padding: 9px 14px;
+    color: var(--text-mid);
+    max-width: 340px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  td.domain-cell { color: var(--text-hi); }
+  .type-tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .tag-ptr { background: rgba(240,192,64,0.15); color: var(--accent3); }
+  .tag-any { background: rgba(255,62,108,0.15); color: var(--accent2); }
+  .tag-null{ background: rgba(162,89,255,0.15); color: var(--accent5); }
+  .tag-txt { background: rgba(58,123,253,0.15); color: var(--accent4); }
+  .tag-mx  { background: rgba(0,255,231,0.10); color: var(--accent1); }
+  .tag-other{ background: rgba(255,255,255,0.07); color: var(--text-mid); }
+
+  /* ─── Footer ─── */
+  footer {
+    text-align: center;
+    padding: 14px 40px 28px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--text-lo);
+    letter-spacing: 1px;
+    border-top: 1px solid var(--border);
+  }
+  footer span { color: var(--accent1); opacity:0.7; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <div class="title-block">
+      <div class="sys-label">▸ Splunk SOC Lab &nbsp;|&nbsp; DNS Intelligence Platform &nbsp;|&nbsp; Kali Analysis</div>
+      <h1><span>DNS</span> Anomaly Detection</h1>
+      <div style="font-family:'Orbitron';font-size:13px;color:var(--text-mid);letter-spacing:3px;margin-top:2px;">SOC LAB DASHBOARD</div>
+      <p class="subtitle">
+        Real-time anomaly detection across DNS traffic exported from a Kali Linux lab environment. 
+        Identifies high-frequency domain queries, unusual record types (PTR/ANY/NULL/TXT), 
+        entropy-based domain obfuscation signals, and time-correlated activity bursts — 
+        surfacing indicators of tunneling, exfiltration, or C2 beaconing.
+      </p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:14px;">
+      <div class="live-badge"><span class="pulse"></span> Splunk Export Loaded</div>
+      <div class="header-stats">
+        <div class="stat-box">
+          <div class="stat-val" id="stat-total">2015</div>
+          <div class="stat-lbl">Events</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-dns">1872</div>
+          <div class="stat-lbl">DNS Queries</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-domains">72</div>
+          <div class="stat-lbl">Unique Domains</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Panel 1: Top Queried Domains -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title-group">
+        <div class="panel-num">PANEL 01</div>
+        <div class="panel-title">Top Queried Domains</div>
+      </div>
+      <span class="panel-badge badge-bar">Bar Chart</span>
+    </div>
+    <div class="chart-wrap" style="height:300px;">
+      <canvas id="chart1"></canvas>
+    </div>
+  </div>
+
+  <!-- Panel 2: Query Type Distribution -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title-group">
+        <div class="panel-num">PANEL 02</div>
+        <div class="panel-title">Query Type Distribution</div>
+      </div>
+      <span class="panel-badge badge-pie">Pie Chart</span>
+    </div>
+    <div class="chart-wrap" style="height:300px;">
+      <canvas id="chart2"></canvas>
+    </div>
+  </div>
+
+  <!-- Panel 3: Rare Record Types (wide) -->
+  <div class="panel wide">
+    <div class="panel-header">
+      <div class="panel-title-group">
+        <div class="panel-num">PANEL 03</div>
+        <div class="panel-title">Rare Record Types &nbsp;<span style="color:var(--accent2);font-size:12px;">— Non A/AAAA Events</span></div>
+      </div>
+      <span class="panel-badge badge-tbl">Table</span>
+    </div>
+    <div class="tbl-outer">
+      <table id="table3">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Query Name</th>
+            <th>Record Type</th>
+            <th>Timestamp (UTC)</th>
+          </tr>
+        </thead>
+        <tbody id="tbody3"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Panel 4: Time-based Activity (wide) -->
+  <div class="panel wide">
+    <div class="panel-header">
+      <div class="panel-title-group">
+        <div class="panel-num">PANEL 04</div>
+        <div class="panel-title">Time-Based Query Activity &nbsp;<span style="color:var(--accent4);font-size:12px;">— Last 24 Hours (1-min bins)</span></div>
+      </div>
+      <span class="panel-badge badge-line">Line Chart</span>
+    </div>
+    <div class="chart-wrap" style="height:220px;">
+      <canvas id="chart4"></canvas>
+    </div>
+  </div>
+
+  <!-- Panel 5: Entropy Scatter -->
+  <div class="panel wide">
+    <div class="panel-header">
+      <div class="panel-title-group">
+        <div class="panel-num">PANEL 05</div>
+        <div class="panel-title">Entropy Detection &nbsp;<span style="color:var(--accent3);font-size:12px;">— Domain Length vs Query Volume</span></div>
+      </div>
+      <span class="panel-badge badge-scat">Scatter Plot</span>
+    </div>
+    <p style="font-size:12px;color:var(--text-mid);margin-bottom:14px;letter-spacing:0.3px;">
+      Long or high-entropy domain names may indicate DNS tunneling or algorithmically-generated C2 domains (DGA). 
+      Points in the upper-right quadrant (high length + high frequency) are primary anomaly candidates.
+    </p>
+    <div class="chart-wrap" style="height:280px;">
+      <canvas id="chart5"></canvas>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>DNS ANOMALY DETECTION – SOC LAB</span> &nbsp;·&nbsp; Data Source: Splunk DNS Event Export (Microsoft-Windows-DNS Client Events) &nbsp;·&nbsp; Host: DESKTOP-GGJ18MO &nbsp;·&nbsp; Captured: 2026-04-07
+</footer>
+
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────────
+const P1 = [{"domain":"v10.events.data.microsoft.com","count":106},{"domain":"array810.prod.do.dsp.mp.microsoft.com","count":82},{"domain":"kv801.prod.do.dsp.mp.microsoft.com","count":80},{"domain":"wpad","count":60},{"domain":"disc801.prod.do.dsp.mp.microsoft.com","count":54},{"domain":"mobile.events.data.microsoft.com","count":54},{"domain":"arc.msn.com","count":50},{"domain":"ocsp.digicert.com","count":48},{"domain":"oneocsp.microsoft.com","count":48},{"domain":"DESKTOP-GGJ18MO","count":36},{"domain":"time.windows.com","count":30},{"domain":"fe3cr.delivery.mp.microsoft.com","count":28},{"domain":"update.googleapis.com","count":24},{"domain":"login.live.com","count":22},{"domain":"dns.msftncsi.com","count":20}];
+
+const P2 = [{"type":"AAAA","count":573},{"type":"A","count":567},{"type":"PTR","count":407},{"type":"ANY","count":53}];
+
+const P3_RAW = [{"QueryName":"1.1.1.1.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:27:20.110000+00:00"},{"QueryName":"1.0.0.127.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:28:11.445000+00:00"},{"QueryName":"8.8.8.8.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:30:55.210000+00:00"},{"QueryName":"wpad","QueryType":"ANY","_time":"2026-04-07 09:31:02.880000+00:00"},{"QueryName":"DESKTOP-GGJ18MO","QueryType":"ANY","_time":"2026-04-07 09:31:04.112000+00:00"},{"QueryName":"255.255.168.192.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:32:18.001000+00:00"},{"QueryName":"1.168.192.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:33:20.091000+00:00"},{"QueryName":"wpad.localdomain","QueryType":"ANY","_time":"2026-04-07 09:34:00.550000+00:00"},{"QueryName":"gateway.local","QueryType":"ANY","_time":"2026-04-07 09:35:11.720000+00:00"},{"QueryName":"6.9.4.0.5.3.a.a.5.9.0.f.a.f.c.7.2.0.0.0.7.3.0.f.c.5.2.6.7.1.d.f.ip6.arpa","QueryType":"PTR","_time":"2026-04-07 09:36:44.990000+00:00"},{"QueryName":"wpad","QueryType":"ANY","_time":"2026-04-07 09:37:03.441000+00:00"},{"QueryName":"localhost","QueryType":"ANY","_time":"2026-04-07 09:38:22.007000+00:00"},{"QueryName":"3.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.0.0.7.3.0.f.c.5.2.6.7.1.d.f.ip6.arpa","QueryType":"PTR","_time":"2026-04-07 09:39:11.228000+00:00"},{"QueryName":"a.5.9.2.e.6.b.1.b.2.f.8.a.5.b.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa","QueryType":"PTR","_time":"2026-04-07 09:40:05.660000+00:00"},{"QueryName":"DESKTOP-GGJ18MO","QueryType":"ANY","_time":"2026-04-07 09:41:33.810000+00:00"},{"QueryName":"e.f.5.8.7.e.b.7.a.c.c.7.6.8.b.c.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa","QueryType":"PTR","_time":"2026-04-07 09:42:00.104000+00:00"},{"QueryName":"wpad.localdomain","QueryType":"ANY","_time":"2026-04-07 09:43:15.440000+00:00"},{"QueryName":"b.f.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.f.f.ip6.arpa","QueryType":"PTR","_time":"2026-04-07 09:44:28.551000+00:00"},{"QueryName":"255.0.168.192.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:45:09.777000+00:00"},{"QueryName":"wpad","QueryType":"ANY","_time":"2026-04-07 09:46:33.218000+00:00"},{"QueryName":"10.0.2.15","QueryType":"PTR","_time":"2026-04-07 09:48:02.334000+00:00"},{"QueryName":"gateway.local","QueryType":"ANY","_time":"2026-04-07 09:49:15.667000+00:00"},{"QueryName":"1.0.0.127.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:50:44.890000+00:00"},{"QueryName":"localhost","QueryType":"ANY","_time":"2026-04-07 09:51:22.014000+00:00"},{"QueryName":"wpad.localdomain","QueryType":"ANY","_time":"2026-04-07 09:52:48.120000+00:00"},{"QueryName":"f.f.f.f.ip6.arpa","QueryType":"PTR","_time":"2026-04-07 09:53:10.332000+00:00"},{"QueryName":"0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa","QueryType":"PTR","_time":"2026-04-07 09:54:01.891000+00:00"},{"QueryName":"wpad","QueryType":"ANY","_time":"2026-04-07 09:55:30.772000+00:00"},{"QueryName":"DESKTOP-GGJ18MO.localdomain","QueryType":"ANY","_time":"2026-04-07 09:56:44.003000+00:00"},{"QueryName":"gateway.local","QueryType":"ANY","_time":"2026-04-07 09:57:55.220000+00:00"},{"QueryName":"1.1.1.1.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:58:12.440000+00:00"},{"QueryName":"8.8.4.4.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 09:59:00.104000+00:00"},{"QueryName":"wpad","QueryType":"ANY","_time":"2026-04-07 10:00:14.555000+00:00"},{"QueryName":"localhost","QueryType":"ANY","_time":"2026-04-07 10:01:28.780000+00:00"},{"QueryName":"2.168.192.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 10:02:45.001000+00:00"},{"QueryName":"wpad.localdomain","QueryType":"ANY","_time":"2026-04-07 10:03:11.334000+00:00"},{"QueryName":"15.2.0.10.in-addr.arpa","QueryType":"PTR","_time":"2026-04-07 10:03:55.008000+00:00"},{"QueryName":"DESKTOP-GGJ18MO","QueryType":"ANY","_time":"2026-04-07 10:04:22.990000+00:00"},{"QueryName":"gateway.local","QueryType":"ANY","_time":"2026-04-07 10:04:50.082000+00:00"}];
+
+const P4 = [{"time":"2026-04-07 09:27:00+00:00","count":45},{"time":"2026-04-07 09:28:00+00:00","count":62},{"time":"2026-04-07 09:29:00+00:00","count":88},{"time":"2026-04-07 09:30:00+00:00","count":134},{"time":"2026-04-07 09:31:00+00:00","count":96},{"time":"2026-04-07 09:32:00+00:00","count":78},{"time":"2026-04-07 09:33:00+00:00","count":110},{"time":"2026-04-07 09:34:00+00:00","count":145},{"time":"2026-04-07 09:35:00+00:00","count":122},{"time":"2026-04-07 09:36:00+00:00","count":89},{"time":"2026-04-07 09:37:00+00:00","count":101},{"time":"2026-04-07 09:38:00+00:00","count":76},{"time":"2026-04-07 09:39:00+00:00","count":58},{"time":"2026-04-07 09:40:00+00:00","count":93},{"time":"2026-04-07 09:41:00+00:00","count":117},{"time":"2026-04-07 09:42:00+00:00","count":139},{"time":"2026-04-07 09:43:00+00:00","count":84},{"time":"2026-04-07 09:44:00+00:00","count":67},{"time":"2026-04-07 09:45:00+00:00","count":72},{"time":"2026-04-07 09:46:00+00:00","count":155}];
+
+const P5 = [{"QueryName":"a.5.9.2.e.6.b.1.b.2.f.8.a.5.b.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa","avg_len":72.0,"count":5},{"QueryName":"e.f.5.8.7.e.b.7.a.c.c.7.6.8.b.c.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa","avg_len":72.0,"count":15},{"QueryName":"b.f.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.f.f.ip6.arpa","avg_len":72.0,"count":22},{"QueryName":"0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa","avg_len":72.0,"count":8},{"QueryName":"6.9.4.0.5.3.a.a.5.9.0.f.a.f.c.7.2.0.0.0.7.3.0.f.c.5.2.6.7.1.d.f.ip6.arpa","avg_len":73.0,"count":30},{"QueryName":"3.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.0.0.7.3.0.f.c.5.2.6.7.1.d.f.ip6.arpa","avg_len":73.0,"count":12},{"QueryName":"array810.prod.do.dsp.mp.microsoft.com","avg_len":37.0,"count":82},{"QueryName":"kv801.prod.do.dsp.mp.microsoft.com","avg_len":35.0,"count":80},{"QueryName":"v10.events.data.microsoft.com","avg_len":29.0,"count":106},{"QueryName":"disc801.prod.do.dsp.mp.microsoft.com","avg_len":36.0,"count":54},{"QueryName":"mobile.events.data.microsoft.com","avg_len":32.0,"count":54},{"QueryName":"fe3cr.delivery.mp.microsoft.com","avg_len":31.0,"count":28},{"QueryName":"ocsp.digicert.com","avg_len":17.0,"count":48},{"QueryName":"arc.msn.com","avg_len":11.0,"count":50},{"QueryName":"oneocsp.microsoft.com","avg_len":21.0,"count":48},{"QueryName":"time.windows.com","avg_len":16.0,"count":30},{"QueryName":"login.live.com","avg_len":14.0,"count":22},{"QueryName":"update.googleapis.com","avg_len":21.0,"count":24},{"QueryName":"dns.msftncsi.com","avg_len":16.0,"count":20},{"QueryName":"wpad","avg_len":4.0,"count":60},{"QueryName":"DESKTOP-GGJ18MO","avg_len":15.0,"count":36}];
+
+// ── CHART DEFAULTS ────────────────────────────────────────────────────────────
+Chart.defaults.color = '#7aa4c8';
+Chart.defaults.font.family = "'Share Tech Mono', monospace";
+Chart.defaults.font.size = 11;
+
+const gridColor = 'rgba(0,255,231,0.07)';
+const tickColor = '#3a5a7a';
+
+// ── P1: Top Queried Domains Bar Chart ─────────────────────────────────────────
+(function() {
+  const labels = P1.map(d => d.domain.length > 28 ? '…'+d.domain.slice(-26) : d.domain);
+  const vals   = P1.map(d => d.count);
+  const colors = vals.map((v,i) => `hsla(${168 - i*9},90%,${55 - i*1.2}%,0.85)`);
+
+  new Chart(document.getElementById('chart1'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Query Count',
+        data: vals,
+        backgroundColor: colors,
+        borderColor: colors.map(c => c.replace('0.85','1')),
+        borderWidth: 1,
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#091525',
+          borderColor: 'rgba(0,255,231,0.3)',
+          borderWidth: 1,
+          titleColor: '#00ffe7',
+          bodyColor: '#e8f4ff',
+          callbacks: {
+            title: (items) => P1[items[0].dataIndex].domain,
+            label: (item) => ` Queries: ${item.raw}`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          ticks: { color: tickColor },
+          border: { color: gridColor }
+        },
+        y: {
+          grid: { color: 'transparent' },
+          ticks: { color: '#7aa4c8', font: { size: 10 } },
+          border: { color: gridColor }
+        }
+      }
+    }
+  });
+})();
+
+// ── P2: Query Type Pie Chart ───────────────────────────────────────────────────
+(function() {
+  const palette = ['#3a7bfd','#00ffe7','#f0c040','#ff3e6c','#a259ff','#00cc99'];
+  new Chart(document.getElementById('chart2'), {
+    type: 'doughnut',
+    data: {
+      labels: P2.map(d => d.type),
+      datasets: [{
+        data: P2.map(d => d.count),
+        backgroundColor: palette,
+        borderColor: '#060e1a',
+        borderWidth: 3,
+        hoverOffset: 10
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '60%',
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: {
+            color: '#7aa4c8',
+            padding: 14,
+            usePointStyle: true,
+            pointStyleWidth: 10,
+            font: { size: 12 }
+          }
+        },
+        tooltip: {
+          backgroundColor: '#091525',
+          borderColor: 'rgba(0,255,231,0.3)',
+          borderWidth: 1,
+          titleColor: '#00ffe7',
+          bodyColor: '#e8f4ff',
+          callbacks: {
+            label: (item) => ` ${item.label}: ${item.raw} (${((item.raw/P2.reduce((a,b)=>a+b.count,0))*100).toFixed(1)}%)`
+          }
+        }
+      }
+    }
+  });
+})();
+
+// ── P3: Rare Record Types Table ────────────────────────────────────────────────
+(function() {
+  const tbody = document.getElementById('tbody3');
+  const typeClass = { PTR:'tag-ptr', ANY:'tag-any', NULL:'tag-null', TXT:'tag-txt', MX:'tag-mx' };
+  P3_RAW.forEach((row, i) => {
+    const tr = document.createElement('tr');
+    const cls = typeClass[row.QueryType] || 'tag-other';
+    const ts = row._time.replace('+00:00','').replace('000000','').trim();
+    tr.innerHTML = `
+      <td style="color:var(--text-lo);font-size:10px;">${String(i+1).padStart(2,'0')}</td>
+      <td class="domain-cell">${row.QueryName}</td>
+      <td><span class="type-tag ${cls}">${row.QueryType}</span></td>
+      <td style="color:var(--text-lo);">${ts.slice(0,19)}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+})();
+
+// ── P4: Time-based Activity Line Chart ────────────────────────────────────────
+(function() {
+  const labels = P4.map(d => d.time.slice(11,16));
+  const vals   = P4.map(d => d.count);
+
+  new Chart(document.getElementById('chart4'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'DNS Queries/min',
+        data: vals,
+        borderColor: '#3a7bfd',
+        backgroundColor: 'rgba(58,123,253,0.08)',
+        borderWidth: 2,
+        pointRadius: 4,
+        pointBackgroundColor: '#3a7bfd',
+        pointBorderColor: '#060e1a',
+        pointBorderWidth: 2,
+        pointHoverRadius: 6,
+        fill: true,
+        tension: 0.35
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#091525',
+          borderColor: 'rgba(58,123,253,0.4)',
+          borderWidth: 1,
+          titleColor: '#3a7bfd',
+          bodyColor: '#e8f4ff',
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          ticks: { color: tickColor },
+          border: { color: gridColor },
+          title: { display: true, text: 'UTC Time (HH:MM)', color: '#3a5a7a', font: { size: 10 } }
+        },
+        y: {
+          grid: { color: gridColor },
+          ticks: { color: tickColor },
+          border: { color: gridColor },
+          title: { display: true, text: 'Query Count', color: '#3a5a7a', font: { size: 10 } }
+        }
+      }
+    }
+  });
+})();
+
+// ── P5: Entropy Scatter ────────────────────────────────────────────────────────
+(function() {
+  // Color by length: longer = more suspicious = more red
+  const maxLen = Math.max(...P5.map(d => d.avg_len));
+  const minLen = Math.min(...P5.map(d => d.avg_len));
+
+  const points = P5.map(d => ({
+    x: d.avg_len,
+    y: d.count,
+    label: d.QueryName
+  }));
+
+  const bgColors = points.map(p => {
+    const t = (p.x - minLen) / (maxLen - minLen);
+    const r = Math.round(58 + t * (255 - 58));
+    const g = Math.round(123 + t * (62  - 123));
+    const b = Math.round(253 + t * (108 - 253));
+    return `rgba(${r},${g},${b},0.75)`;
+  });
+
+  new Chart(document.getElementById('chart5'), {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'Domain',
+        data: points,
+        backgroundColor: bgColors,
+        borderColor: bgColors.map(c => c.replace('0.75','1')),
+        borderWidth: 1,
+        pointRadius: points.map(p => Math.max(4, Math.min(12, p.y / 12))),
+        pointHoverRadius: 10,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#091525',
+          borderColor: 'rgba(240,192,64,0.4)',
+          borderWidth: 1,
+          titleColor: '#f0c040',
+          bodyColor: '#e8f4ff',
+          callbacks: {
+            title: (items) => {
+              const d = points[items[0].dataIndex];
+              return d.label.length > 50 ? '…' + d.label.slice(-48) : d.label;
+            },
+            label: (item) => [
+              ` Domain Length: ${item.raw.x} chars`,
+              ` Query Count:   ${item.raw.y}`
+            ]
+          }
+        },
+        // Quadrant annotation hint via afterDraw
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          ticks: { color: tickColor },
+          border: { color: gridColor },
+          title: { display: true, text: 'Domain Length (chars)', color: '#3a5a7a', font: { size: 10 } }
+        },
+        y: {
+          grid: { color: gridColor },
+          ticks: { color: tickColor },
+          border: { color: gridColor },
+          title: { display: true, text: 'Query Count', color: '#3a5a7a', font: { size: 10 } }
+        }
+      }
+    },
+    plugins: [{
+      id: 'anomalyZone',
+      afterDraw(chart) {
+        const { ctx, chartArea: { right, top }, scales: { x, y } } = chart;
+        // Shade high-entropy zone (len > 50)
+        const x50 = x.getPixelForValue(50);
+        if (x50 < right) {
+          ctx.save();
+          ctx.fillStyle = 'rgba(255,62,108,0.04)';
+          ctx.fillRect(x50, top, right - x50, chart.chartArea.bottom - top);
+          ctx.strokeStyle = 'rgba(255,62,108,0.2)';
+          ctx.setLineDash([4,4]);
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(x50, top);
+          ctx.lineTo(x50, chart.chartArea.bottom);
+          ctx.stroke();
+          ctx.fillStyle = 'rgba(255,62,108,0.55)';
+          ctx.font = '10px Share Tech Mono';
+          ctx.fillText('⚠ HIGH ENTROPY ZONE', x50 + 6, top + 14);
+          ctx.restore();
+        }
+      }
+    }]
+  });
+})();
+</script>
+</body>
+</html>
