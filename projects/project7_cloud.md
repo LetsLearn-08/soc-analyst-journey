@@ -21,7 +21,7 @@ The goal is to showcase how authentication systems can be implemented with moder
 
 | Auth Page | Dashboard |
 |-----------|-----------|
-| ![Auth Page](screenshots/auth-page.png) | ![Dashboard](screenshots/dashboard.png) |
+| ![Auth Page](Project7/screenshots/auth-page.png) | ![Dashboard](Project7/screenshots/dashboard.png) |
 
 ---
 
@@ -312,24 +312,10 @@ MIT — free to use, modify, and deploy.
 
 This project is organized into separate folders for clarity. Each folder contains code, configuration, or documentation relevant to NexusAuth.
 
-| Folder / File | Description | Link |
-|---------------|-------------|------|
-| `backend/` | Node.js + Express backend with routes, models, middleware, and server entry point | [backend/](backend/) |
-| `backend/models/User.js` | Mongoose schema with bcrypt hooks for password hashing | [User.js](backend/models/User.js) |
-| `backend/middleware/auth.js` | JWT verification middleware for protected routes | [auth.js](backend/middleware/auth.js) |
-| `backend/routes/auth.js` | Authentication routes (`/register`, `/login`, `/me`, `/logout`) | [auth.js](backend/routes/auth.js) |
-| `backend/routes/dashboard.js` | Protected dashboard route | [dashboard.js](backend/routes/dashboard.js) |
-| `backend/server.js` | Express app entry point | [server.js](backend/server.js) |
-| `frontend/` | React frontend with pages, context, and cyberpunk styling | [frontend/](frontend/) |
-| `frontend/src/context/AuthContext.js` | Global auth state + axios defaults | [AuthContext.js](frontend/src/context/AuthContext.js) |
-| `frontend/src/pages/AuthPage.js` | Login + Register page | [AuthPage.js](frontend/src/pages/AuthPage.js) |
-| `frontend/src/pages/Dashboard.js` | Protected dashboard page | [Dashboard.js](frontend/src/pages/Dashboard.js) |
-| `frontend/src/App.js` | Router setup with private/public routes | [App.js](frontend/src/App.js) |
-| `frontend/src/App.css` | Global cyberpunk styles | [App.css](frontend/src/App.css) |
-| `screenshots/` | UI screenshots for proof artifacts | [screenshots/](screenshots/) |
-| `README.md` | Project documentation (this file) | [README.md](README.md) |
+- [User.js](Project7/backend/models/User.js)
+- [AuthContext.js](Project7/frontend/src/context/AuthContext.js)
 
----
+
 
 ---
 
