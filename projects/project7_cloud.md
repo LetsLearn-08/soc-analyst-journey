@@ -21,7 +21,7 @@ The goal is to showcase how authentication systems can be implemented with moder
 
 | Auth Page | Dashboard |
 |-----------|-----------|
-| ![Auth Page](Project7/screenshots/auth-page.png) | ![Dashboard](Project7/screenshots/dashboard.png) |
+| ![Auth Page](Project7/screenshots/screenshot-anomaly-detail.png) | ![Dashboard](Project7/screenshots/screenshot-dashboard.png) |
 
 ---
 
